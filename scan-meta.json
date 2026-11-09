@@ -1,0 +1,43 @@
+{
+ "version": "0.1.0",
+ "godot_version": "4.7.2.stable.official.ed1daf0bf",
+ "controls": {
+  "control-good": {
+   "expected": "clean",
+   "got": "clean",
+   "returncode": 0,
+   "errors": []
+  },
+  "control-g3": {
+   "expected": "real-error",
+   "got": "real-error",
+   "returncode": 1,
+   "errors": [
+    {
+     "msg": "The \"onready\" keyword was removed in Godot 4. Use the \"@onready\" annotation instead.",
+     "line": 3,
+     "category": "godot3"
+    }
+   ]
+  },
+  "control-external": {
+   "expected": "external-only",
+   "got": "external-only",
+   "returncode": 1,
+   "errors": [
+    {
+     "msg": "Could not find type \"PlayerStatsResource\" in the current scope.",
+     "line": 3,
+     "category": "external"
+    },
+    {
+     "msg": "Identifier \"PlayerStatsResource\" not declared in the current scope.",
+     "line": 6,
+     "category": "external"
+    }
+   ]
+  }
+ },
+ "eligible_scripts": 2239,
+ "checked_scripts": 2239
+}

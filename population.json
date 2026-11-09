@@ -1,0 +1,3235 @@
+{
+ "retrieved_at": "2026-11-09T02:23:31Z",
+ "queries": {
+  "godot": {
+   "count": 131,
+   "searchType": "fuzzy"
+  },
+  "gdscript": {
+   "count": 200,
+   "searchType": "fuzzy"
+  }
+ },
+ "skills": [
+  {
+   "id": "wshobson/agents/godot-gdscript-patterns",
+   "source": "wshobson/agents",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 18211,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-ui-control",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-ui-control",
+   "name": "godot-ui-control",
+   "installs": 10279,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-animation",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-animation",
+   "name": "godot-animation",
+   "installs": 10152,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-gdscript",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 9990,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-shaders",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-shaders",
+   "name": "godot-shaders",
+   "installs": 9972,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-nodes-scenes",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-nodes-scenes",
+   "name": "godot-nodes-scenes",
+   "installs": 9926,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-physics",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-physics",
+   "name": "godot-physics",
+   "installs": 9718,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-resources",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-resources",
+   "name": "godot-resources",
+   "installs": 9712,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-signals-groups",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-signals-groups",
+   "name": "godot-signals-groups",
+   "installs": 9618,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-3d-essentials",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-3d-essentials",
+   "name": "godot-3d-essentials",
+   "installs": 9578,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-export",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-export",
+   "name": "godot-export",
+   "installs": 9574,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-audio",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-audio",
+   "name": "godot-audio",
+   "installs": 9547,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-2d-movement",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-2d-movement",
+   "name": "godot-2d-movement",
+   "installs": 9433,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-tilemap",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-tilemap",
+   "name": "godot-tilemap",
+   "installs": 9351,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-multiplayer",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-multiplayer",
+   "name": "godot-multiplayer",
+   "installs": 9121,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-csharp",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-csharp",
+   "name": "godot-csharp",
+   "installs": 9071,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "gamedev-skills/awesome-gamedev-agent-skills/godot-gdscript-headless-testing",
+   "source": "gamedev-skills/awesome-gamedev-agent-skills",
+   "skillId": "godot-gdscript-headless-testing",
+   "name": "godot-gdscript-headless-testing",
+   "installs": 6537,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-master",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-master",
+   "name": "godot-master",
+   "installs": 5215,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "zate/cc-godot/godot-ui",
+   "source": "zate/cc-godot",
+   "skillId": "godot-ui",
+   "name": "godot-ui",
+   "installs": 2683,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "zate/cc-godot/godot-development",
+   "source": "zate/cc-godot",
+   "skillId": "godot-development",
+   "name": "godot-development",
+   "installs": 1437,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jwynia/agent-skills/godot-best-practices",
+   "source": "jwynia/agent-skills",
+   "skillId": "godot-best-practices",
+   "name": "godot-best-practices",
+   "installs": 2083,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "lightforgelabsstudio/godot-skills/godot",
+   "source": "lightforgelabsstudio/godot-skills",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 363,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "zate/cc-godot/godot-optimization",
+   "source": "zate/cc-godot",
+   "skillId": "godot-optimization",
+   "name": "godot-optimization",
+   "installs": 724,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "jwynia/agent-skills/godot-asset-generator",
+   "source": "jwynia/agent-skills",
+   "skillId": "godot-asset-generator",
+   "name": "godot-asset-generator",
+   "installs": 1014,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "randroids-dojo/skills/godot",
+   "source": "randroids-dojo/skills",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 365,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-shaders-basics",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-shaders-basics",
+   "name": "godot-shaders-basics",
+   "installs": 719,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-2d-animation",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-2d-animation",
+   "name": "godot-2d-animation",
+   "installs": 700,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "spritecook/skills/spritecook-use-assets-in-godot",
+   "source": "spritecook/skills",
+   "skillId": "spritecook-use-assets-in-godot",
+   "name": "spritecook-use-assets-in-godot",
+   "installs": 676,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-ui-theming",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-ui-theming",
+   "name": "godot-ui-theming",
+   "installs": 651,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-particles",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-particles",
+   "name": "godot-particles",
+   "installs": 647,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-gdscript-mastery",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-gdscript-mastery",
+   "name": "godot-gdscript-mastery",
+   "installs": 642,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-save-load-systems",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-save-load-systems",
+   "name": "godot-save-load-systems",
+   "installs": 635,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-testing-patterns",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-testing-patterns",
+   "name": "godot-testing-patterns",
+   "installs": 629,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "hkuds/cli-anything/cli-anything-godot",
+   "source": "hkuds/cli-anything",
+   "skillId": "cli-anything-godot",
+   "name": "cli-anything-godot",
+   "installs": 582,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "zate/cc-godot/godot-debugging",
+   "source": "zate/cc-godot",
+   "skillId": "godot-debugging",
+   "name": "godot-debugging",
+   "installs": 378,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-3d-world-building",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-3d-world-building",
+   "name": "godot-3d-world-building",
+   "installs": 559,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-camera-systems",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-camera-systems",
+   "name": "godot-camera-systems",
+   "installs": 558,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-signal-architecture",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-signal-architecture",
+   "name": "godot-signal-architecture",
+   "installs": 550,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-characterbody-2d",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-characterbody-2d",
+   "name": "godot-characterbody-2d",
+   "installs": 550,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-ui-containers",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-ui-containers",
+   "name": "godot-ui-containers",
+   "installs": 546,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-input-handling",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-input-handling",
+   "name": "godot-input-handling",
+   "installs": 537,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-composition",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-composition",
+   "name": "godot-composition",
+   "installs": 537,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-project-foundations",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-project-foundations",
+   "name": "godot-project-foundations",
+   "installs": 530,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-combat-system",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-combat-system",
+   "name": "godot-combat-system",
+   "installs": 528,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-resource-data-patterns",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-resource-data-patterns",
+   "name": "godot-resource-data-patterns",
+   "installs": 527,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-2d-physics",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-2d-physics",
+   "name": "godot-2d-physics",
+   "installs": 526,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-audio-systems",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-audio-systems",
+   "name": "godot-audio-systems",
+   "installs": 521,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-state-machine-advanced",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-state-machine-advanced",
+   "name": "godot-state-machine-advanced",
+   "installs": 519,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-performance-optimization",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-performance-optimization",
+   "name": "godot-performance-optimization",
+   "installs": 519,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-procedural-generation",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-procedural-generation",
+   "name": "godot-procedural-generation",
+   "installs": 514,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-tweening",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-tweening",
+   "name": "godot-tweening",
+   "installs": 513,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-scene-management",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-scene-management",
+   "name": "godot-scene-management",
+   "installs": 487,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-economy-system",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-economy-system",
+   "name": "godot-economy-system",
+   "installs": 480,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-debugging-profiling",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-debugging-profiling",
+   "name": "godot-debugging-profiling",
+   "installs": 479,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-tilemap-mastery",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-tilemap-mastery",
+   "name": "godot-tilemap-mastery",
+   "installs": 477,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-autoload-architecture",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-autoload-architecture",
+   "name": "godot-autoload-architecture",
+   "installs": 470,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-3d-lighting",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-3d-lighting",
+   "name": "godot-3d-lighting",
+   "installs": 470,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-rpg-stats",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-rpg-stats",
+   "name": "godot-rpg-stats",
+   "installs": 465,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-platform-mobile",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-platform-mobile",
+   "name": "godot-platform-mobile",
+   "installs": 455,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-dialogue-system",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-dialogue-system",
+   "name": "godot-dialogue-system",
+   "installs": 453,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-navigation-pathfinding",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-navigation-pathfinding",
+   "name": "godot-navigation-pathfinding",
+   "installs": 446,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-animation-player",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-animation-player",
+   "name": "godot-animation-player",
+   "installs": 446,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-export-builds",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-export-builds",
+   "name": "godot-export-builds",
+   "installs": 445,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-inventory-system",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-inventory-system",
+   "name": "godot-inventory-system",
+   "installs": 444,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-roguelike",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-roguelike",
+   "name": "godot-genre-roguelike",
+   "installs": 443,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-3d-materials",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-3d-materials",
+   "name": "godot-3d-materials",
+   "installs": 442,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-physics-3d",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-physics-3d",
+   "name": "godot-physics-3d",
+   "installs": 439,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-animation-tree-mastery",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-animation-tree-mastery",
+   "name": "godot-animation-tree-mastery",
+   "installs": 433,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-ability-system",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-ability-system",
+   "name": "godot-ability-system",
+   "installs": 430,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-ui-rich-text",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-ui-rich-text",
+   "name": "godot-ui-rich-text",
+   "installs": 423,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-multiplayer-networking",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-multiplayer-networking",
+   "name": "godot-multiplayer-networking",
+   "installs": 402,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-expert",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-expert",
+   "name": "scenario-godot-expert",
+   "installs": 394,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-platform-desktop",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-platform-desktop",
+   "name": "godot-platform-desktop",
+   "installs": 387,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-turn-system",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-turn-system",
+   "name": "godot-turn-system",
+   "installs": 379,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-action-rpg",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-action-rpg",
+   "name": "godot-genre-action-rpg",
+   "installs": 368,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-adapt-desktop-to-mobile",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-adapt-desktop-to-mobile",
+   "name": "godot-adapt-desktop-to-mobile",
+   "installs": 366,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-vfx",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-vfx",
+   "name": "scenario-godot-vfx",
+   "installs": 366,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-shaders",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-shaders",
+   "name": "scenario-godot-shaders",
+   "installs": 365,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-quest-system",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-quest-system",
+   "name": "godot-quest-system",
+   "installs": 363,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-animation",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-animation",
+   "name": "scenario-godot-animation",
+   "installs": 363,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-3d-world",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-3d-world",
+   "name": "scenario-godot-3d-world",
+   "installs": 362,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "arjun988/blender-skills/godot-export",
+   "source": "arjun988/blender-skills",
+   "skillId": "godot-export",
+   "name": "godot-export",
+   "installs": 360,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-ui",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-ui",
+   "name": "scenario-godot-ui",
+   "installs": 358,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-performance-export",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-performance-export",
+   "name": "scenario-godot-performance-export",
+   "installs": 358,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-architecture",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-architecture",
+   "name": "scenario-godot-architecture",
+   "installs": 358,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-gameplay",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-gameplay",
+   "name": "scenario-godot-gameplay",
+   "installs": 356,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-2d",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-2d",
+   "name": "scenario-godot-2d",
+   "installs": 355,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-rendering-lighting",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-rendering-lighting",
+   "name": "scenario-godot-rendering-lighting",
+   "installs": 353,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "sickn33/agentic-awesome-skills/godot-gdscript-patterns",
+   "source": "sickn33/agentic-awesome-skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 352,
+   "queries": [
+    "godot",
+    "gdscript"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-idle-clicker",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-idle-clicker",
+   "name": "godot-genre-idle-clicker",
+   "installs": 350,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-pipeline-automation",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-pipeline-automation",
+   "name": "scenario-godot-pipeline-automation",
+   "installs": 350,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-audio",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-audio",
+   "name": "scenario-godot-audio",
+   "installs": 348,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-simulation",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-simulation",
+   "name": "godot-genre-simulation",
+   "installs": 347,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-godot-multiplayer",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-godot-multiplayer",
+   "name": "scenario-godot-multiplayer",
+   "installs": 344,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-card-game",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-card-game",
+   "name": "godot-genre-card-game",
+   "installs": 342,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-horror",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-horror",
+   "name": "godot-genre-horror",
+   "installs": 339,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-project-templates",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-project-templates",
+   "name": "godot-project-templates",
+   "installs": 333,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-rts",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-rts",
+   "name": "godot-genre-rts",
+   "installs": 321,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-tower-defense",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-tower-defense",
+   "name": "godot-genre-tower-defense",
+   "installs": 318,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-server-architecture",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-server-architecture",
+   "name": "godot-server-architecture",
+   "installs": 317,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-platformer",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-platformer",
+   "name": "godot-genre-platformer",
+   "installs": 315,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-composition-apps",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-composition-apps",
+   "name": "godot-composition-apps",
+   "installs": 307,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-visual-novel",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-visual-novel",
+   "name": "godot-genre-visual-novel",
+   "installs": 303,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-fighting",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-fighting",
+   "name": "godot-genre-fighting",
+   "installs": 296,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-raycasting-queries",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-raycasting-queries",
+   "name": "godot-raycasting-queries",
+   "installs": 290,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-platform-web",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-platform-web",
+   "name": "godot-platform-web",
+   "installs": 276,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-puzzle",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-puzzle",
+   "name": "godot-genre-puzzle",
+   "installs": 274,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-theme-easter",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-theme-easter",
+   "name": "godot-theme-easter",
+   "installs": 271,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-metroidvania",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-metroidvania",
+   "name": "godot-genre-metroidvania",
+   "installs": 270,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-game-loop-collection",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-game-loop-collection",
+   "name": "godot-game-loop-collection",
+   "installs": 270,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-survival",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-survival",
+   "name": "godot-genre-survival",
+   "installs": 269,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-game-loop-waves",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-game-loop-waves",
+   "name": "godot-game-loop-waves",
+   "installs": 267,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-adapt-single-to-multiplayer",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-adapt-single-to-multiplayer",
+   "name": "godot-adapt-single-to-multiplayer",
+   "installs": 267,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-adapt-2d-to-3d",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-adapt-2d-to-3d",
+   "name": "godot-adapt-2d-to-3d",
+   "installs": 265,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-shooter",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-shooter",
+   "name": "godot-genre-shooter",
+   "installs": 264,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-genre-open-world",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-genre-open-world",
+   "name": "godot-genre-open-world",
+   "installs": 257,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-mechanic-secrets",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-mechanic-secrets",
+   "name": "godot-mechanic-secrets",
+   "installs": 254,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-adapt-mobile-to-desktop",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-adapt-mobile-to-desktop",
+   "name": "godot-adapt-mobile-to-desktop",
+   "installs": 254,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-adapt-3d-to-2d",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-adapt-3d-to-2d",
+   "name": "godot-adapt-3d-to-2d",
+   "installs": 254,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-game-assets",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-game-assets",
+   "name": "scenario-game-assets",
+   "installs": 989,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-3d",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-3d",
+   "name": "scenario-3d",
+   "installs": 960,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-sprite-animation",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-sprite-animation",
+   "name": "scenario-sprite-animation",
+   "installs": 914,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-skyboxes",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-skyboxes",
+   "name": "scenario-skyboxes",
+   "installs": 839,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "layerai/skills/layer-game-ui",
+   "source": "layerai/skills",
+   "skillId": "layer-game-ui",
+   "name": "layer-game-ui",
+   "installs": 683,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "layerai/skills/layer-tilesets",
+   "source": "layerai/skills",
+   "skillId": "layer-tilesets",
+   "name": "layer-tilesets",
+   "installs": 680,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "layerai/skills/layer-environments",
+   "source": "layerai/skills",
+   "skillId": "layer-environments",
+   "name": "layer-environments",
+   "installs": 678,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "mirzaaghazadeh/iphone-duo-skills/iphone-duo-games",
+   "source": "mirzaaghazadeh/iphone-duo-skills",
+   "skillId": "iphone-duo-games",
+   "name": "iphone-duo-games",
+   "installs": 605,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "scenario-labs/skills/scenario-blender-export",
+   "source": "scenario-labs/skills",
+   "skillId": "scenario-blender-export",
+   "name": "scenario-blender-export",
+   "installs": 523,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "0x0funky/agent-sprite-forge/generate2dsprite",
+   "source": "0x0funky/agent-sprite-forge",
+   "skillId": "generate2dsprite",
+   "name": "generate2dsprite",
+   "installs": 399,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "el4cteo/blender-skills/blender-export-pipelines",
+   "source": "el4cteo/blender-skills",
+   "skillId": "blender-export-pipelines",
+   "name": "blender-export-pipelines",
+   "installs": 360,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "0x0funky/agent-sprite-forge/generate2dmap",
+   "source": "0x0funky/agent-sprite-forge",
+   "skillId": "generate2dmap",
+   "name": "generate2dmap",
+   "installs": 315,
+   "queries": [
+    "godot"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/gdscript-patterns",
+   "source": "jame581/godotprompter",
+   "skillId": "gdscript-patterns",
+   "name": "gdscript-patterns",
+   "installs": 216,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/gdscript-advanced",
+   "source": "jame581/godotprompter",
+   "skillId": "gdscript-advanced",
+   "name": "gdscript-advanced",
+   "installs": 198,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "smithery.ai/godot-gdscript-patterns",
+   "source": "smithery.ai",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 65,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "vl4dt/godot-skills/godot-gdscript-patterns",
+   "source": "vl4dt/godot-skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 37,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "rmyndharis/antigravity-skills/godot-gdscript-patterns",
+   "source": "rmyndharis/antigravity-skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 36,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "ericgrill/agents-skills-plugins/godot-gdscript-patterns",
+   "source": "ericgrill/agents-skills-plugins",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 30,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jwd83/skills/godot-gdscript-patterns",
+   "source": "jwd83/skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 23,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "taiki-kuraishi/skill/kstack-gdscript",
+   "source": "taiki-kuraishi/skill",
+   "skillId": "kstack-gdscript",
+   "name": "kstack-gdscript",
+   "installs": 19,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "mrcalderon3d/everything-game-dev-code/godot-gdscript-standards",
+   "source": "mrcalderon3d/everything-game-dev-code",
+   "skillId": "godot-gdscript-standards",
+   "name": "godot-gdscript-standards",
+   "installs": 16,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bgrenat/godot-game-dev-studio/godot-gdscript-mastery",
+   "source": "bgrenat/godot-game-dev-studio",
+   "skillId": "godot-gdscript-mastery",
+   "name": "godot-gdscript-mastery",
+   "installs": 14,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bgrenat/godot-game-dev-studio/godot-prompter-gdscript-patterns",
+   "source": "bgrenat/godot-game-dev-studio",
+   "skillId": "godot-prompter-gdscript-patterns",
+   "name": "godot-prompter-gdscript-patterns",
+   "installs": 11,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bgrenat/godot-game-dev-studio/godot-prompter-gdscript-advanced",
+   "source": "bgrenat/godot-game-dev-studio",
+   "skillId": "godot-prompter-gdscript-advanced",
+   "name": "godot-prompter-gdscript-advanced",
+   "installs": 10,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "modelscope.cn/gdscript",
+   "source": "modelscope.cn",
+   "skillId": "gdscript",
+   "name": "gdscript",
+   "installs": 5,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "fenixnix/godot-skills/godot-gdscript-grammar",
+   "source": "fenixnix/godot-skills",
+   "skillId": "godot-gdscript-grammar",
+   "name": "godot-gdscript-grammar",
+   "installs": 9,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bbenefield89/skills/gdscript-cleanup",
+   "source": "bbenefield89/skills",
+   "skillId": "gdscript-cleanup",
+   "name": "gdscript-cleanup",
+   "installs": 8,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "fetasty/godot-skills/godot-gdscript",
+   "source": "fetasty/godot-skills",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 8,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "minhhoit/gamedev-agent-skills/godot-gdscript",
+   "source": "minhhoit/gamedev-agent-skills",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 7,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "smithery.ai/wshobson-godot-gdscript-patterns",
+   "source": "smithery.ai",
+   "skillId": "wshobson-godot-gdscript-patterns",
+   "name": "wshobson-godot-gdscript-patterns",
+   "installs": 7,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "summerengine/summer/gdscript-patterns",
+   "source": "summerengine/summer",
+   "skillId": "gdscript-patterns",
+   "name": "gdscript-patterns",
+   "installs": 6,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "aiskillstore/marketplace/godot-gdscript-patterns",
+   "source": "aiskillstore/marketplace",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 6,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "fivepebblesgpt/godot-gdscript-patterns/godot-gdscript-patterns",
+   "source": "fivepebblesgpt/godot-gdscript-patterns",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "xlanstar/godot-skills/godot-gdscript",
+   "source": "xlanstar/godot-skills",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 5,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "asreonn/godot-superpowers/godot-modernize-gdscript",
+   "source": "asreonn/godot-superpowers",
+   "skillId": "godot-modernize-gdscript",
+   "name": "godot-modernize-gdscript",
+   "installs": 4,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "hubdev-ai/godot-ai-builder/godot-gdscript",
+   "source": "hubdev-ai/godot-ai-builder",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "totes-mickgoats/mcgoats-game-template/godot-gdscript-patterns",
+   "source": "totes-mickgoats/mcgoats-game-template",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "convxai/claude-plugin-agents/godot-gdscript-patterns",
+   "source": "convxai/claude-plugin-agents",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "totes-mickgoats/mcgoats-game-template/godot-gdscript-mastery",
+   "source": "totes-mickgoats/mcgoats-game-template",
+   "skillId": "godot-gdscript-mastery",
+   "name": "godot-gdscript-mastery",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "minami110/godot-signal-extensions/gdscript-file-manager",
+   "source": "minami110/godot-signal-extensions",
+   "skillId": "gdscript-file-manager",
+   "name": "GDScript File Manager",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "wade-devcode/awesome-coding-skills-cn/godot-gdscript",
+   "source": "wade-devcode/awesome-coding-skills-cn",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "erlendtregde/snufkin-game/godot-gdscript",
+   "source": "erlendtregde/snufkin-game",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sufficientdaikon/godot-kit/godot-gdscript-patterns",
+   "source": "sufficientdaikon/godot-kit",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "ravinani02/opencode-agent-skills/godot-gdscript-patterns",
+   "source": "ravinani02/opencode-agent-skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "david-martel/claude-agents/godot-gdscript-patterns",
+   "source": "david-martel/claude-agents",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sufficientdaikon/archon/godot-gdscript-mastery",
+   "source": "sufficientdaikon/archon",
+   "skillId": "godot-gdscript-mastery",
+   "name": "godot-gdscript-mastery",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "kimgea/agent-kit/godot-gdscript-mastery",
+   "source": "kimgea/agent-kit",
+   "skillId": "godot-gdscript-mastery",
+   "name": "godot-gdscript-mastery",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "smithery.ai/gdscript-validate",
+   "source": "smithery.ai",
+   "skillId": "gdscript-validate",
+   "name": "GDScript Validate",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "minami110/godot-signal-extensions/gdscript-validate",
+   "source": "minami110/godot-signal-extensions",
+   "skillId": "gdscript-validate",
+   "name": "GDScript Validate",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "minami110/godot-signal-extensions/gdscript-test",
+   "source": "minami110/godot-signal-extensions",
+   "skillId": "gdscript-test",
+   "name": "GDScript Test",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "cautiouskurns/blood-and-gold/gdscript-refactor-executor",
+   "source": "cautiouskurns/blood-and-gold",
+   "skillId": "gdscript-refactor-executor",
+   "name": "gdscript-refactor-executor",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "oubakiou/skills/gdscript-quality",
+   "source": "oubakiou/skills",
+   "skillId": "gdscript-quality",
+   "name": "gdscript-quality",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "cautiouskurns/blood-and-gold/gdscript-quality-checker",
+   "source": "cautiouskurns/blood-and-gold",
+   "skillId": "gdscript-quality-checker",
+   "name": "gdscript-quality-checker",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "siyangsun/godot-skills/gdscript-patterns",
+   "source": "siyangsun/godot-skills",
+   "skillId": "gdscript-patterns",
+   "name": "gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "0999312/godotprompter/gdscript-patterns",
+   "source": "0999312/godotprompter",
+   "skillId": "gdscript-patterns",
+   "name": "gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "smithery.ai/gdscript-file-manager",
+   "source": "smithery.ai",
+   "skillId": "gdscript-file-manager",
+   "name": "GDScript File Manager",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "minami110/claude-godot-tools/gdscript-diagnostics",
+   "source": "minami110/claude-godot-tools",
+   "skillId": "gdscript-diagnostics",
+   "name": "gdscript-diagnostics",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sufficientdaikon/godot-kit/omega-gdscript-expert",
+   "source": "sufficientdaikon/godot-kit",
+   "skillId": "omega-gdscript-expert",
+   "name": "omega-gdscript-expert",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sufficientdaikon/archon/omega-gdscript-expert",
+   "source": "sufficientdaikon/archon",
+   "skillId": "omega-gdscript-expert",
+   "name": "omega-gdscript-expert",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "smithery.ai/godot-gdscript",
+   "source": "smithery.ai",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "skyrant/gamedev-agent-skills/godot-gdscript",
+   "source": "skyrant/gamedev-agent-skills",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "hlj-cell/awesome-gamedev-agent-skills/godot-gdscript",
+   "source": "hlj-cell/awesome-gamedev-agent-skills",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "gsfsss/awesome-gamedev-agent-skills/godot-gdscript",
+   "source": "gsfsss/awesome-gamedev-agent-skills",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "gliany/awesome-gamedev-agent-skills/godot-gdscript",
+   "source": "gliany/awesome-gamedev-agent-skills",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "dragoscirjan/opencode-config/godot-gdscript",
+   "source": "dragoscirjan/opencode-config",
+   "skillId": "godot-gdscript",
+   "name": "godot-gdscript",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sufficientdaikon/archon/godot-gdscript-patterns",
+   "source": "sufficientdaikon/archon",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "new-career-begin/queryweaver/godot-gdscript-patterns",
+   "source": "new-career-begin/queryweaver",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "mowgliph/everything-agents-skills/godot-gdscript-patterns",
+   "source": "mowgliph/everything-agents-skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "mohamednaeem92-max/opencode-6-2026/godot-gdscript-patterns",
+   "source": "mohamednaeem92-max/opencode-6-2026",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "microck/opendots-microck/godot-gdscript-patterns",
+   "source": "microck/opendots-microck",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "ma1orek/replay/godot-gdscript-patterns",
+   "source": "ma1orek/replay",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "juanjosegongi/skills/godot-gdscript-patterns",
+   "source": "juanjosegongi/skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "ibrohim1234567881717/game-dev-ai-skills/godot-gdscript-patterns",
+   "source": "ibrohim1234567881717/game-dev-ai-skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "henryhawke/skills/godot-gdscript-patterns",
+   "source": "henryhawke/skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "diegosouzapw/awesome-omni-skills/godot-gdscript-patterns",
+   "source": "diegosouzapw/awesome-omni-skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "agusruiz11/posicionarte-2026/godot-gdscript-patterns",
+   "source": "agusruiz11/posicionarte-2026",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "0xzahed/antigravity-skills/godot-gdscript-patterns",
+   "source": "0xzahed/antigravity-skills",
+   "skillId": "godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "diegosouzapw/awesome-omni-skills/godot-gdscript-patterns-v3",
+   "source": "diegosouzapw/awesome-omni-skills",
+   "skillId": "godot-gdscript-patterns-v3",
+   "name": "godot-gdscript-patterns-v3",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "diegosouzapw/awesome-omni-skills/godot-gdscript-patterns-v2",
+   "source": "diegosouzapw/awesome-omni-skills",
+   "skillId": "godot-gdscript-patterns-v2",
+   "name": "godot-gdscript-patterns-v2",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "modelscope.cn/godot-gdscript-patterns-gaitans-ai-mancare",
+   "source": "modelscope.cn",
+   "skillId": "godot-gdscript-patterns-gaitans-ai-mancare",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sufficientdaikon/godot-kit/godot-gdscript-mastery",
+   "source": "sufficientdaikon/godot-kit",
+   "skillId": "godot-gdscript-mastery",
+   "name": "godot-gdscript-mastery",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "liuhaoxh/gd-agentic-skills/godot-gdscript-mastery",
+   "source": "liuhaoxh/gd-agentic-skills",
+   "skillId": "godot-gdscript-mastery",
+   "name": "godot-gdscript-mastery",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "skyrant/gamedev-agent-skills/godot-gdscript-headless-testing",
+   "source": "skyrant/gamedev-agent-skills",
+   "skillId": "godot-gdscript-headless-testing",
+   "name": "godot-gdscript-headless-testing",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "modelscope.cn/antigravity-godot-gdscript-patterns",
+   "source": "modelscope.cn",
+   "skillId": "antigravity-godot-gdscript-patterns",
+   "name": "godot-gdscript-patterns",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "gliany/awesome-gamedev-agent-skills/godot-gdscript-headless-testing",
+   "source": "gliany/awesome-gamedev-agent-skills",
+   "skillId": "godot-gdscript-headless-testing",
+   "name": "godot-gdscript-headless-testing",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "hlj-cell/awesome-gamedev-agent-skills/godot-gdscript-headless-testing",
+   "source": "hlj-cell/awesome-gamedev-agent-skills",
+   "skillId": "godot-gdscript-headless-testing",
+   "name": "godot-gdscript-headless-testing",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/godot-testing",
+   "source": "jame581/godotprompter",
+   "skillId": "godot-testing",
+   "name": "godot-testing",
+   "installs": 248,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/godot-code-review",
+   "source": "jame581/godotprompter",
+   "skillId": "godot-code-review",
+   "name": "godot-code-review",
+   "installs": 232,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "thedivergentai/game-dev-agentic-skills/godot-monte-carlo-balancer",
+   "source": "thedivergentai/game-dev-agentic-skills",
+   "skillId": "godot-monte-carlo-balancer",
+   "name": "godot-monte-carlo-balancer",
+   "installs": 218,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/csharp-godot",
+   "source": "jame581/godotprompter",
+   "skillId": "csharp-godot",
+   "name": "csharp-godot",
+   "installs": 187,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/csharp-signals",
+   "source": "jame581/godotprompter",
+   "skillId": "csharp-signals",
+   "name": "csharp-signals",
+   "installs": 178,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/gdextension",
+   "source": "jame581/godotprompter",
+   "skillId": "gdextension",
+   "name": "gdextension",
+   "installs": 170,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/beehave",
+   "source": "jame581/godotprompter",
+   "skillId": "beehave",
+   "name": "beehave",
+   "installs": 152,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jame581/godotprompter/authoring-godot-prompter-skills",
+   "source": "jame581/godotprompter",
+   "skillId": "authoring-godot-prompter-skills",
+   "name": "authoring-godot-prompter-skills",
+   "installs": 111,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "omer-metin/skills-for-antigravity/godot-development",
+   "source": "omer-metin/skills-for-antigravity",
+   "skillId": "godot-development",
+   "name": "godot-development",
+   "installs": 93,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "alphaonedev/openclaw-graph/godot",
+   "source": "alphaonedev/openclaw-graph",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 63,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sickn33/agentic-awesome-skills/godot-4-migration",
+   "source": "sickn33/agentic-awesome-skills",
+   "skillId": "godot-4-migration",
+   "name": "godot-4-migration",
+   "installs": 60,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "pbzona/godot-skills/godot-programming-patterns",
+   "source": "pbzona/godot-skills",
+   "skillId": "godot-programming-patterns",
+   "name": "godot-programming-patterns",
+   "installs": 60,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "haxqer/godot-skill/godot",
+   "source": "haxqer/godot-skill",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 51,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "pbzona/godot-skills/gamedev-math",
+   "source": "pbzona/godot-skills",
+   "skillId": "gamedev-math",
+   "name": "gamedev-math",
+   "installs": 46,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "randroids-dojo/godot-claude-skills/godot",
+   "source": "randroids-dojo/godot-claude-skills",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 44,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "monumentalsystems/atlas-agent-teams/godot",
+   "source": "monumentalsystems/atlas-agent-teams",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 43,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "omer-metin/skills-for-antigravity/godot-llm-integration",
+   "source": "omer-metin/skills-for-antigravity",
+   "skillId": "godot-llm-integration",
+   "name": "godot-llm-integration",
+   "installs": 36,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "vl4dt/godot-skills/godot-project-setup",
+   "source": "vl4dt/godot-skills",
+   "skillId": "godot-project-setup",
+   "name": "godot-project-setup",
+   "installs": 35,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "vl4dt/godot-skills/godot-code-review",
+   "source": "vl4dt/godot-skills",
+   "skillId": "godot-code-review",
+   "name": "godot-code-review",
+   "installs": 34,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "vl4dt/godot-skills/godot-headless-workflow",
+   "source": "vl4dt/godot-skills",
+   "skillId": "godot-headless-workflow",
+   "name": "godot-headless-workflow",
+   "installs": 34,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "lanc3/godot-sight/godot-sight",
+   "source": "lanc3/godot-sight",
+   "skillId": "godot-sight",
+   "name": "godot-sight",
+   "installs": 28,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "qb-lab/godot-agent-skills/godot-verify",
+   "source": "qb-lab/godot-agent-skills",
+   "skillId": "godot-verify",
+   "name": "godot-verify",
+   "installs": 27,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "lanc3/godot-sight/godot-master",
+   "source": "lanc3/godot-sight",
+   "skillId": "godot-master",
+   "name": "godot-master",
+   "installs": 27,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "qb-lab/godot-agent-skills/godot4-api-guard",
+   "source": "qb-lab/godot-agent-skills",
+   "skillId": "godot4-api-guard",
+   "name": "godot4-api-guard",
+   "installs": 23,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "saschb2b/skills/godot",
+   "source": "saschb2b/skills",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 19,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "taiki-kuraishi/skill/kstack-skill-review",
+   "source": "taiki-kuraishi/skill",
+   "skillId": "kstack-skill-review",
+   "name": "kstack-skill-review",
+   "installs": 19,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "smithery.ai/godot",
+   "source": "smithery.ai",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 18,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "qb-lab/godot-agent-skills/using-godot-skills",
+   "source": "qb-lab/godot-agent-skills",
+   "skillId": "using-godot-skills",
+   "name": "using-godot-skills",
+   "installs": 18,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "setcodes/gamedev-skills/godot-gamedev",
+   "source": "setcodes/gamedev-skills",
+   "skillId": "godot-gamedev",
+   "name": "godot-gamedev",
+   "installs": 16,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "thearchitectit/awesome-cline-skills/godot-helper",
+   "source": "thearchitectit/awesome-cline-skills",
+   "skillId": "godot-helper",
+   "name": "godot-helper",
+   "installs": 14,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bgrenat/godot-game-dev-studio/godot-prompter-godot-code-review",
+   "source": "bgrenat/godot-game-dev-studio",
+   "skillId": "godot-prompter-godot-code-review",
+   "name": "godot-prompter-godot-code-review",
+   "installs": 13,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "fernforestgames/agent-skill-godot/godot",
+   "source": "fernforestgames/agent-skill-godot",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 12,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "hybridindie/godot-mcp/godot-expert",
+   "source": "hybridindie/godot-mcp",
+   "skillId": "godot-expert",
+   "name": "godot-expert",
+   "installs": 11,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bgrenat/godot-game-dev-studio/godot-prompter-godot-optimization",
+   "source": "bgrenat/godot-game-dev-studio",
+   "skillId": "godot-prompter-godot-optimization",
+   "name": "godot-prompter-godot-optimization",
+   "installs": 11,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bgrenat/godot-game-dev-studio/godot-prompter-beehave",
+   "source": "bgrenat/godot-game-dev-studio",
+   "skillId": "godot-prompter-beehave",
+   "name": "godot-prompter-beehave",
+   "installs": 10,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "gwtt/open-code-godot-studio/godot-specialist",
+   "source": "gwtt/open-code-godot-studio",
+   "skillId": "godot-specialist",
+   "name": "godot-specialist",
+   "installs": 10,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bgrenat/godot-game-dev-studio/godot-prompter-csharp-godot",
+   "source": "bgrenat/godot-game-dev-studio",
+   "skillId": "godot-prompter-csharp-godot",
+   "name": "godot-prompter-csharp-godot",
+   "installs": 10,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "cnqdztp/godot-skills/godot-mobile-web",
+   "source": "cnqdztp/godot-skills",
+   "skillId": "godot-mobile-web",
+   "name": "godot-mobile-web",
+   "installs": 9,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "fenixnix/godot-skills/godot-knowledge",
+   "source": "fenixnix/godot-skills",
+   "skillId": "godot-knowledge",
+   "name": "godot-knowledge",
+   "installs": 9,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "kjaylee/misskim-skills/godot",
+   "source": "kjaylee/misskim-skills",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 7,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "modelscope.cn/godot",
+   "source": "modelscope.cn",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 7,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "ericrisco/rsc-harness/godot",
+   "source": "ericrisco/rsc-harness",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 6,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sahiixx/agency-agents/godot-gameplay-scripter",
+   "source": "sahiixx/agency-agents",
+   "skillId": "godot-gameplay-scripter",
+   "name": "godot-gameplay-scripter",
+   "installs": 6,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "professeurhaipeng/godot-indie-game-skill/build-godot-games",
+   "source": "professeurhaipeng/godot-indie-game-skill",
+   "skillId": "build-godot-games",
+   "name": "build-godot-games",
+   "installs": 6,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "summerengine/summer/design-npc",
+   "source": "summerengine/summer",
+   "skillId": "design-npc",
+   "name": "design-npc",
+   "installs": 6,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "summerengine/summer/design-mechanic",
+   "source": "summerengine/summer",
+   "skillId": "design-mechanic",
+   "name": "design-mechanic",
+   "installs": 6,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "skills.volces.com/godot-dev",
+   "source": "skills.volces.com",
+   "skillId": "godot-dev",
+   "name": "godot-dev",
+   "installs": 5,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "ericrisco/rsc-harness/unity",
+   "source": "ericrisco/rsc-harness",
+   "skillId": "unity",
+   "name": "unity",
+   "installs": 5,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sufficientdaikon/godot-kit/godot-best-practices",
+   "source": "sufficientdaikon/godot-kit",
+   "skillId": "godot-best-practices",
+   "name": "godot-best-practices",
+   "installs": 4,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "aiunlocked1412/claude-skill-unlock/game-dev-pro",
+   "source": "aiunlocked1412/claude-skill-unlock",
+   "skillId": "game-dev-pro",
+   "name": "game-dev-pro",
+   "installs": 4,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "53able/agency-agents/godot-gameplay-scripter",
+   "source": "53able/agency-agents",
+   "skillId": "godot-gameplay-scripter",
+   "name": "Godot Gameplay Scripter",
+   "installs": 4,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "nguyenthienthanh/archon/godot-expert",
+   "source": "nguyenthienthanh/archon",
+   "skillId": "godot-expert",
+   "name": "godot-expert",
+   "installs": 4,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "smithery.ai/godot-development",
+   "source": "smithery.ai",
+   "skillId": "godot-development",
+   "name": "godot-development",
+   "installs": 4,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "summerengine/summer/headless-scripting",
+   "source": "summerengine/summer",
+   "skillId": "headless-scripting",
+   "name": "headless-scripting",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "mynamekse/godot-gecs/gecs-code-review",
+   "source": "mynamekse/godot-gecs",
+   "skillId": "gecs-code-review",
+   "name": "gecs-code-review",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sharadchaturveda-coder/agency-agents-codex/agency-godot-gameplay-scripter",
+   "source": "sharadchaturveda-coder/agency-agents-codex",
+   "skillId": "agency-godot-gameplay-scripter",
+   "name": "agency-godot-gameplay-scripter",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "unfrgivn/abby-game/godot",
+   "source": "unfrgivn/abby-game",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "skills.volces.com/godot",
+   "source": "skills.volces.com",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "harmitx7/tribunal-kit/game-engineering-expert",
+   "source": "harmitx7/tribunal-kit",
+   "skillId": "game-engineering-expert",
+   "name": "game-engineering-expert",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bgrenat/godot-game-dev-studio/godot-game-dev-studio",
+   "source": "bgrenat/godot-game-dev-studio",
+   "skillId": "godot-game-dev-studio",
+   "name": "godot-game-dev-studio",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "mynamekse/godot-gecs/gecs-performance",
+   "source": "mynamekse/godot-gecs",
+   "skillId": "gecs-performance",
+   "name": "gecs-performance",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "skills.volces.com/code-qc",
+   "source": "skills.volces.com",
+   "skillId": "code-qc",
+   "name": "code-qc",
+   "installs": 3,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "randallliuxin/godotmaker/gdtoolkit",
+   "source": "randallliuxin/godotmaker",
+   "skillId": "gdtoolkit",
+   "name": "gdtoolkit",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "erikstmartin/dotfiles/godot-core",
+   "source": "erikstmartin/dotfiles",
+   "skillId": "godot-core",
+   "name": "godot-core",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "summerengine/summer/scene-scripting",
+   "source": "summerengine/summer",
+   "skillId": "scene-scripting",
+   "name": "scene-scripting",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "chen19007/my_skills/godot-design",
+   "source": "chen19007/my_skills",
+   "skillId": "godot-design",
+   "name": "godot-design",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "simone-tarantino/godot-superpowers/godot-patterns",
+   "source": "simone-tarantino/godot-superpowers",
+   "skillId": "godot-patterns",
+   "name": "godot-patterns",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "lynricsy/hyperskills/godot",
+   "source": "lynricsy/hyperskills",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "itzfaisal/agency-agents/godot-gameplay-scripter",
+   "source": "itzfaisal/agency-agents",
+   "skillId": "godot-gameplay-scripter",
+   "name": "godot-gameplay-scripter",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "trollz1004/antigravity/agency-godot-gameplay-scripter",
+   "source": "trollz1004/antigravity",
+   "skillId": "agency-godot-gameplay-scripter",
+   "name": "agency-godot-gameplay-scripter",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "jay6697117/agency-agents-antigravity/agency-godot-gameplay-scripter",
+   "source": "jay6697117/agency-agents-antigravity",
+   "skillId": "agency-godot-gameplay-scripter",
+   "name": "agency-godot-gameplay-scripter",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "walangstudio/gd-skills/godot-patterns",
+   "source": "walangstudio/gd-skills",
+   "skillId": "godot-patterns",
+   "name": "godot-patterns",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "hi-godot/godot-ai/verification",
+   "source": "hi-godot/godot-ai",
+   "skillId": "verification",
+   "name": "verification",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "bangrocket/godot-skill/godot",
+   "source": "bangrocket/godot-skill",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "coreymaypray/sloth-skill-tree/godot-developer",
+   "source": "coreymaypray/sloth-skill-tree",
+   "skillId": "godot-developer",
+   "name": "godot-developer",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "phuetz/code-buddy/game-engines",
+   "source": "phuetz/code-buddy",
+   "skillId": "game-engines",
+   "name": "game-engines",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "wanghaisheng/openagenticgame-studios/godot",
+   "source": "wanghaisheng/openagenticgame-studios",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "0999312/godotprompter/csharp-godot",
+   "source": "0999312/godotprompter",
+   "skillId": "csharp-godot",
+   "name": "csharp-godot",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "theneoai/awesome-skills/godot-expert",
+   "source": "theneoai/awesome-skills",
+   "skillId": "godot-expert",
+   "name": "godot-expert",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "silvio-l/skills/godot-cli",
+   "source": "silvio-l/skills",
+   "skillId": "godot-cli",
+   "name": "godot-cli",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "tianchengli135/godot3d-harness/dev-story",
+   "source": "tianchengli135/godot3d-harness",
+   "skillId": "dev-story",
+   "name": "dev-story",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "hermeticormus/libregamedev-claude-code/godot-development",
+   "source": "hermeticormus/libregamedev-claude-code",
+   "skillId": "godot-development",
+   "name": "godot-development",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "hbilal9/godot-ai-skills/godot-gameplay-systems",
+   "source": "hbilal9/godot-ai-skills",
+   "skillId": "godot-gameplay-systems",
+   "name": "godot-gameplay-systems",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "gordon1210/agent-goodies/godot-engineering-suite",
+   "source": "gordon1210/agent-goodies",
+   "skillId": "godot-engineering-suite",
+   "name": "godot-engineering-suite",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "manticoregamesinc/harmony-skills/harmony-engines",
+   "source": "manticoregamesinc/harmony-skills",
+   "skillId": "harmony-engines",
+   "name": "harmony-engines",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "mattstruble/skills/godot-shader",
+   "source": "mattstruble/skills",
+   "skillId": "godot-shader",
+   "name": "godot-shader",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "akira399/dsh-godot-skill/godot-4-development",
+   "source": "akira399/dsh-godot-skill",
+   "skillId": "godot-4-development",
+   "name": "godot-4-development",
+   "installs": 2,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "yulu86/godotscaffolding/godot-static-analysis",
+   "source": "yulu86/godotscaffolding",
+   "skillId": "godot-static-analysis",
+   "name": "godot-static-analysis",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "smithery.ai/gdunit4-test-runner",
+   "source": "smithery.ai",
+   "skillId": "gdunit4-test-runner",
+   "name": "gdunit4-test-runner",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "sufficientdaikon/archon/godot-best-practices",
+   "source": "sufficientdaikon/archon",
+   "skillId": "godot-best-practices",
+   "name": "godot-best-practices",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "paolo1234/slopmerge/error-optimizer",
+   "source": "paolo1234/slopmerge",
+   "skillId": "error-optimizer",
+   "name": "error-optimizer",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "gcko/pendulum-of-despair/gut-tdd",
+   "source": "gcko/pendulum-of-despair",
+   "skillId": "gut-tdd",
+   "name": "gut-tdd",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "nonya123456/gmcp/gmcp-edit-scene",
+   "source": "nonya123456/gmcp",
+   "skillId": "gmcp-edit-scene",
+   "name": "gmcp-edit-scene",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "nobledarkgames/thesparklingfarce/code-style",
+   "source": "nobledarkgames/thesparklingfarce",
+   "skillId": "code-style",
+   "name": "code-style",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "modelscope.cn/godot-design",
+   "source": "modelscope.cn",
+   "skillId": "godot-design",
+   "name": "godot-design",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "autonomous-ai/openharness/godot",
+   "source": "autonomous-ai/openharness",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "alivirgo/major-ai-skills/godot",
+   "source": "alivirgo/major-ai-skills",
+   "skillId": "godot",
+   "name": "godot",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "laaielichter/reverseport/godot-port",
+   "source": "laaielichter/reverseport",
+   "skillId": "godot-port",
+   "name": "godot-port",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "mahdy-gribkov/arcana/godot-4",
+   "source": "mahdy-gribkov/arcana",
+   "skillId": "godot-4",
+   "name": "godot-4",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "mahdy-gribkov/arcana/game-programming-languages",
+   "source": "mahdy-gribkov/arcana",
+   "skillId": "game-programming-languages",
+   "name": "game-programming-languages",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "n24q02m/better-godot-mcp/add-mechanic",
+   "source": "n24q02m/better-godot-mcp",
+   "skillId": "add-mechanic",
+   "name": "add-mechanic",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "pelchers/sessionsaver/scripting-godot",
+   "source": "pelchers/sessionsaver",
+   "skillId": "scripting-godot",
+   "name": "scripting-godot",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "likas07/t3code-skills/godot-gameplay-scripter",
+   "source": "likas07/t3code-skills",
+   "skillId": "godot-gameplay-scripter",
+   "name": "godot-gameplay-scripter",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "whitetowerai/ohmygame/godot-game",
+   "source": "whitetowerai/ohmygame",
+   "skillId": "godot-game",
+   "name": "godot-game",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "augustoheiss/logicdefense/agency-godot-gameplay-scripter",
+   "source": "augustoheiss/logicdefense",
+   "skillId": "agency-godot-gameplay-scripter",
+   "name": "agency-godot-gameplay-scripter",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "30eggis/walwal-harness/game-development-godot-godot-gameplay-scripter",
+   "source": "30eggis/walwal-harness",
+   "skillId": "game-development-godot-godot-gameplay-scripter",
+   "name": "game-development-godot-godot-gameplay-scripter",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "aetik-yue/godomaster/godomaster",
+   "source": "aetik-yue/godomaster",
+   "skillId": "godomaster",
+   "name": "godomaster",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "whoisclebs/gamesmith/gamesmith-godot",
+   "source": "whoisclebs/gamesmith",
+   "skillId": "gamesmith-godot",
+   "name": "gamesmith-godot",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "naimsolong/ai-software-agency/specialist-game-development-godot-godot-gameplay-scripter",
+   "source": "naimsolong/ai-software-agency",
+   "skillId": "specialist-game-development-godot-godot-gameplay-scripter",
+   "name": "specialist-game-development-godot-godot-gameplay-scripter",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "rqd6f4g6zn-bit/onecommand/godot-builder",
+   "source": "rqd6f4g6zn-bit/onecommand",
+   "skillId": "godot-builder",
+   "name": "godot-builder",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "testland/qa/godot-gut-tests",
+   "source": "testland/qa",
+   "skillId": "godot-gut-tests",
+   "name": "godot-gut-tests",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "akdworks/godot-clarity/godot-clarity",
+   "source": "akdworks/godot-clarity",
+   "skillId": "godot-clarity",
+   "name": "godot-clarity",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "dubdev720/gdref/file-refactor-safety",
+   "source": "dubdev720/gdref",
+   "skillId": "file-refactor-safety",
+   "name": "file-refactor-safety",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "skills.volces.com/godot-dev-guide",
+   "source": "skills.volces.com",
+   "skillId": "godot-dev-guide",
+   "name": "godot-dev-guide",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "clawhub.ai/godot-dev-guide",
+   "source": "clawhub.ai",
+   "skillId": "godot-dev-guide",
+   "name": "godot-dev-guide",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  },
+  {
+   "id": "ncdevshiv/nc-skills-mcp/godot-4-migration",
+   "source": "ncdevshiv/nc-skills-mcp",
+   "skillId": "godot-4-migration",
+   "name": "godot-4-migration",
+   "installs": 1,
+   "queries": [
+    "gdscript"
+   ]
+  }
+ ]
+}

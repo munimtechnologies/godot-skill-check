@@ -1,0 +1,187 @@
+{
+ "M1_controls_ok": true,
+ "M2_godot_version_ok": true,
+ "godot_version": "4.7.2.stable.official.ed1daf0bf",
+ "controls": {
+  "control-good": {
+   "expected": "clean",
+   "got": "clean"
+  },
+  "control-g3": {
+   "expected": "real-error",
+   "got": "real-error"
+  },
+  "control-external": {
+   "expected": "external-only",
+   "got": "external-only"
+  }
+ },
+ "skills_in_population": 280,
+ "script_status_counts": {
+  "real-error": 363,
+  "clean": 1505,
+  "external-only": 365,
+  "multi-file": 20,
+  "elision-only": 6
+ },
+ "P1": {
+  "skills_with_code": 238,
+  "verdict": "held"
+ },
+ "P2_core": {
+  "skills_with_static_hit": 31,
+  "share": 0.13025210084033614,
+  "verdict": "held"
+ },
+ "P3_core": {
+  "graded_scripts": 2239,
+  "real_error_scripts": 363,
+  "share": 0.1621259490844127,
+  "verdict": "held"
+ },
+ "P4": {
+  "top10": [
+   "wshobson/agents/godot-gdscript-patterns",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-ui-control",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-gdscript",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-nodes-scenes",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-physics",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-resources",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-signals-groups",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-3d-essentials",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-2d-movement",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-tilemap"
+  ],
+  "top10_with_real_error": [
+   "wshobson/agents/godot-gdscript-patterns",
+   "gamedev-skills/awesome-gamedev-agent-skills/godot-nodes-scenes"
+  ],
+  "verdict": "failed"
+ },
+ "P5": {
+  "inference_scripts": 142,
+  "godot3_scripts": 9,
+  "verdict": "held"
+ },
+ "P6": {
+  "labeled_blocks": 3646,
+  "complete_blocks": 1466,
+  "share": 0.40208447613823367,
+  "verdict": "failed"
+ },
+ "version": "0.1.0",
+ "static_hits_by_pattern": {
+  "change-scene": 37,
+  "yield": 5,
+  "export-keyword": 5,
+  "rpc-keyword": 3,
+  "tool-keyword": 3,
+  "onready-keyword": 2,
+  "setget": 2,
+  "file-directory-new": 2,
+  "instance-call": 2,
+  "renamed-class": 1
+ },
+ "top_error_messages": [
+  [
+   "Cannot infer the type of \"X\" variable because the value doesn't have a set type.",
+   232
+  ],
+  [
+   "Identifier \"X\" not declared in the current scope.",
+   153
+  ],
+  [
+   "Function \"X\" not found in base self.",
+   130
+  ],
+  [
+   "The variable type is being inferred from a Variant value, so it will be typed as Variant. (Warning treated as error.)",
+   23
+  ],
+  [
+   "Cannot find member \"X\" in base \"X\".",
+   14
+  ],
+  [
+   "Unexpected \"X\" in class body.",
+   13
+  ],
+  [
+   "Unexpected identifier \"X\" in class body.",
+   13
+  ],
+  [
+   "Static function \"X\" not found in base \"X\".",
+   8
+  ],
+  [
+   "Cannot infer the type of \"X\" constant because the value doesn't have a set type.",
+   6
+  ],
+  [
+   "Expected statement, found \"X\" instead.",
+   6
+  ],
+  [
+   "Invalid argument for \"X\" function: argument 2 should be \"X\" but is \"X\".",
+   6
+  ],
+  [
+   "Expected end of file.",
+   5
+  ],
+  [
+   "Expected identifier for the global class name after \"X\".",
+   5
+  ],
+  [
+   "Not all code paths return a value.",
+   4
+  ],
+  [
+   "Invalid argument for \"X\" function: argument 1 should be \"X\" but is \"X\".",
+   4
+  ],
+  [
+   "The function signature doesn't match the parent. Parent signature is \"X\".",
+   4
+  ],
+  [
+   "Cannot pass a value of type \"X\" as \"X\".",
+   4
+  ],
+  [
+   "Cannot call function on enum value.",
+   3
+  ],
+  [
+   "Cannot get property from enum value.",
+   3
+  ],
+  [
+   "The \"X\" keyword was removed in Godot 4. Use the \"X\" annotation instead.",
+   3
+  ],
+  [
+   "Member \"X\" redefined (original in native class 'Resource')",
+   3
+  ],
+  [
+   "The default value uses \"X\" which won't return nodes in the scene tree before \"X\" is called. Use the \"X\" annotation to so",
+   3
+  ],
+  [
+   "Cannot call the parent class' virtual function \"X\" because it hasn't been defined.",
+   3
+  ],
+  [
+   "Assigned value for constant \"X\" isn't a constant expression.",
+   2
+  ],
+  [
+   "Member \"X\" redefined (original in native class 'CharacterBody2D')",
+   2
+  ]
+ ]
+}
