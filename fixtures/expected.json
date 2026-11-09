@@ -1,0 +1,60 @@
+{
+ "note": "Expected gdcheck results on the fixtures, written before gdcheck was ever run against Godot. Keys are file#n = the n-th GDScript block in that file.",
+ "runs": [
+  {
+   "name": "main",
+   "args": ["fixtures/good.md", "fixtures/bad.md", "fixtures/skips.md", "fixtures/external.md"],
+   "exit": 1,
+   "blocks": {
+    "fixtures/good.md#1": {"status": "ok"},
+    "fixtures/good.md#2": {"status": "ok"},
+    "fixtures/bad.md#1": {"status": "error", "first_error_line": 14, "first_category": "inference"},
+    "fixtures/bad.md#2": {"status": "error", "first_error_line": 25, "first_category": "godot3"},
+    "fixtures/bad.md#3": {"status": "error", "first_error_line": 43, "first_category": "other"},
+    "fixtures/skips.md#1": {"status": "skipped"},
+    "fixtures/skips.md#2": {"status": "skipped"},
+    "fixtures/skips.md#3": {"status": "skipped"},
+    "fixtures/skips.md#4": {"status": "fragment"},
+    "fixtures/external.md#1": {"status": "external"},
+    "fixtures/external.md#2": {"status": "external"}
+   }
+  },
+  {
+   "name": "good-only",
+   "args": ["fixtures/good.md"],
+   "exit": 0,
+   "blocks": {
+    "fixtures/good.md#1": {"status": "ok"},
+    "fixtures/good.md#2": {"status": "ok"}
+   }
+  },
+  {
+   "name": "fragments",
+   "args": ["--fragments", "fixtures/fragments.md"],
+   "exit": 1,
+   "blocks": {
+    "fixtures/fragments.md#1": {"status": "error", "severity": "warning", "first_error_line": 7},
+    "fixtures/fragments.md#2": {"status": "ok", "severity": "error"},
+    "fixtures/fragments.md#3": {"status": "error", "severity": "error", "first_error_line": 24}
+   }
+  },
+  {
+   "name": "fragments-off",
+   "args": ["fixtures/fragments.md"],
+   "exit": 1,
+   "blocks": {
+    "fixtures/fragments.md#1": {"status": "fragment"},
+    "fixtures/fragments.md#2": {"status": "ok"},
+    "fixtures/fragments.md#3": {"status": "error"}
+   }
+  },
+  {
+   "name": "strict-external",
+   "args": ["--fail-on-external", "fixtures/external.md"],
+   "exit": 1,
+   "blocks": {
+    "fixtures/external.md#1": {"status": "external"}
+   }
+  }
+ ]
+}

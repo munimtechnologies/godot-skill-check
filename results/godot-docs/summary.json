@@ -1,0 +1,498 @@
+{
+ "study": "godot-docs sample check",
+ "study_version": "1.0.0",
+ "gdrst_version": "0.1.0",
+ "gdcheck_version": "0.2.0",
+ "godot_version": "4.7.2.stable.official.ed1daf0bf",
+ "docs_sha": "9adca4c1c72917bfe1b7be3108abed5ce26696a6",
+ "pinned_sha": "9adca4c1c72917bfe1b7be3108abed5ce26696a6",
+ "pinned_sha_used": true,
+ "rst_files": 1596,
+ "gdscript_blocks": 1964,
+ "godot_runs": 1349,
+ "seconds": 336.1,
+ "code_blocks_by_language": {
+  "classes/csharp": 340,
+  "classes/gdscript": 857,
+  "classes/text": 60,
+  "manual/bash": 5,
+  "manual/bat": 4,
+  "manual/c": 62,
+  "manual/console": 6,
+  "manual/cpp": 111,
+  "manual/csharp": 646,
+  "manual/doscon": 5,
+  "manual/gdscript": 1107,
+  "manual/glsl": 217,
+  "manual/groovy": 1,
+  "manual/html": 2,
+  "manual/ini": 3,
+  "manual/java": 2,
+  "manual/js": 12,
+  "manual/json": 10,
+  "manual/kotlin": 3,
+  "manual/none": 59,
+  "manual/powershell": 3,
+  "manual/py": 1,
+  "manual/python": 16,
+  "manual/sh": 6,
+  "manual/shell": 228,
+  "manual/text": 15,
+  "manual/unixconfig": 1,
+  "manual/xml": 6,
+  "manual/yaml": 1
+ },
+ "by_stratum_kind_status": {
+  "classes/decl-fragment/context": 70,
+  "classes/decl-fragment/error": 10,
+  "classes/decl-fragment/external": 4,
+  "classes/decl-fragment/ok": 192,
+  "classes/fragment/fragment": 284,
+  "classes/script/error": 3,
+  "classes/script/external": 6,
+  "classes/script/ok": 32,
+  "classes/script/skipped": 28,
+  "classes/stmt-fragment/context": 35,
+  "classes/stmt-fragment/error": 10,
+  "classes/stmt-fragment/external": 1,
+  "classes/stmt-fragment/ok": 182,
+  "manual/decl-fragment/context": 108,
+  "manual/decl-fragment/elision": 4,
+  "manual/decl-fragment/error": 30,
+  "manual/decl-fragment/external": 11,
+  "manual/decl-fragment/ok": 235,
+  "manual/fragment/fragment": 239,
+  "manual/script/elision": 6,
+  "manual/script/error": 22,
+  "manual/script/external": 22,
+  "manual/script/ok": 177,
+  "manual/script/skipped": 61,
+  "manual/stmt-fragment/context": 115,
+  "manual/stmt-fragment/elision": 6,
+  "manual/stmt-fragment/error": 14,
+  "manual/stmt-fragment/ok": 57
+ },
+ "by_stratum_source": {
+  "classes/code-tab": 379,
+  "classes/literal-default": 478,
+  "manual/code-block": 87,
+  "manual/code-tab": 535,
+  "manual/literal-default": 485
+ },
+ "skip_reasons": {
+  "classes/fragment/not a complete script or declaration fragment (literal block)": 284,
+  "classes/skipped/marked as a wrong, error or Godot 3 example": 28,
+  "manual/fragment/mixes declarations and statements": 21,
+  "manual/fragment/not a complete script or declaration fragment (literal block)": 218,
+  "manual/skipped/marked as a wrong, error or Godot 3 example": 51,
+  "manual/skipped/no code (comments only)": 7,
+  "manual/skipped/several scripts in one block": 3
+ },
+ "root_categories_of_error_blocks": {
+  "classes/decl-fragment/other": 10,
+  "classes/script/godot3": 1,
+  "classes/script/other": 2,
+  "classes/stmt-fragment/context+other": 2,
+  "classes/stmt-fragment/other": 8,
+  "manual/decl-fragment/context+other": 2,
+  "manual/decl-fragment/external+other": 1,
+  "manual/decl-fragment/inference": 1,
+  "manual/decl-fragment/other": 26,
+  "manual/script/external+other": 5,
+  "manual/script/other": 17,
+  "manual/stmt-fragment/other": 14
+ },
+ "base_retries": 29,
+ "top_error_messages": [
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Identifier \"…\" not declared in the current scope.",
+   "blocks": 25
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Function \"…\" not found in base self.",
+   "blocks": 9
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Expected indented block after \"…\" block.",
+   "blocks": 6
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Too few arguments for \"…\" call. Expected at least 1 but received 0.",
+   "blocks": 5
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Expected indented block after function declaration.",
+   "blocks": 5
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Not all code paths return a value.",
+   "blocks": 4
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Cannot call non-static function \"…\" on the class \"…\" directly. Make an instance instead.",
+   "blocks": 4
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Variable \"…\" has the same name as a previously declared variable.",
+   "blocks": 3
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Expected end of statement after expression, found \"…\" instead.",
+   "blocks": 3
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Expected end of statement after expression, found \"…\" instead.",
+   "blocks": 3
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Variable \"…\" has the same name as a previously declared variable.",
+   "blocks": 3
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "There is already a variable named \"…\" declared in this scope.",
+   "blocks": 3
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "\"…\" is a constant but does not contain a type.",
+   "blocks": 3
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Expected indented block after \"…\" block.",
+   "blocks": 2
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Cannot find member \"…\" in base \"…\".",
+   "blocks": 2
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Expected expression as the function argument.",
+   "blocks": 2
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Closing \"…\" doesn't have an opening counterpart.",
+   "blocks": 2
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Assigned value for constant \"…\" isn't a constant expression.",
+   "blocks": 2
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Function \"…\" not found in base Node.",
+   "blocks": 2
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Cannot call the parent class' virtual function \"…\" because it hasn't been defined.",
+   "blocks": 2
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Getter \"…\" not found.",
+   "blocks": 2
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Setter \"…\" not found.",
+   "blocks": 2
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Static function \"…\" not found in base \"…\".",
+   "blocks": 2
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "\"…\" annotation requires a variable of type \"…\", \"…\", \"…\", \"…\", or \"…\", but type \"…\" was given instead.",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "godot3",
+   "msg": "Could not find base class \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Function \"…\" has the same name as a previously declared function.",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Expected end of file.",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Cannot pass a value of type \"…\" as \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Invalid argument for \"…\" function: argument 2 should be \"…\" but is \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Not all code paths return a value.",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Expected expression for variable initial value after \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Invalid escape in string.",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Unindent doesn't match the previous indentation level.",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Native class \"…\" cannot be constructed as it is abstract.",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Name \"…\" is a Callable. You can call it with \"…\" instead.",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "category": "other",
+   "msg": "Expected identifier for the global class name after \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Expected \"…\" after \"…\" condition.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Unexpected \"…\" in class body.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Preloaded path must be a constant string.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Expected end of file.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Expected expression for variable initial value after \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Annotation \"…\" does not precede a valid target, so it will have no effect.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Expected opening \"…\" after \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Too many arguments for \"…\" call. Expected at most 3 but received 4.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Invalid argument for \"…\" function: argument 2 should be \"…\" but is \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Unrecognized annotation: \"…\".",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "\"…\" will set the default value after \"…\" takes effect and will override it. (Warning treated as error.)",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "inference",
+   "msg": "Cannot use simple \"…\" annotation with variable without type or initializer, since type can't be inferred.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Constant \"…\" has the same name as a previously declared enum value.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Constant \"…\" has the same name as a previously declared enum.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Too many arguments for \"…\" call. Expected at most 0 but received 2.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Too many arguments for \"…\" call. Expected at most 0 but received 1.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Constant \"…\" has the same name as a previously declared variable.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "\"…\" annotation requires a variable of type \"…\", \"…\", \"…\", \"…\", or \"…\", but type \"…\" was given instead.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Annotation \"…\" requires at least 2 arguments, but 1 were given.",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "category": "other",
+   "msg": "Unindent doesn't match the previous indentation level.",
+   "blocks": 1
+  }
+ ],
+ "predictions": {
+  "P1": {
+   "value": 1107,
+   "held": false,
+   "prediction": "The manual holds between 1,500 and 4,500 GDScript blocks."
+  },
+  "P2": {
+   "value_pct": 21.32,
+   "complete": 236,
+   "of": 1107,
+   "held": true,
+   "prediction": "Complete scripts are between 5% and 25% of the manual's GDScript blocks."
+  },
+  "P3": {
+   "value_pct": 9.69,
+   "errors": 22,
+   "of": 227,
+   "held": true,
+   "prediction": "Between 2% and 12% of the manual's checked complete scripts get status error."
+  },
+  "P4": {
+   "held": null,
+   "note": "graded by hand in a later run; not gradable if P3 found no errors",
+   "to_check": 22,
+   "prediction": "At least half of the manual's complete-script errors are confirmed real by hand (graded later)."
+  },
+  "P5": {
+   "value_pct": 0.0,
+   "godot3_blocks": 0,
+   "of": 807,
+   "held": true,
+   "prediction": "At most 1% of the manual's checked blocks have a Godot 3 API error."
+  },
+  "P6": {
+   "context_only": 223,
+   "error": 44,
+   "held": true,
+   "prediction": "Among the manual's checked fragments, context-only blocks outnumber error blocks."
+  },
+  "P7": {
+   "value_pct": 7.59,
+   "errors": 44,
+   "of": 580,
+   "held": true,
+   "prediction": "Between 3% and 20% of the manual's checked fragments get status error."
+  }
+ },
+ "handcheck": {
+  "scripts": 22,
+  "fragment_sample": 40,
+  "fragment_errors": 44,
+  "seed": 20261109
+ },
+ "limited_dry_run": false
+}

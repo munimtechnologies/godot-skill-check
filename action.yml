@@ -1,0 +1,52 @@
+# godot-skill-check / gdcheck GitHub Action. By MV2 of Munim, Inc. Made with AI agents (Anthropic Claude).
+# SPDX-License-Identifier: Apache-2.0
+name: "Godot skill check (gdcheck)"
+description: "Check the GDScript code blocks in Markdown (agent skills, docs, READMEs) with Godot 4's own --check-only."
+author: "MV2 of Munim, Inc."
+branding:
+  icon: "check-circle"
+  color: "blue"
+inputs:
+  paths:
+    description: "Space-separated Markdown files or folders to check (folders are searched recursively)."
+    required: false
+    default: "."
+  godot-version:
+    description: "Official Godot 4 release to check with (Linux binary from github.com/godotengine/godot releases)."
+    required: false
+    default: "4.7.2"
+  fragments:
+    description: "'true' to also check declaration-only fragments wrapped in 'extends Node' (reported as warnings)."
+    required: false
+    default: "false"
+  gd-files:
+    description: "'true' to also check .gd files found in the folders (each on its own, outside any project)."
+    required: false
+    default: "false"
+  fail-on-external:
+    description: "'true' to fail on names defined in other files (class_name, autoloads, missing preloads)."
+    required: false
+    default: "false"
+runs:
+  using: "composite"
+  steps:
+    - name: Install Godot
+      shell: bash
+      env:
+        GODOT_VERSION: ${{ inputs.godot-version }}
+      run: bash "$GITHUB_ACTION_PATH/install_godot.sh"
+    - name: Check GDScript blocks
+      shell: bash
+      env:
+        GDCHECK_PATHS: ${{ inputs.paths }}
+        GDCHECK_FRAGMENTS: ${{ inputs.fragments }}
+        GDCHECK_GD_FILES: ${{ inputs.gd-files }}
+        GDCHECK_FAIL_EXTERNAL: ${{ inputs.fail-on-external }}
+      run: |
+        set -f
+        args=(--format github --summary "$GITHUB_STEP_SUMMARY")
+        [ "$GDCHECK_FRAGMENTS" = "true" ] && args+=(--fragments)
+        [ "$GDCHECK_GD_FILES" = "true" ] && args+=(--gd-files)
+        [ "$GDCHECK_FAIL_EXTERNAL" = "true" ] && args+=(--fail-on-external)
+        read -r -a paths <<< "$GDCHECK_PATHS"
+        python3 "$GITHUB_ACTION_PATH/gdcheck.py" --godot "$GDCHECK_GODOT" "${args[@]}" -- "${paths[@]}"

@@ -1,9 +1,11 @@
 # godot-skill-check
 
-Do the GDScript examples in Godot agent skills pass Godot 4's own check?
+Do the GDScript examples in Godot agent skills, and in the official Godot docs, pass Godot 4's own check? And a
+tool (`gdcheck`, also a GitHub Action and an agent skill) that checks the GDScript in your own Markdown with Godot
+itself.
 
-An open, pre-registered study by MV2 of Munim, Inc. (mv2@munimtech.com). Made with AI agents (Anthropic Claude)
-working in his name. Code Apache-2.0; text and data CC BY 4.0.
+Open, pre-registered studies by MV2 of Munim, Inc. (mv2@munimtech.com). Made with AI agents (Anthropic Claude)
+working in his name. Not made by or affiliated with the Godot team. Code Apache-2.0; text and data CC BY 4.0.
 
 Agent skills (SKILL.md folders) teach coding agents such as Claude Code, Codex and Cursor how to do a job, and
 Vercel's [skills.sh](https://skills.sh) lists them with install counts. Godot skills there have up to about 18,000
@@ -21,7 +23,7 @@ repository checks the code inside them:
 The predictions and every rule were published in [PREREGISTRATION.md](PREREGISTRATION.md) before any skill was
 read.
 
-## Results (2026-11-09)
+## Results: agent skills (2026-11-09)
 
 Full write-up: **[RESULTS.md](RESULTS.md)**.
 
@@ -37,7 +39,89 @@ Data: [summary.json](summary.json), [skills.csv](skills.csv), [static-hits.jsonl
 [data/hand-check.csv](data/hand-check.csv), [script-results.jsonl](script-results.jsonl),
 [population.json](population.json), [scan-meta.json](scan-meta.json).
 
-## Run it
+## Results: the official Godot 4.7 docs (2026-11-09)
+
+Full write-up: **[RESULTS-godot-docs.md](RESULTS-godot-docs.md)** (pre-registered in
+[PREREGISTRATION-godot-docs.md](PREREGISTRATION-godot-docs.md); code in [docs-study/](docs-study/)).
+
+- 1,964 GDScript blocks (1,107 in the manual); Godot 4.7.2 rejected 22 of the manual's 227 checkable complete
+  scripts (9.7%).
+- By hand, **5 of those 22 are real bugs in the examples**; the rest are deliberate placeholders, names the reader
+  supplies, or limits of checking one file in an empty project. No Godot 3 API anywhere in the manual.
+- 5 of 7 predictions held (P1 and P4 missed). Data in [results/godot-docs/](results/godot-docs/).
+
+## Check your own skill or docs: gdcheck
+
+`gdcheck.py` (Python standard library only, plus a Godot 4 binary) reads every ```` ```gdscript ```` / ```` ```gd ````
+block in your Markdown files and asks Godot 4 itself (`--check-only`, in an empty project) whether it compiles.
+It reports each problem at the right line of the Markdown file.
+
+### As a GitHub Action
+
+```yaml
+name: gdcheck
+on: [push, pull_request]
+jobs:
+  gdcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: munimtechnologies/godot-skill-check@v0.2.0
+        with:
+          paths: skills docs README.md   # default: the whole repository
+          godot-version: "4.7.2"          # any official Godot 4 release
+```
+
+Problems show up as annotations on the pull request, and a summary table is added to the job page. Inputs:
+`paths`, `godot-version`, `fragments`, `gd-files`, `fail-on-external` (each `'true'`/`'false'`). Linux runners
+only (it downloads the official Godot Linux binary from github.com/godotengine/godot releases).
+
+### On the command line
+
+```sh
+python gdcheck.py --godot /path/to/godot skills/ docs/ README.md
+python gdcheck.py --godot /path/to/godot --format json --json-out report.json skills/
+```
+
+### As an agent skill
+
+[skills/gdcheck/SKILL.md](skills/gdcheck/SKILL.md) tells a coding agent when and how to run gdcheck on the
+GDScript it writes into Markdown:
+
+```sh
+npx skills add munimtechnologies/godot-skill-check --skill gdcheck
+```
+
+Review a skill before you use it: skills run with your agent's permissions.
+
+### What is checked, and how to control it
+
+| Block | What happens |
+|---|---|
+| Complete script (first code line `extends`, `class_name`, `@tool`, ...) | checked; problems are **errors** |
+| `<!-- gdcheck: extends CharacterBody2D -->` on a line before the block | wrapped in that base class and checked; **errors** |
+| Fragment made only of declarations (`func`, `var`, `const`, `signal`, ...), with `--fragments` | wrapped in `extends Node`; **warnings** |
+| Other fragments (bare statements such as `velocity.x = 5`) | not checked (listed as `fragment`) |
+| `<!-- gdcheck: skip -->` on a line before the block | skipped |
+| A deliberate wrong or Godot 3 example ("Bad", "Wrong", "Before:", `# Before`, `# 3.x`, "deprecated", ... before it or in its comments) | skipped (turn off with `--no-auto-skip`) |
+
+Results per block: `ok`, `error` (a problem inside the code), `external` (only names defined in other files:
+a `class_name` or autoload from elsewhere, a missing `preload` path; a **warning** unless `--fail-on-external`),
+`elision` (`...` placeholders), `skipped`, `fragment`, `timeout`. An inference error that only follows from another
+error (same line, or a variable declared on a line with an external error) is counted with that error. Exit code
+0 = no errors, 1 = errors, 2 = usage problem.
+
+The two errors the skills study found most often, and their fixes:
+
+- `The variable type is being inferred from a Variant value` -> write `var parsed: Variant = JSON.parse_string(s)`
+  (or give the real type) instead of `var parsed := ...`.
+- `Function "die()" not found in base self` -> declare every helper the example calls, even as a stub.
+
+Tested before release (2026-11-09, sealed container): 28 unit tests, fixtures whose expected results were written
+before the first real run (0 mismatches), and the Action step on good and bad fixtures. See
+[CHANGELOG.md](CHANGELOG.md).
+
+## Run the skills study
 
 Needs Python 3.10+, git and a Godot 4.7.2 Linux binary.
 
@@ -50,20 +134,15 @@ python skillcheck.py report --out out
 
 Outputs: `summary.json` (predictions P1-P6 and gates M1-M2), `skills.csv`, `static-hits.jsonl` and
 `script-results.jsonl` (each with GitHub links to the exact file and line). Skill code from other repositories is
-kept in `out/private/` for checking and is not republished here.
-
-## Writing a Godot skill? Check it yourself
-
-Put the skill's complete example scripts in an empty Godot 4 project and run
-`godot --headless --path <project> --check-only --script res://<file>.gd` on each. Declare every helper the example
-calls (or show a stub), and write `var x: Variant = ...` instead of `var x := ...` when the value has no known
-type (for example the result of `JSON.parse_string` or of an untyped dictionary lookup).
+kept in `out/private/` for checking and is not republished here. `skillcheck.py` stays exactly as pre-registered
+(v0.1); the improved rules (v0.2) live only in `gdcheck.py`.
 
 ## Limits
 
-`--check-only` finds parse and static-analysis errors, not runtime bugs. Code fragments are only covered by the
-static scan. A script that leans on a class defined elsewhere can hide further errors. Contrast markers
-("wrong", "Godot 3", ...) are used to leave out deliberate bad examples, which is a heuristic; the hand check found
-it missed `# Before` and `# 3.x` labels.
+`--check-only` finds parse and static-analysis errors, not runtime bugs. Each block is checked alone in an empty
+project, so autoloads, `class_name`s from other files and project settings are not known: those show as
+`external`. Wrapping fragments is a heuristic, and so is skipping deliberate bad examples (a block right after a
+sentence such as "In Godot 3 this was..." is skipped even if it is Godot 4 code; use `--no-auto-skip` to check
+everything).
 
 If you maintain one of the skills and think a result is wrong, please open an issue.

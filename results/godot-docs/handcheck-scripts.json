@@ -1,0 +1,90 @@
+[
+ {
+  "file": "engine_details/engine_api/vendor_runtime_module.rst",
+  "line": 67
+ },
+ {
+  "file": "tutorials/3d/procedural_geometry/arraymesh.rst",
+  "line": 373
+ },
+ {
+  "file": "tutorials/3d/procedural_geometry/arraymesh.rst",
+  "line": 466
+ },
+ {
+  "file": "tutorials/animation/playing_videos.rst",
+  "line": 339
+ },
+ {
+  "file": "tutorials/best_practices/godot_interfaces.rst",
+  "line": 42
+ },
+ {
+  "file": "tutorials/best_practices/godot_interfaces.rst",
+  "line": 138
+ },
+ {
+  "file": "tutorials/best_practices/logic_preferences.rst",
+  "line": 48
+ },
+ {
+  "file": "tutorials/navigation/navigation_using_navigationpathqueryobjects.rst",
+  "line": 217
+ },
+ {
+  "file": "tutorials/navigation/navigation_using_navigationpathqueryobjects.rst",
+  "line": 245
+ },
+ {
+  "file": "tutorials/networking/high_level_multiplayer.rst",
+  "line": 634
+ },
+ {
+  "file": "tutorials/networking/http_client_class.rst",
+  "line": 38
+ },
+ {
+  "file": "tutorials/physics/ray-casting.rst",
+  "line": 211
+ },
+ {
+  "file": "tutorials/physics/ray-casting.rst",
+  "line": 250
+ },
+ {
+  "file": "tutorials/plugins/editor/3d_gizmos.rst",
+  "line": 125
+ },
+ {
+  "file": "tutorials/plugins/editor/3d_gizmos.rst",
+  "line": 179
+ },
+ {
+  "file": "tutorials/scripting/gdscript/gdscript_basics.rst",
+  "line": 1725
+ },
+ {
+  "file": "tutorials/scripting/gdscript/gdscript_basics.rst",
+  "line": 2639
+ },
+ {
+  "file": "tutorials/scripting/gdscript/gdscript_documentation_comments.rst",
+  "line": 144
+ },
+ {
+  "file": "tutorials/scripting/gdscript/static_typing.rst",
+  "line": 34
+ },
+ {
+  "file": "tutorials/ui/creating_applications.rst",
+  "line": 120
+ },
+ {
+  "file": "tutorials/xr/openxr_spatial_entities.rst",
+  "line": 289
+ },
+ {
+  "file": "tutorials/xr/openxr_spatial_entities.rst",
+  "line": 1541
+ }
+]
