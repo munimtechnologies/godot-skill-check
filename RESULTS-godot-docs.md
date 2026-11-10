@@ -17,7 +17,9 @@ checking one file in an empty project (4). Five of the seven predictions held. P
 GDScript blocks than predicted) and P4 missed (most flagged scripts are not real bugs).
 
 Update 2026-11-10: a second, unchanged run gave exactly the same counts, and the pre-registered sample of 40
-fragment errors is now hand-checked (exploratory): **6 of 40 are real bugs**, see below.
+fragment errors is now hand-checked (exploratory): **6 of 40 are real bugs**, see below. A sealed test with
+Godot 4.7.2 then confirmed every one of those six, showed that each proposed fix compiles, and traced one more
+error to a known Godot parser bug, not to the docs: **22 of 22 test cases came out as written before the run**.
 
 ## The run
 
@@ -96,9 +98,10 @@ The pre-registration did not make a prediction about fragments, so this is not g
 | real | 6 | the code as shown fails in Godot 4.7.2 for a reason in the code itself |
 | intended | 25 | the page means it to be partial: comment-only bodies, signatures only, `...`, alternatives shown side by side ("is the same as", "the line above is a shorter form of"), or a comment saying it is invalid |
 | context | 5 | `super(...)` calls or getters/setters that assume a base class or functions defined elsewhere on the page |
-| tool | 4 | 2 shader blocks taken as GDScript, 1 `preload` cascade, 1 suspected checker artifact (pending, see below) |
+| tool | 4 | 2 shader blocks taken as GDScript, 1 `preload` cascade, 1 checker artifact (`godot_notifications.rst` line 76, confirmed below) |
 
-The six real ones (each checked against the RST source at the pinned commit):
+The six real ones (each checked against the RST source at the pinned commit, and each confirmed with Godot in
+the next section):
 
 1. `tutorials/animation/animation_tree.rst` line 98: `animation_tree.get("parameters/OneShot/active"))` has a
    stray `)`.
@@ -126,20 +129,68 @@ Two things the fragment check adds to the picture:
   `highlight_language = "gdscript"`, so these shader lines are rendered with the GDScript highlighter. It is a
   markup slip, not a GDScript bug, and we count it as a tool label.
 
-**Pending test.** `tutorials/best_practices/godot_notifications.rst` line 76 fails with "Expected end of file".
-The block ends with a multi-line lambda closed by `)`, and gdcheck wrote the checked file without a trailing
-newline. We suspect that Godot's parser needs that newline after a lambda at the end of a file, which would make
-this a gdcheck artifact and not a docs bug. A sealed job (`fragverify` 0.1.0, expectations written before it
-runs) tests this, and it also tests each proposed fix above: the code as shown must fail and the fixed code must
-pass. Its results will be added here, whichever way they come out.
-
 On the 40 sampled blocks, 6 real (15%) against 25 intended (62.5%) means a fragment error from this check is
 usually a deliberate partial example. That matches the complete-script result (5 of 22 real).
 
-Found by reading, outside the sample and not counted: the server half of the same authentication example
-(`high_level_multiplayer.rst`, the block introduced by "On the server:") sets `multiplayer.auth_timout = 3`. The property
-is spelled `auth_timeout`. `--check-only` cannot see this because `multiplayer` is typed `MultiplayerAPI`, so
-the property lookup is only checked at run time. The job also checks this name in Godot's ClassDB.
+## Fragment checks with Godot (fragverify 0.1.0, 2026-11-10)
+
+The hand check above made claims that Godot itself can test: that six blocks fail as shown, that each proposed
+fix compiles, that one error is our checker's fault, and two facts about Godot's API. `fragverify` 0.1.0
+([docs-study/fragverify/verify.py](docs-study/fragverify/verify.py)) turns each claim into a case with its
+expected outcome written in the code **before the first run**, and reports every case as held or not held. It ran
+once, in a sealed job (`godot-fragverify-v1`), with Godot 4.7.2.stable.official.ed1daf0bf and gdcheck 0.2.0 from
+this repository (6 of 6 unit tests passed first). Full output:
+[results/godot-docs/fragverify.json](results/godot-docs/fragverify.json).
+
+**Result: 22 of 22 cases and 4 of 4 probe facts held.** Nothing was changed after the run.
+
+**A. The "Expected end of file" errors (9 of 9 held).** gdcheck 0.2.0 wrote each checked block to a file with no
+trailing newline. With Godot 4.7.2:
+
+| Case | Code | Trailing newline | Expected | Got |
+|---|---|---|---|---|
+| A1 | `godot_notifications.rst` line 76 as checked | no | error "Expected end of file" | error, line 12 |
+| A2 | same | yes | ok | ok |
+| A3 | `classes/class_callable.rst` line 59 as checked | no | error "Expected end of file" | error, line 11 |
+| A4 | same | yes | only the context name `button_pressed` | only `button_pressed` |
+| A5 | synthetic: multi-line lambda last | no | error | error |
+| A6 | same | yes | ok | ok |
+| A7 | synthetic: one-line lambda last | no | error | error |
+| A8 | synthetic: one-line lambda, then another statement | no | ok | ok |
+| A9 | synthetic control: no lambda | no | ok | ok |
+
+So the error comes from Godot's parser: any file whose last token closes a lambda, with no newline after it, is
+rejected (A5, A7), and nothing else about the code matters (A8, A9). This is a known Godot bug, reported as
+godotengine/godot#96228 (and again as #101804, #109269 and #116285), with an open fix in pull request #100550;
+these cases show it is still present in 4.7.2 stable. For the docs it means `godot_notifications.rst` line 76 is
+**not** a docs bug (its label stays "tool"), and `class_callable.rst` line 59 only lacks the signal it names. The
+next gdcheck release writes Markdown blocks with a trailing newline.
+
+**B. The six real fragments and their fixes (13 of 13 held).** Each block was checked as shown and with the
+proposed fix, in the smallest context that supplies the names the page assumes (for example
+`@onready var animation_tree: AnimationTree`):
+
+| Case | Block | As shown | With the fix |
+|---|---|---|---|
+| B1 | `animation_tree.rst` 98 | error: Closing ")" doesn't have an opening counterpart | ok (one `)` removed) |
+| B2 | `animation_tree.rst` 173 | error: same | ok (one `)` removed) |
+| B3 | `high_level_multiplayer.rst` 708 | error: Expected opening "(" after "func" | `func():` alone still fails (Expected closing ")" after call arguments); `func():` plus the missing `)` is ok |
+| B4 | `gdscript_exports.rst` 146 | error: "@export_multiline" annotation requires a variable of type "String", ... | ok (`var text: String`) |
+| B5 | `gdscript_exports.rst` 155 | error: Annotation "@export_custom" requires at least 2 arguments, but 1 were given | ok (empty hint string added) |
+| B6 | `using_servers.rst` 251 | error: Too many arguments for "body_set_force_integration_callback()" call. Expected at most 3 but received 4 (plus the `ci_rid` the page says to move) | ok (`ci_rid` as a member, `_body_moved` passed as a Callable) |
+
+B3 confirms that the multiplayer example has two separate mistakes: fixing only the lambda's parameter list is
+not enough.
+
+**C. Facts from Godot's ClassDB (4 of 4 held).** `SceneMultiplayer` has the properties `auth_timeout` and
+`auth_callback` and no `auth_timout`; `PhysicsServer2D.body_set_force_integration_callback` takes 3 arguments.
+
+## Found by reading, outside the sample
+
+The server half of the same authentication example (`high_level_multiplayer.rst`, the block introduced by "On
+the server:") sets `multiplayer.auth_timout = 3`. Godot's ClassDB confirms the property is spelled
+`auth_timeout` (probe C above). `--check-only` cannot see this because `multiplayer` is typed `MultiplayerAPI`, so
+the property lookup is only checked at run time. This block is outside the sample and is not counted.
 
 ## Other numbers (descriptive)
 
@@ -156,18 +207,24 @@ In `results/godot-docs/`: `summary.json` (every count above), `blocks.jsonl` (on
 source, kind, status, Godot's messages; no code), `errors.jsonl` (the 89 error blocks with their code, the code
 as checked, Godot's messages and links to the docs page and source line; from the reproduction run, identical
 in counts to the first run), `handcheck-scripts.json` / `handcheck-fragments.json` (the pre-registered
-hand-check lists) and `handcheck-scripts.csv` / `handcheck-fragments.csv` (the labels).
+hand-check lists), `handcheck-scripts.csv` / `handcheck-fragments.csv` (the labels) and `fragverify.json` (every
+fragverify case with its expectation, Godot's messages and held / not held).
 
 In `errors.jsonl`, one constant name in a SurfaceTool example has its fourth letter written as the JSON escape
 `M`. Any JSON reader gives back the original text; the escape is there only because our publishing tool
 refuses that run of capital letters.
+
+`fragverify` 0.1.0 calls gdcheck's `GodotRunner` directly and controls the trailing newline itself. It was run
+with gdcheck 0.2.0. From gdcheck 0.3.0 on, the runner adds a missing newline unless called with
+`keep_eof=True`, so cases A1, A3, A5 and A7 need that argument to reproduce.
 
 ## Reporting upstream
 
 The pre-registration said MV2 would offer verified fixes to godot-docs if its contributing rules allowed it. The
 Godot Foundation's contribution policy of 2026-06-30 bans autonomous AI agents and AI-written text in issues and
 PRs. This work was made by AI agents, so MV2 is **not** filing issues or PRs on Godot repositories. The items
-above, with their fixes, are published here for anyone who wants to check them and send a fix themselves.
+above, with their fixes (now tested with Godot), are published here for anyone who wants to check them and send
+a fix themselves.
 
 ## Limits
 
@@ -175,4 +232,4 @@ above, with their fixes, are published here for anyone who wants to check them a
 project, so autoloads, other files and module settings are unknown. The hand labels were made by AI agents
 from the RST source; "real" means Godot 4.7.2 rejects the code as shown, which a docs maintainer may still
 consider acceptable for teaching. The fragment labels cover a sample of 40 of 44 blocks; the 4 left out were not
-labelled.
+labelled. fragverify tests each fix in a small context we wrote; on the page the code sits in a larger scene.

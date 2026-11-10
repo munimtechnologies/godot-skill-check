@@ -1,0 +1,405 @@
+{
+ "summary": {
+  "fragverify": "0.1.0",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "cases": 22,
+  "held": 22,
+  "by_group": {
+   "A": [
+    9,
+    9
+   ],
+   "B": [
+    13,
+    13
+   ]
+  },
+  "probe_held": [
+   4,
+   4
+  ],
+  "not_held": []
+ },
+ "cases": [
+  {
+   "id": "A1",
+   "group": "A",
+   "about": "godot_notifications.rst:76 exactly as checked (no trailing newline)",
+   "eof_newline": false,
+   "expect": "error",
+   "must": [
+    "Expected end of file"
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Expected end of file.",
+     "line": 12
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "A2",
+   "group": "A",
+   "about": "godot_notifications.rst:76 plus a trailing newline",
+   "eof_newline": true,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "A3",
+   "group": "A",
+   "about": "classes/class_callable.rst:59 exactly as checked (no trailing newline)",
+   "eof_newline": false,
+   "expect": "error",
+   "must": [
+    "Expected end of file"
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Expected end of file.",
+     "line": 11
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "A4",
+   "group": "A",
+   "about": "classes/class_callable.rst:59 plus a trailing newline: only the context name is left",
+   "eof_newline": true,
+   "expect": "error",
+   "must": [
+    "button_pressed"
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Identifier \"button_pressed\" not declared in the current scope.",
+     "line": 10
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "A5",
+   "group": "A",
+   "about": "synthetic: multi-line lambda in parentheses last, no trailing newline",
+   "eof_newline": false,
+   "expect": "error",
+   "must": [
+    "Expected end of file"
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Expected end of file.",
+     "line": 7
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "A6",
+   "group": "A",
+   "about": "synthetic: same with a trailing newline",
+   "eof_newline": true,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "A7",
+   "group": "A",
+   "about": "synthetic: one-line lambda last, no trailing newline",
+   "eof_newline": false,
+   "expect": "error",
+   "must": [
+    "Expected end of file"
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Expected end of file.",
+     "line": 5
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "A8",
+   "group": "A",
+   "about": "synthetic: one-line lambda not last, no trailing newline",
+   "eof_newline": false,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "A9",
+   "group": "A",
+   "about": "synthetic control: no lambda, no trailing newline",
+   "eof_newline": false,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B1a",
+   "group": "B",
+   "about": "animation_tree.rst:98 as shown (stray ')')",
+   "eof_newline": true,
+   "expect": "error",
+   "must": [
+    "Closing \")\""
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Closing \")\" doesn't have an opening counterpart.",
+     "line": 15
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B1b",
+   "group": "B",
+   "about": "animation_tree.rst:98 with the stray ')' removed",
+   "eof_newline": true,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B2a",
+   "group": "B",
+   "about": "animation_tree.rst:173 as shown (stray ')')",
+   "eof_newline": true,
+   "expect": "error",
+   "must": [
+    "Closing \")\""
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Closing \")\" doesn't have an opening counterpart.",
+     "line": 15
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B2b",
+   "group": "B",
+   "about": "animation_tree.rst:173 with the stray ')' removed",
+   "eof_newline": true,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B3a",
+   "group": "B",
+   "about": "high_level_multiplayer.rst:708 as shown ('func:' without parentheses)",
+   "eof_newline": true,
+   "expect": "error",
+   "must": [
+    "Expected opening \"(\""
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Expected opening \"(\" after \"func\".",
+     "line": 4
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B3b",
+   "group": "B",
+   "about": "high_level_multiplayer.rst:708 with 'func():' only (connect( still unclosed)",
+   "eof_newline": true,
+   "expect": "error",
+   "must": [],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Expected closing \")\" after call arguments.",
+     "line": 18
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B3c",
+   "group": "B",
+   "about": "high_level_multiplayer.rst:708 with 'func():' and the closing ')' added",
+   "eof_newline": true,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B4a",
+   "group": "B",
+   "about": "gdscript_exports.rst:146 as shown (untyped @export_multiline)",
+   "eof_newline": true,
+   "expect": "error",
+   "must": [
+    "\"@export_multiline\" annotation requires"
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "\"@export_multiline\" annotation requires a variable of type \"String\", \"Array[String]\", \"PackedStringArray\", \"Dictionary\", or \"Array[Dictionary]\", but type \"Variant\" was given instead.",
+     "line": 2
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B4b",
+   "group": "B",
+   "about": "gdscript_exports.rst:146 typed as String",
+   "eof_newline": true,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B5a",
+   "group": "B",
+   "about": "gdscript_exports.rst:155 as shown (@export_custom with one argument)",
+   "eof_newline": true,
+   "expect": "error",
+   "must": [
+    "requires at least 2 arguments"
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Annotation \"@export_custom\" requires at least 2 arguments, but 1 were given.",
+     "line": 2
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B5b",
+   "group": "B",
+   "about": "gdscript_exports.rst:155 with an empty hint string added",
+   "eof_newline": true,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B6a",
+   "group": "B",
+   "about": "using_servers.rst:251 as shown, on Node2D (Godot 3 style callback call)",
+   "eof_newline": true,
+   "expect": "error",
+   "must": [
+    "Too many arguments for \"body_set_force_integration_callback()\""
+   ],
+   "status": "error",
+   "errors": [
+    {
+     "msg": "Identifier \"ci_rid\" not declared in the current scope.",
+     "line": 11
+    },
+    {
+     "msg": "Too many arguments for \"body_set_force_integration_callback()\" call. Expected at most 3 but received 4.",
+     "line": 31
+    },
+    {
+     "msg": "Invalid argument for \"body_set_force_integration_callback()\" function: argument 2 should be \"Callable\" but is \"res://s/fbc4875bed757cc1.gd\".",
+     "line": 31
+    }
+   ],
+   "held": true,
+   "why_not": ""
+  },
+  {
+   "id": "B6b",
+   "group": "B",
+   "about": "using_servers.rst:251 with ci_rid as a member (as the page says) and a Callable",
+   "eof_newline": true,
+   "expect": "ok",
+   "must": [],
+   "status": "ok",
+   "errors": [],
+   "held": true,
+   "why_not": ""
+  }
+ ],
+ "probe": [
+  {
+   "key": "auth_timeout",
+   "expect": "true",
+   "got": "true",
+   "held": true
+  },
+  {
+   "key": "auth_timout",
+   "expect": "false",
+   "got": "false",
+   "held": true
+  },
+  {
+   "key": "auth_callback",
+   "expect": "true",
+   "got": "true",
+   "held": true
+  },
+  {
+   "key": "pfi_args",
+   "expect": "3",
+   "got": "3",
+   "held": true
+  }
+ ]
+}
