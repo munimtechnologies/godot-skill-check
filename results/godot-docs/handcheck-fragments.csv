@@ -1,0 +1,41 @@
+n,file,line,label,reason,proposed_fix
+1,tutorials/io/saving_games.rst,45,intended,"loop body is only a comment; the page fills it in later",
+2,tutorials/animation/animation_tree.rst,98,real,"stray closing parenthesis: animation_tree.get(""parameters/OneShot/active""))","remove one ')' (fragverify B1)"
+3,tutorials/scripting/gdscript/gdscript_basics.rst,2366,context,"super(...) assumes a base class with a custom _init(a, b); the checker's base is Node",
+4,tutorials/platform/android/javaclasswrapper_and_androidruntimeplugin.rst,124,intended,"if/else bodies are only comments (placeholders)",
+5,tutorials/scripting/gdscript/gdscript_styleguide.rst,720,intended,"naming example: function signature only",
+6,tutorials/inputs/controllers_gamepads_joysticks.rst,63,intended,"two alternative ways to compute velocity, labelled as alternatives in comments",
+7,tutorials/scripting/gdscript/gdscript_basics.rst,1358,intended,"enum and the constants it 'is the same as', shown together on purpose",
+8,tutorials/scripting/gdscript/gdscript_basics.rst,487,intended,"@annotation_a / @annotation_b are placeholder names for annotation syntax",
+9,tutorials/shaders/shader_reference/shading_language.rst,928,tool,"shader code, not GDScript: the block is a '.. code-block::' with no language, and the docs' conf.py sets highlight_language = ""gdscript"", so our extractor (like Sphinx's highlighter) treats it as GDScript",
+10,engine_details/architecture/unit_testing.rst,402,intended,"comment says '# Missing colon here.' (example of a failing test)",
+11,tutorials/scripting/gdscript/gdscript_basics.rst,2324,context,"super(x) assumes the base class defines some_func",
+12,tutorials/best_practices/godot_notifications.rst,76,tool,"PENDING TEST: 'Expected end of file' after a multi-line lambda that ends the file; the checked file had no trailing newline. Hypothesis tested by fragverify A1-A2",
+13,tutorials/networking/high_level_multiplayer.rst,129,intended,"client and server alternatives, each declaring peer",
+14,tutorials/networking/high_level_multiplayer.rst,708,real,"'multiplayer.auth_callback = func:' has no parameter list (GDScript lambdas need 'func():'); the multiplayer.peer_authenticating.connect( call is also never closed","'func():' and a closing ')' (fragverify B3)"
+15,tutorials/scripting/gdscript/gdscript_basics.rst,2409,context,"idle.gd extends a state.gd whose _init takes an argument (shown just above on the page)",
+16,tutorials/scripting/gdscript/gdscript_basics.rst,2533,context,"getter and setter functions are defined elsewhere on the page",
+17,tutorials/scripting/gdscript/gdscript_basics.rst,1328,intended,"comment says '# Invalid; this is not a constant expression!'",
+18,tutorials/best_practices/godot_interfaces.rst,24,intended,"property access and method access shown as alternatives",
+19,tutorials/inputs/inputevent.rst,49,intended,"if body is only a comment ('# Move right.')",
+20,tutorials/plugins/running_code_in_the_editor.rst,48,intended,"if body is only a comment",
+21,tutorials/inputs/controllers_gamepads_joysticks.rst,98,intended,"'The line above is a shorter form of:' two alternatives of walk",
+22,tutorials/scripting/gdscript/gdscript_exports.rst,155,real,"@export_custom needs a hint string as its second argument; the next examples in the same section pass one","@export_custom(PROPERTY_HINT_INPUT_NAME, """") var my_input (fragverify B5)"
+23,tutorials/scripting/gdscript/gdscript_basics.rst,1378,intended,"enum and the dictionary constant it 'is the same as', shown together on purpose",
+24,tutorials/scripting/gdscript/static_typing.rst,132,tool,"cascade: 'is a constant but does not contain a type' follows the missing preload file",
+25,tutorials/math/beziers_and_curves.rst,79,intended,"signature only; the body is developed in the text that follows",
+26,tutorials/scripting/gdscript/gdscript_basics.rst,2468,intended,"load() and preload() shown as alternatives for MyClass",
+27,tutorials/scripting/gdscript/gdscript_basics.rst,529,intended,"the page says this combination raises ONREADY_WITH_EXPORT, treated as an error by default",
+28,tutorials/3d/procedural_geometry/surfacetool.rst,18,intended,"arguments left out on purpose to show the order of calls",
+29,tutorials/scripting/gdscript/gdscript_styleguide.rst,1005,intended,"type-hint example: signature only",
+30,tutorials/performance/using_servers.rst,251,real,"Godot 3 call PhysicsServer2D.body_set_force_integration_callback(body, self, ""_body_moved"", 0); Godot 4 takes a Callable (3 arguments), as the page's own C# tab already does. (ci_rid is context, which the page explains; get_world_2d is our tool's Node3D base guess)","body_set_force_integration_callback(body, _body_moved, 0) (fragverify B6)"
+31,tutorials/plugins/running_code_in_the_editor.rst,64,intended,"if body is only a comment",
+32,tutorials/animation/animation_tree.rst,173,real,"stray closing parenthesis: animation_tree.get(""parameters/Transition/current_index""))","remove one ')' (fragverify B2)"
+33,tutorials/networking/high_level_multiplayer.rst,277,intended,"the @rpc annotation shown alone to explain its arguments",
+34,tutorials/scripting/gdscript/gdscript_exports.rst,146,real,"untyped '@export_multiline var text'; Godot 4.7.2 requires String, Array[String], PackedStringArray, Dictionary or Array[Dictionary]","@export_multiline var text: String (fragverify B4)"
+35,tutorials/inputs/controller_features.rst,147,intended,"'var node: Node3D = ... # Put your object here.' placeholder",
+36,tutorials/physics/using_character_body_2d.rst,132,intended,"move_and_collide and move_and_slide shown as alternatives",
+37,tutorials/plugins/editor/import_plugins.rst,296,intended,"first part of _import; the page says it splits the function into parts and continues it in the next blocks",
+38,tutorials/scripting/gdscript/gdscript_styleguide.rst,712,intended,"naming example: function signature only",
+39,tutorials/scripting/gdscript/gdscript_basics.rst,2332,context,"super.overriding() assumes the base class defines overriding()",
+40,tutorials/shaders/shader_reference/shading_language.rst,922,tool,"shader code in a '.. code-block::' with no language (see row 9)",

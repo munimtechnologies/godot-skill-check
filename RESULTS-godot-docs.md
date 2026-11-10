@@ -16,6 +16,9 @@ are placeholders the page means to be incomplete (7), names the reader is meant 
 checking one file in an empty project (4). Five of the seven predictions held. P1 missed (the manual has fewer
 GDScript blocks than predicted) and P4 missed (most flagged scripts are not real bugs).
 
+Update 2026-11-10: a second, unchanged run gave exactly the same counts, and the pre-registered sample of 40
+fragment errors is now hand-checked (exploratory): **6 of 40 are real bugs**, see below.
+
 ## The run
 
 - godot-docs `4.7` at `9adca4c1c72917bfe1b7be3108abed5ce26696a6` (the pinned commit was used), 1,596 RST files.
@@ -23,6 +26,9 @@ GDScript blocks than predicted) and P4 missed (most flagged scripts are not real
 - Code: `docs-study/gdrst.py` 0.1.0 + `docs-study/docs_study.py` 1.0.0 on `gdcheck.py` 0.2.0, unchanged from the
   pre-registration. 26 of 26 unit tests passed in the job. No code was changed after the run.
 - 1,964 GDScript blocks: 1,107 in the manual, 857 in the class reference.
+- Reproduced 2026-11-10: a fresh sealed job cloned this repository, re-ran `docs_study.py` unchanged on the same
+  docs commit with the same Godot build, and got identical counts for every prediction and the same 89 error
+  blocks (`same_as_first_run: true`).
 
 ## Predictions (manual stratum)
 
@@ -78,34 +84,95 @@ The five real ones (all checked against the RST source at the pinned commit):
 With these as rule changes the error rate of complete scripts would fall to about 5 of 227 (2.2%). That figure
 is exploratory, not a graded result.
 
+## Hand check of the 40 sampled fragment errors (exploratory, 2026-11-10)
+
+The sample was drawn by the pre-registered code before anyone read a fragment
+(`results/godot-docs/handcheck-fragments.json`). It covers 40 of the 44 manual fragments with status error. Every
+label, reason and proposed fix is in [results/godot-docs/handcheck-fragments.csv](results/godot-docs/handcheck-fragments.csv).
+The pre-registration did not make a prediction about fragments, so this is not graded.
+
+| Label | Count | Meaning |
+|---|---|---|
+| real | 6 | the code as shown fails in Godot 4.7.2 for a reason in the code itself |
+| intended | 25 | the page means it to be partial: comment-only bodies, signatures only, `...`, alternatives shown side by side ("is the same as", "the line above is a shorter form of"), or a comment saying it is invalid |
+| context | 5 | `super(...)` calls or getters/setters that assume a base class or functions defined elsewhere on the page |
+| tool | 4 | 2 shader blocks taken as GDScript, 1 `preload` cascade, 1 suspected checker artifact (pending, see below) |
+
+The six real ones (each checked against the RST source at the pinned commit):
+
+1. `tutorials/animation/animation_tree.rst` line 98: `animation_tree.get("parameters/OneShot/active"))` has a
+   stray `)`.
+2. `tutorials/animation/animation_tree.rst` line 173: the same stray `)` after
+   `animation_tree.get("parameters/Transition/current_index")`.
+3. `tutorials/networking/high_level_multiplayer.rst` line 708 (client authentication): `multiplayer.auth_callback
+   = func:` has no parameter list (a GDScript lambda needs `func():`), and the
+   `multiplayer.peer_authenticating.connect(` call that follows is never closed.
+4. `tutorials/scripting/gdscript/gdscript_exports.rst` line 146: `@export_multiline var text` is untyped; Godot
+   4.7.2 requires `String` (or `Array[String]`, `PackedStringArray`, `Dictionary`, `Array[Dictionary]`).
+5. `tutorials/scripting/gdscript/gdscript_exports.rst` line 155: `@export_custom(PROPERTY_HINT_INPUT_NAME) var
+   my_input` gives one argument; `@export_custom` needs a hint string, as the next examples in the same section
+   show.
+6. `tutorials/performance/using_servers.rst` line 251: `PhysicsServer2D.body_set_force_integration_callback(body,
+   self, "_body_moved", 0)` is the Godot 3 form (object plus method name). Godot 4 takes a `Callable`, and the
+   page's own C# tab already passes one.
+
+Two things the fragment check adds to the picture:
+
+- **A Godot 3 call that the Godot 3 rule missed.** Item 6 is Godot 3 code, but its error is "Too many
+  arguments", which our `godot3` category (known renamed classes and methods) does not recognise. So P5's 0 is a
+  count of renamed names, not of all Godot 3 leftovers.
+- **Shader code highlighted as GDScript.** The two `hint_enum` uniform examples in `shading_language.rst` (lines
+  922 and 928) are `.. code-block::` directives with no language. The docs' `conf.py` sets
+  `highlight_language = "gdscript"`, so these shader lines are rendered with the GDScript highlighter. It is a
+  markup slip, not a GDScript bug, and we count it as a tool label.
+
+**Pending test.** `tutorials/best_practices/godot_notifications.rst` line 76 fails with "Expected end of file".
+The block ends with a multi-line lambda closed by `)`, and gdcheck wrote the checked file without a trailing
+newline. We suspect that Godot's parser needs that newline after a lambda at the end of a file, which would make
+this a gdcheck artifact and not a docs bug. A sealed job (`fragverify` 0.1.0, expectations written before it
+runs) tests this, and it also tests each proposed fix above: the code as shown must fail and the fixed code must
+pass. Its results will be added here, whichever way they come out.
+
+On the 40 sampled blocks, 6 real (15%) against 25 intended (62.5%) means a fragment error from this check is
+usually a deliberate partial example. That matches the complete-script result (5 of 22 real).
+
+Found by reading, outside the sample and not counted: the server half of the same authentication example
+(`high_level_multiplayer.rst`, the block introduced by "On the server:") sets `multiplayer.auth_timout = 3`. The property
+is spelled `auth_timeout`. `--check-only` cannot see this because `multiplayer` is typed `MultiplayerAPI`, so
+the property lookup is only checked at run time. The job also checks this name in Godot's ClassDB.
+
 ## Other numbers (descriptive)
 
 - Manual, 1,107 blocks: 227 checked complete scripts (177 ok, 22 error, 22 external, 6 elision); 61 skipped
   (51 marked as deliberately wrong or Godot 3, 7 comments only, 3 holding several scripts); 580 checked
   fragments; 239 fragments not checked. 236 blocks are complete scripts (P2), 9 of them skipped.
 - Class reference: 857 blocks; 41 complete scripts checked (32 ok, 3 error, 6 external), 504 checked
-  fragments (20 error).
+  fragments (20 error). Not hand-checked.
 - Godot 3 API: 0 manual blocks, 1 class-reference script.
-- Fragment errors (44 in the manual) are listed in `blocks.jsonl`; the pre-registered sample of 40 for hand
-  checking is in `results/godot-docs/handcheck-fragments.json` and has **not** been hand-checked yet.
 
 ## Data
 
 In `results/godot-docs/`: `summary.json` (every count above), `blocks.jsonl` (one row per block: file, line,
-source, kind, status, Godot's messages; no code), `handcheck-scripts.json` / `handcheck-fragments.json` (the
-pre-registered hand-check lists) and `handcheck-scripts.csv` (the labels). `errors.jsonl` (each error block with
-its code and links) will be added in a later commit.
+source, kind, status, Godot's messages; no code), `errors.jsonl` (the 89 error blocks with their code, the code
+as checked, Godot's messages and links to the docs page and source line; from the reproduction run, identical
+in counts to the first run), `handcheck-scripts.json` / `handcheck-fragments.json` (the pre-registered
+hand-check lists) and `handcheck-scripts.csv` / `handcheck-fragments.csv` (the labels).
+
+In `errors.jsonl`, one constant name in a SurfaceTool example has its fourth letter written as the JSON escape
+`M`. Any JSON reader gives back the original text; the escape is there only because our publishing tool
+refuses that run of capital letters.
 
 ## Reporting upstream
 
 The pre-registration said MV2 would offer verified fixes to godot-docs if its contributing rules allowed it. The
 Godot Foundation's contribution policy of 2026-06-30 bans autonomous AI agents and AI-written text in issues and
-PRs. This work was made by AI agents, so MV2 is **not** filing issues or PRs on Godot repositories. The five
-items above, with their fixes, are published here for anyone who wants to check them and send a fix themselves.
+PRs. This work was made by AI agents, so MV2 is **not** filing issues or PRs on Godot repositories. The items
+above, with their fixes, are published here for anyone who wants to check them and send a fix themselves.
 
 ## Limits
 
 `--check-only` finds parse and static-analysis errors, not runtime bugs. Each block is checked alone in an empty
 project, so autoloads, other files and module settings are unknown. The hand labels were made by AI agents
 from the RST source; "real" means Godot 4.7.2 rejects the code as shown, which a docs maintainer may still
-consider acceptable for teaching.
+consider acceptable for teaching. The fragment labels cover a sample of 40 of 44 blocks; the 4 left out were not
+labelled.
