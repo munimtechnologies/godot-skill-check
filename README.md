@@ -46,8 +46,10 @@ Full write-up: **[RESULTS-godot-docs.md](RESULTS-godot-docs.md)** (pre-registere
 
 - 1,964 GDScript blocks (1,107 in the manual); Godot 4.7.2 rejected 22 of the manual's 227 checkable complete
   scripts (9.7%).
-- By hand, **5 of those 22 are real bugs in the examples**; the rest are deliberate placeholders, names the reader
-  supplies, or limits of checking one file in an empty project. No Godot 3 API anywhere in the manual.
+- By hand, **5 of those 22 are real bugs in the examples**, and 6 of a sample of 40 fragment errors; the rest
+  are deliberate placeholders, names the reader supplies, or limits of checking one file in an empty project.
+  No Godot 3 API anywhere in the manual.
+- Every proposed fix was tested with Godot 4.7.2 (fragverify 0.1.0: 22 of 22 cases as expected).
 - 5 of 7 predictions held (P1 and P4 missed). Data in [results/godot-docs/](results/godot-docs/).
 
 ## Check your own skill or docs: gdcheck
@@ -66,15 +68,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: munimtechnologies/godot-skill-check@v0.2.0
+      - uses: munimtechnologies/godot-skill-check@v0.3.0
         with:
           paths: skills docs README.md   # default: the whole repository
           godot-version: "4.7.2"          # any official Godot 4 release
 ```
 
 Problems show up as annotations on the pull request, and a summary table is added to the job page. Inputs:
-`paths`, `godot-version`, `fragments`, `gd-files`, `fail-on-external` (each `'true'`/`'false'`). Linux runners
-only (it downloads the official Godot Linux binary from github.com/godotengine/godot releases).
+`paths`, `godot-version`, `godot-sha512`, `fragments`, `gd-files`, `fail-on-external` (each `'true'`/`'false'`
+where it is a switch). Linux runners only. The Action downloads the official Godot Linux binary from
+github.com/godotengine/godot releases and refuses it unless its SHA-512 matches the release's own
+`SHA512-SUMS.txt` (or the `godot-sha512` you give).
 
 ### On the command line
 
@@ -86,7 +90,8 @@ python gdcheck.py --godot /path/to/godot --format json --json-out report.json sk
 ### As an agent skill
 
 [skills/gdcheck/SKILL.md](skills/gdcheck/SKILL.md) tells a coding agent when and how to run gdcheck on the
-GDScript it writes into Markdown:
+GDScript it writes into Markdown. It is listed on skills.sh at
+[skills.sh/munimtechnologies/godot-skill-check/gdcheck](https://skills.sh/munimtechnologies/godot-skill-check/gdcheck).
 
 ```sh
 npx skills add munimtechnologies/godot-skill-check --skill gdcheck
@@ -103,13 +108,19 @@ Review a skill before you use it: skills run with your agent's permissions.
 | Fragment made only of declarations (`func`, `var`, `const`, `signal`, ...), with `--fragments` | wrapped in `extends Node`; **warnings** |
 | Other fragments (bare statements such as `velocity.x = 5`) | not checked (listed as `fragment`) |
 | `<!-- gdcheck: skip -->` on a line before the block | skipped |
-| A deliberate wrong or Godot 3 example ("Bad", "Wrong", "Before:", `# Before`, `# 3.x`, "deprecated", ... before it or in its comments) | skipped (turn off with `--no-auto-skip`) |
+| A deliberate wrong or Godot 3 example ("Bad", "Wrong", "Before:", `# Before`, `# 3.x`, "deprecated", "results in an error", "compile time error", ... before it or in its comments) | skipped (turn off with `--no-auto-skip`) |
 
 Results per block: `ok`, `error` (a problem inside the code), `external` (only names defined in other files:
 a `class_name` or autoload from elsewhere, a missing `preload` path; a **warning** unless `--fail-on-external`),
-`elision` (`...` placeholders), `skipped`, `fragment`, `timeout`. An inference error that only follows from another
-error (same line, or a variable declared on a line with an external error) is counted with that error. Exit code
-0 = no errors, 1 = errors, 2 = usage problem.
+`elision` (a deliberate placeholder: `...`, a block whose body is only a comment, or a signature on its own),
+`skipped`, `fragment`, `timeout`. An error that only follows from another error (an inference error on the same
+line or on a variable declared on a line with an external error; "is a constant but does not contain a type"
+after a missing `preload`) is counted with that error. Exit code 0 = no errors, 1 = errors, 2 = usage problem.
+
+Code from a Markdown block is given to Godot with a trailing newline. Godot 4, still in 4.7.2, rejects a file
+whose last token closes a lambda when no newline follows (godotengine/godot#96228); a fenced block has no newline
+of its own, so without this gdcheck 0.2 reported "Expected end of file" for such blocks. A `.gd` file is checked
+exactly as it is on disk, and gdcheck adds a hint when it hits this bug.
 
 The two errors the skills study found most often, and their fixes:
 
@@ -117,9 +128,9 @@ The two errors the skills study found most often, and their fixes:
   (or give the real type) instead of `var parsed := ...`.
 - `Function "die()" not found in base self` -> declare every helper the example calls, even as a stub.
 
-Tested before release (2026-11-09, sealed container): 28 unit tests, fixtures whose expected results were written
-before the first real run (0 mismatches), and the Action step on good and bad fixtures. See
-[CHANGELOG.md](CHANGELOG.md).
+Each release is tested in a sealed container before it is published: unit tests, fixtures whose expected results
+were written before the first real run, the Action's own shell step, and (from 0.3.0) the install script's SHA-512
+check. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Run the skills study
 
@@ -135,7 +146,8 @@ python skillcheck.py report --out out
 Outputs: `summary.json` (predictions P1-P6 and gates M1-M2), `skills.csv`, `static-hits.jsonl` and
 `script-results.jsonl` (each with GitHub links to the exact file and line). Skill code from other repositories is
 kept in `out/private/` for checking and is not republished here. `skillcheck.py` stays exactly as pre-registered
-(v0.1); the improved rules (v0.2) live only in `gdcheck.py`.
+(v0.1); the improved rules (v0.2, v0.3) live only in `gdcheck.py`. The graded docs-study numbers were made with
+gdcheck 0.2.0 and stay as published.
 
 ## Limits
 

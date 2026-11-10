@@ -15,6 +15,10 @@ inputs:
     description: "Official Godot 4 release to check with (Linux binary from github.com/godotengine/godot releases)."
     required: false
     default: "4.7.2"
+  godot-sha512:
+    description: "Optional expected SHA-512 of the Godot zip. If empty, it is read from the release's SHA512-SUMS.txt."
+    required: false
+    default: ""
   fragments:
     description: "'true' to also check declaration-only fragments wrapped in 'extends Node' (reported as warnings)."
     required: false
@@ -34,6 +38,7 @@ runs:
       shell: bash
       env:
         GODOT_VERSION: ${{ inputs.godot-version }}
+        GODOT_SHA512: ${{ inputs.godot-sha512 }}
       run: bash "$GITHUB_ACTION_PATH/install_godot.sh"
     - name: Check GDScript blocks
       shell: bash

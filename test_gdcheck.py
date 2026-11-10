@@ -33,6 +33,12 @@ OUT_VARIANT = godot_out(("Parse Error: The variable type is being inferred from 
 OUT_SAMELINE = godot_out(('Parse Error: Function "get_world_3d()" not found in base self.', 7),
                          ('Parse Error: Cannot infer the type of "space" variable because the value doesn\'t '
                           'have a set type.', 7))
+# v0.3: messages as Godot 4.7.2 printed them in the godot-docs study (results/godot-docs/errors.jsonl)
+OUT_INDENT_FUNC = godot_out(("Parse Error: Expected indented block after function declaration.", 3))
+OUT_INDENT_IF = godot_out(('Parse Error: Expected indented block after "if" block.', 3))
+OUT_PRELOAD_CONST = godot_out(('Parse Error: Preload file "res://enemy.gd" does not exist.', 3),
+                              ('Parse Error: "Enemy" is a constant but does not contain a type.', 6))
+OUT_EOF = godot_out(("Parse Error: Expected end of file.", 7))
 
 
 def md(text):
@@ -89,6 +95,42 @@ class TestMarkdown(unittest.TestCase):
         self.assertFalse(g.is_contrast(blk("Do this before calling start():")))
         # a '#' inside a string is not a comment
         self.assertFalse(g.is_contrast(blk("", 'extends Node\nvar s := "# Before"\n')))
+
+    def test_contrast_markers_v03(self):
+        def blk(context, code="extends Node\n"):
+            return {"context": context, "code": code}
+        self.assertTrue(g.is_contrast(blk("The following results in an error:")))
+        self.assertTrue(g.is_contrast(blk("This results in a parse error because ...")))
+        self.assertTrue(g.is_contrast(blk("", "extends Node\nfunc _ready():\n    # Compile time error, as `x` is "
+                                              "not defined.\n    print(x)\n")))
+        self.assertTrue(g.is_contrast(blk("This gives a compile-time error:")))
+        self.assertFalse(g.is_contrast(blk("Errors are reported in the Output panel:")))
+        self.assertFalse(g.is_contrast(blk("", "extends Node\n# Returns an error code on failure.\n")))
+
+
+class TestPlaceholderBody(unittest.TestCase):
+    def test_comment_only_function_body(self):
+        self.assertTrue(g.placeholder_body("extends Node\n\nfunc _ready():\n    # Insert code here.\n\n"
+                                           "func _process(_delta):\n    pass\n"))
+
+    def test_comment_only_if_body_before_dedent(self):
+        # godot-docs running_code_in_the_editor.rst: two if blocks with comment-only bodies
+        self.assertTrue(g.placeholder_body("extends Node\nfunc _process(delta):\n    if Engine.is_editor_hint():\n"
+                                           "        # Code to execute in editor.\n\n    if not Engine.is_editor_hint():"
+                                           "\n        # Code to execute in game.\n"))
+
+    def test_signature_at_end(self):
+        self.assertTrue(g.placeholder_body("extends Node\nfunc heal(amount: int) -> void:"))
+        self.assertTrue(g.placeholder_body("extends Node\nfunc heal(amount: int) -> void:\n\n"))
+
+    def test_real_missing_indent_is_not_placeholder(self):
+        self.assertFalse(g.placeholder_body("extends Node\n\nfunc _ready() -> void:\nprint(1)\n"))
+
+    def test_normal_code_is_not_placeholder(self):
+        self.assertFalse(g.placeholder_body("extends Node\nfunc f():\n    # note\n    pass\n"))
+        self.assertFalse(g.placeholder_body('extends Node\nvar d = {\n    "a": 1,\n}\n'))
+        # a ':' inside a comment does not make a header
+        self.assertFalse(g.placeholder_body("extends Node\nvar x = 1 # note:\n"))
 
 
 class TestPlan(unittest.TestCase):
@@ -241,14 +283,49 @@ class TestClassify(unittest.TestCase):
         out = godot_out(('Parse Error: Expected statement, found "..." instead.', 4))
         self.assertEqual(self.status(out)[0], "elision")
 
+    # ---- v0.3
+    def test_constant_not_type_after_missing_preload_is_cascade(self):
+        code = ('extends Node\n\nconst Enemy = preload("res://enemy.gd")\n\nfunc is_enemy(node: Node) -> bool:\n'
+                '    return node is Enemy\n')
+        st, errs = self.status(OUT_PRELOAD_CONST, code)
+        self.assertEqual([e["category"] for e in errs], ["external", "cascade"])
+        self.assertEqual(errs[1]["follows"], "external")
+        self.assertEqual(st, "external")
+
+    def test_constant_not_type_without_external_stays_other(self):
+        code = 'extends Node\n\nconst Enemy = 5\n\nfunc f(node: Node) -> bool:\n    return node is Enemy\n'
+        out = godot_out(('Parse Error: "Enemy" is a constant but does not contain a type.', 6))
+        st, errs = self.status(out, code)
+        self.assertEqual((st, errs[0]["category"]), ("error", "other"))
+
+    def test_indented_block_with_comment_body_is_elision(self):
+        code = "extends Node\n\nfunc _ready():\n    # Insert code here.\n\nfunc _process(_delta):\n    pass\n"
+        st, errs = self.status(OUT_INDENT_FUNC, code)
+        self.assertEqual((st, errs[0]["category"]), ("elision", "elision"))
+
+    def test_indented_block_signature_only_is_elision(self):
+        self.assertEqual(self.status(OUT_INDENT_FUNC, "extends Node\nfunc heal(amount: int) -> void:")[0],
+                         "elision")
+
+    def test_indented_block_comment_only_if_is_elision(self):
+        code = "extends Node\nfunc _on_exit():\n    if not visible:\n        # Not hovering over area."
+        self.assertEqual(self.status(OUT_INDENT_IF, code)[0], "elision")
+
+    def test_indented_block_real_missing_indent_is_error(self):
+        code = "extends Node\n\nfunc _ready() -> void:\nprint(1)\n"
+        st, errs = self.status(OUT_INDENT_FUNC, code)
+        self.assertEqual((st, errs[0]["category"]), ("error", "other"))
+
 
 class FakeRunner:
     def __init__(self, outputs):
         self.outputs = outputs
         self.calls = 0
+        self.keep_eof = []
 
-    def __call__(self, code):
+    def __call__(self, code, keep_eof=False):
         self.calls += 1
+        self.keep_eof.append(keep_eof)
         for needle, out in self.outputs.items():
             if needle in code:
                 return 1, out, False
@@ -295,6 +372,7 @@ class TestCheck(unittest.TestCase):
         self.assertTrue(all("code" not in x for x in e))
         self.assertEqual(g.exit_code_of(e), 1)
         self.assertEqual(g.counts_of(e), {"error": 3, "ok": 1})
+        self.assertEqual(runner.keep_eof, [False, False, False])  # Markdown blocks: newline added by the runner
 
     def test_warning_fragment_does_not_fail(self):
         p = md("```gdscript\nfunc heal(n: int) -> void:\n\thealth += n\n```\n")
@@ -321,6 +399,51 @@ class TestCheck(unittest.TestCase):
         self.assertEqual(e[0]["status"], "timeout")
         self.assertEqual(g.exit_code_of(e), 1)
 
+    def test_gd_file_is_checked_as_is_with_eof_hint(self):
+        d = Path(tempfile.mkdtemp())
+        f = d / "eof.gd"
+        f.write_bytes(b"extends Node\nfunc _ready():\n    var t = Timer.new()\n    t.timeout.connect(func():\n"
+                      b"        print(1)\n    )")
+        runner = FakeRunner({"connect(func": OUT_EOF})
+        e = g.check_entries(g.plan_file(f), runner)
+        self.assertEqual(runner.keep_eof, [True])
+        self.assertEqual(e[0]["status"], "error")
+        self.assertIn("godotengine/godot#96228", e[0]["errors"][0]["hint"])
+        self.assertIn("(hint: ", g.format_text(e)[0])
+
+    def test_gd_file_with_newline_gets_no_hint(self):
+        d = Path(tempfile.mkdtemp())
+        f = d / "eof.gd"
+        f.write_bytes(b"extends Node\nfunc _ready():\n    print(1)\n    )\n")
+        e = g.check_entries(g.plan_file(f), FakeRunner({")": OUT_EOF}))
+        self.assertNotIn("hint", e[0]["errors"][0])
+
+
+class TestRunnerNewline(unittest.TestCase):
+    """GodotRunner writes Markdown code with a trailing newline, and .gd code exactly as given."""
+
+    def run_with(self, code, keep_eof):
+        r = g.GodotRunner(os.path.join(tempfile.mkdtemp(), "no-godot"))
+        try:
+            try:
+                r(code, keep_eof=keep_eof)
+            except OSError:
+                pass  # no Godot binary here; the script file is written before Godot is started
+            files = list((r.proj / "s").glob("*.gd"))
+            self.assertEqual(len(files), 1)
+            return files[0].read_bytes()
+        finally:
+            r.close()
+
+    def test_newline_added(self):
+        self.assertEqual(self.run_with("extends Node", False), b"extends Node\n")
+
+    def test_newline_not_doubled(self):
+        self.assertEqual(self.run_with("extends Node\n", False), b"extends Node\n")
+
+    def test_keep_eof(self):
+        self.assertEqual(self.run_with("extends Node", True), b"extends Node")
+
 
 class TestOutput(unittest.TestCase):
     def test_github_escaping(self):
@@ -344,6 +467,9 @@ class TestOutput(unittest.TestCase):
     def test_main_without_godot(self):
         p = md("```gdscript\nextends Node\n```\n")
         self.assertEqual(g.main(["--godot", os.path.join(tempfile.mkdtemp(), "no-godot"), str(p)]), 2)
+
+    def test_version(self):
+        self.assertEqual(g.VERSION, "0.3.0")
 
 
 if __name__ == "__main__":

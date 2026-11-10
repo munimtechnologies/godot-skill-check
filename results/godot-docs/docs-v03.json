@@ -1,0 +1,444 @@
+{
+ "about": "exploratory: godot-docs study re-run with gdcheck 0.3.0 (docs_study 1.0.0, gdrst 0.1.0 unchanged)",
+ "gdcheck_old": "0.2.0",
+ "gdcheck_new": "0.3.0",
+ "godot_version": "4.7.2.stable.official.ed1daf0bf",
+ "docs_sha": "9adca4c1c72917bfe1b7be3108abed5ce26696a6",
+ "blocks_old": 1964,
+ "blocks_new": 1964,
+ "manual_script_errors": [
+  22,
+  17
+ ],
+ "manual_script_checked": [
+  227,
+  225
+ ],
+ "manual_fragment_errors": [
+  44,
+  32
+ ],
+ "by_stratum_kind_status_new": {
+  "classes/decl-fragment/context": 70,
+  "classes/decl-fragment/elision": 1,
+  "classes/decl-fragment/error": 8,
+  "classes/decl-fragment/external": 4,
+  "classes/decl-fragment/ok": 192,
+  "classes/decl-fragment/timeout": 1,
+  "classes/fragment/fragment": 284,
+  "classes/script/error": 3,
+  "classes/script/external": 6,
+  "classes/script/ok": 32,
+  "classes/script/skipped": 28,
+  "classes/stmt-fragment/context": 35,
+  "classes/stmt-fragment/elision": 1,
+  "classes/stmt-fragment/error": 9,
+  "classes/stmt-fragment/external": 1,
+  "classes/stmt-fragment/ok": 182,
+  "manual/decl-fragment/context": 108,
+  "manual/decl-fragment/elision": 10,
+  "manual/decl-fragment/error": 22,
+  "manual/decl-fragment/external": 12,
+  "manual/decl-fragment/ok": 236,
+  "manual/fragment/fragment": 239,
+  "manual/script/elision": 7,
+  "manual/script/error": 17,
+  "manual/script/external": 24,
+  "manual/script/ok": 177,
+  "manual/script/skipped": 63,
+  "manual/stmt-fragment/context": 115,
+  "manual/stmt-fragment/elision": 10,
+  "manual/stmt-fragment/error": 10,
+  "manual/stmt-fragment/ok": 57
+ },
+ "transition_counts": [
+  {
+   "stratum": "classes",
+   "old": "context",
+   "new": "timeout",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "old": "error",
+   "new": "context",
+   "blocks": 1
+  },
+  {
+   "stratum": "classes",
+   "old": "error",
+   "new": "elision",
+   "blocks": 2
+  },
+  {
+   "stratum": "manual",
+   "old": "error",
+   "new": "elision",
+   "blocks": 11
+  },
+  {
+   "stratum": "manual",
+   "old": "error",
+   "new": "external",
+   "blocks": 3
+  },
+  {
+   "stratum": "manual",
+   "old": "error",
+   "new": "ok",
+   "blocks": 1
+  },
+  {
+   "stratum": "manual",
+   "old": "error",
+   "new": "skipped",
+   "blocks": 2
+  }
+ ],
+ "transitions": [
+  {
+   "stratum": "classes",
+   "file": "classes/class_callable.rst",
+   "line": 59,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "context",
+   "hand": null,
+   "new_msgs": [
+    "Identifier \"button_pressed\" not declared in the current scope."
+   ]
+  },
+  {
+   "stratum": "classes",
+   "file": "classes/class_control.rst",
+   "line": 502,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": null,
+   "new_msgs": [
+    "Expected indented block after \"if\" block."
+   ]
+  },
+  {
+   "stratum": "classes",
+   "file": "classes/class_editorcontextmenuplugin.rst",
+   "line": 239,
+   "kind": "decl-fragment",
+   "old": "context",
+   "new": "timeout",
+   "hand": null,
+   "new_msgs": []
+  },
+  {
+   "stratum": "classes",
+   "file": "classes/class_fileaccess.rst",
+   "line": 521,
+   "kind": "stmt-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": null,
+   "new_msgs": [
+    "Expected indented block after \"while\" block."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/best_practices/godot_notifications.rst",
+   "line": 76,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "ok",
+   "hand": "tool",
+   "new_msgs": []
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/best_practices/logic_preferences.rst",
+   "line": 48,
+   "kind": "script",
+   "old": "error",
+   "new": "skipped",
+   "hand": "intended",
+   "new_msgs": []
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/inputs/inputevent.rst",
+   "line": 49,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after \"if\" block."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/io/saving_games.rst",
+   "line": 45,
+   "kind": "stmt-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after \"for\" block."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/math/beziers_and_curves.rst",
+   "line": 79,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after function declaration."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/networking/high_level_multiplayer.rst",
+   "line": 634,
+   "kind": "script",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after function declaration."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/platform/android/javaclasswrapper_and_androidruntimeplugin.rst",
+   "line": 124,
+   "kind": "stmt-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after \"if\" block."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/plugins/editor/3d_gizmos.rst",
+   "line": 125,
+   "kind": "script",
+   "old": "error",
+   "new": "external",
+   "hand": "tool",
+   "new_msgs": [
+    "Preload file \"res://addons/my-addon/my_custom_node_3d.gd\" does not exist.",
+    "\"MyCustomNode3D\" is a constant but does not contain a type."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/plugins/editor/3d_gizmos.rst",
+   "line": 179,
+   "kind": "script",
+   "old": "error",
+   "new": "external",
+   "hand": "tool",
+   "new_msgs": [
+    "Preload file \"res://addons/my-addon/my_custom_node_3d.gd\" does not exist.",
+    "Preload file \"res://addons/my-addon/my_custom_gizmo.gd\" does not exist.",
+    "\"MyCustomNode3D\" is a constant but does not contain a type."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/plugins/running_code_in_the_editor.rst",
+   "line": 48,
+   "kind": "stmt-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after \"if\" block."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/plugins/running_code_in_the_editor.rst",
+   "line": 64,
+   "kind": "stmt-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after \"if\" block."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/plugins/running_code_in_the_editor.rst",
+   "line": 82,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": null,
+   "new_msgs": [
+    "Expected indented block after \"if\" block."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/scripting/gdscript/gdscript_basics.rst",
+   "line": 1725,
+   "kind": "script",
+   "old": "error",
+   "new": "skipped",
+   "hand": "intended",
+   "new_msgs": []
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/scripting/gdscript/gdscript_styleguide.rst",
+   "line": 1005,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after function declaration."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/scripting/gdscript/gdscript_styleguide.rst",
+   "line": 712,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after function declaration."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/scripting/gdscript/gdscript_styleguide.rst",
+   "line": 720,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "elision",
+   "hand": "intended",
+   "new_msgs": [
+    "Expected indented block after function declaration."
+   ]
+  },
+  {
+   "stratum": "manual",
+   "file": "tutorials/scripting/gdscript/static_typing.rst",
+   "line": 132,
+   "kind": "decl-fragment",
+   "old": "error",
+   "new": "external",
+   "hand": "tool",
+   "new_msgs": [
+    "Preload file \"res://player/weapons/rifle.gd\" does not exist.",
+    "\"Rifle\" is a constant but does not contain a type."
+   ]
+  }
+ ],
+ "real_blocks": [
+  {
+   "file": "engine_details/engine_api/vendor_runtime_module.rst",
+   "line": 67,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/animation/playing_videos.rst",
+   "line": 339,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/best_practices/godot_interfaces.rst",
+   "line": 138,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/networking/http_client_class.rst",
+   "line": 38,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/ui/creating_applications.rst",
+   "line": 120,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/animation/animation_tree.rst",
+   "line": 98,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/networking/high_level_multiplayer.rst",
+   "line": 708,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/scripting/gdscript/gdscript_exports.rst",
+   "line": 155,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/performance/using_servers.rst",
+   "line": 251,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/animation/animation_tree.rst",
+   "line": 173,
+   "new": "error"
+  },
+  {
+   "file": "tutorials/scripting/gdscript/gdscript_exports.rst",
+   "line": 146,
+   "new": "error"
+  }
+ ],
+ "expectations": {
+  "X1": {
+   "held": true,
+   "real_labelled": 11,
+   "still_error": 11
+  },
+  "X2": {
+   "held": true,
+   "godot_notifications_76": [
+    "ok"
+   ],
+   "class_callable_59_msgs": [
+    [
+     "Identifier \"button_pressed\" not declared in the current scope."
+    ]
+   ]
+  },
+  "X3": {
+   "held": true,
+   "value": 17,
+   "range": [
+    15,
+    19
+   ]
+  },
+  "X4": {
+   "held": true,
+   "value": 32,
+   "range": [
+    28,
+    40
+   ]
+  },
+  "X5": {
+   "held": true,
+   "new_error_blocks": []
+  }
+ },
+ "expectations_held": 5
+}

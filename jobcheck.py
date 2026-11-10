@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-# Sandbox test for gdcheck: real Godot against the fixtures, the Action's own shell step, and two
-# public skill collections as a demonstration. By MV2 of Munim, Inc. Made with AI agents (Anthropic Claude).
+# Sandbox test for gdcheck: real Godot against the fixtures, the Action's own shell step, the install
+# script's SHA-512 check, .gd files at end of file, and two public skill collections as a demonstration.
+# By MV2 of Munim, Inc. Made with AI agents (Anthropic Claude).
 # SPDX-License-Identifier: Apache-2.0
 import json
 import os
@@ -17,6 +18,8 @@ DEMOS = [
     ("wshobson-agents", "https://github.com/wshobson/agents.git"),
     ("gamedev-skills", "https://github.com/gamedev-skills/awesome-gamedev-agent-skills.git"),
 ]
+EOF_SCRIPT = ("extends Node\n\nfunc _ready() -> void:\n    var timer := Timer.new()\n    add_child(timer)\n"
+              "    timer.timeout.connect(func():\n        print(\"tick\")\n    )")
 
 
 def sh(cmd, **kw):
@@ -26,22 +29,25 @@ def sh(cmd, **kw):
     return subprocess.run(cmd, **kw)
 
 
-def install_godot():
-    env = dict(os.environ, RUNNER_TEMP="/tmp/rt", GITHUB_ENV="/tmp/ghenv", GODOT_VERSION="4.7.2")
-    Path("/tmp/rt").mkdir(parents=True, exist_ok=True)
+def install_godot(rt="/tmp/rt", ghenv="/tmp/ghenv", sha=None):
+    env = dict(os.environ, RUNNER_TEMP=rt, GITHUB_ENV=ghenv, GODOT_VERSION="4.7.2")
+    env.pop("GODOT_SHA512", None)
+    if sha is not None:
+        env["GODOT_SHA512"] = sha
+    Path(rt).mkdir(parents=True, exist_ok=True)
     p = sh(["bash", str(HERE / "install_godot.sh")], env=env)
     print(p.stdout[-2000:], p.stderr[-2000:])
     godot = None
-    if Path("/tmp/ghenv").exists():
-        for ln in Path("/tmp/ghenv").read_text().splitlines():
+    if Path(ghenv).exists():
+        for ln in Path(ghenv).read_text().splitlines():
             if ln.startswith("GDCHECK_GODOT="):
                 godot = ln.split("=", 1)[1].strip()
-    return p.returncode, godot
+    return p, godot
 
 
-def run_gdcheck(godot, args, fmt="json"):
-    p = sh([sys.executable, str(HERE / "gdcheck.py"), "--godot", godot, "--format", fmt] + args, cwd=str(HERE))
-    return p
+def run_gdcheck(godot, args, fmt="json", cwd=None):
+    return sh([sys.executable, str(HERE / "gdcheck.py"), "--godot", godot, "--format", fmt] + args,
+              cwd=str(cwd or HERE))
 
 
 def key_results(report):
@@ -87,17 +93,50 @@ def action_step_script():
     return textwrap.dedent("\n".join(body)) + "\n"
 
 
+def eof_check(godot):
+    """A .gd file ending in a lambda: as is (no newline) Godot must reject it and gdcheck must give the
+    hint; with a newline it must pass. A Markdown block with the same code must pass (newline added)."""
+    d = Path("/tmp/eofcheck")
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "eof.gd").write_bytes(EOF_SCRIPT.encode())
+    (d / "eof_nl.gd").write_bytes((EOF_SCRIPT + "\n").encode())
+    (d / "eof.md").write_text("```gdscript\n" + EOF_SCRIPT + "\n```\n", encoding="utf-8")
+    res = {}
+    for name in ("eof.gd", "eof_nl.gd", "eof.md"):
+        p = run_gdcheck(godot, [name], cwd=d)
+        try:
+            r = json.loads(p.stdout)["results"][0]
+            res[name] = {"exit": p.returncode, "status": r["status"],
+                         "msgs": [e["msg"] for e in r["errors"]],
+                         "hint": any(e.get("hint") for e in r["errors"])}
+        except (json.JSONDecodeError, KeyError, IndexError):
+            res[name] = {"exit": p.returncode, "stderr": p.stderr[-400:]}
+    ok = (res["eof.gd"].get("status") == "error" and res["eof.gd"].get("hint") is True
+          and any(m.startswith("Expected end of file") for m in res["eof.gd"].get("msgs", []))
+          and res["eof_nl.gd"].get("status") == "ok" and res["eof.md"].get("status") == "ok")
+    res["ok"] = ok
+    return res
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     report = {"started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
-    rc, godot = install_godot()
-    report["install_exit"] = rc
+    p, godot = install_godot()
+    report["install_exit"] = p.returncode
+    m = re.search(r"SHA-512 verified: ([0-9a-f]{128})", p.stdout)
+    report["install_sha512_verified"] = m.group(1) if m else None
     report["godot"] = godot
-    if rc != 0 or not godot:
+    if p.returncode != 0 or not godot:
         report["passed"] = False
         (OUT / "job-report.json").write_text(json.dumps(report, indent=1))
         print("install failed")
         return 1
+
+    # The install script must refuse a zip whose SHA-512 does not match.
+    pb, gb = install_godot(rt="/tmp/rt-bad", ghenv="/tmp/ghenv-bad", sha="0" * 128)
+    bad_hash_ok = (pb.returncode == 3 and "SHA-512 mismatch" in pb.stderr and gb is None
+                   and not Path("/tmp/rt-bad/gdcheck-godot-4.7.2/godot").exists())
+    report["install_bad_hash"] = {"exit": pb.returncode, "stderr_tail": pb.stderr[-300:], "ok": bad_hash_ok}
 
     expected = json.loads((HERE / "fixtures" / "expected.json").read_text())
     mismatches = []
@@ -111,11 +150,14 @@ def main():
             continue
         mismatches += compare(run, rep, p.returncode)
         report.setdefault("godot_version", rep.get("godot_version"))
+        report.setdefault("gdcheck_version", rep.get("version"))
     p = run_gdcheck(godot, expected["runs"][0]["args"], fmt="github")
     (OUT / "fixtures-main-github.txt").write_text(p.stdout + p.stderr)
-    p = run_gdcheck(godot, expected["runs"][0]["args"], fmt="text")
-    (OUT / "fixtures-main-text.txt").write_text(p.stdout + p.stderr)
+    p = run_gdcheck(godot, ["--fragments", "fixtures/v03.md"], fmt="text")
+    (OUT / "fixtures-v03-text.txt").write_text(p.stdout + p.stderr)
     report["fixture_mismatches"] = mismatches
+
+    report["eof"] = eof_check(godot)
 
     # The agent skill's own examples must pass gdcheck (and the README has no GDScript blocks to fail).
     p = run_gdcheck(godot, ["skills", "README.md"])
@@ -173,7 +215,8 @@ def main():
                        "seconds": round(time.time() - t0, 1),
                        "dirs": [str(Path(d).relative_to(dest)).replace("\\", "/") for d in dirs]}
     report["demos"] = demos
-    report["passed"] = (not mismatches) and action_ok and self_ok
+    report["passed"] = ((not mismatches) and action_ok and self_ok and bad_hash_ok and report["eof"]["ok"]
+                        and report.get("gdcheck_version") == "0.3.0")
     report["finished"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     (OUT / "job-report.json").write_text(json.dumps(report, indent=1))
     print(json.dumps(report, indent=1)[:8000])

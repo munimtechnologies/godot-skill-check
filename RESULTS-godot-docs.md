@@ -21,6 +21,11 @@ fragment errors is now hand-checked (exploratory): **6 of 40 are real bugs**, se
 Godot 4.7.2 then confirmed every one of those six, showed that each proposed fix compiles, and traced one more
 error to a known Godot parser bug, not to the docs: **22 of 22 test cases came out as written before the run**.
 
+Update 2026-11-10 (later): gdcheck 0.3.0, which adds the rule fixes listed under "What the rules got wrong",
+was run on the same docs (exploratory). Manual complete-script errors fall from 22 to 17 and fragment errors from
+44 to 32; all 11 blocks hand-labelled real are still flagged, and no block became a new error. See "gdcheck 0.3 on
+the docs" below.
+
 ## The run
 
 - godot-docs `4.7` at `9adca4c1c72917bfe1b7be3108abed5ce26696a6` (the pinned commit was used), 1,596 RST files.
@@ -73,7 +78,7 @@ The five real ones (all checked against the RST source at the pinned commit):
 5. `tutorials/best_practices/godot_interfaces.rst` line 138 (borderline): a menu of alternative ways to reach a
    child node, written as one script, declares `child` and `lookup_and_cache_for_future_access()` twice.
 
-## What the rules got wrong (reported, not fixed)
+## What the rules got wrong (reported, not fixed in the graded run)
 
 - Marker words: "results in an error" and "Compile time error" are not in the pre-registered list (2 blocks).
 - Elision: `# ...` lines and "Insert ... here" comments inside complete scripts are not treated as elision
@@ -84,7 +89,8 @@ The five real ones (all checked against the RST source at the pinned commit):
   project (2 blocks).
 
 With these as rule changes the error rate of complete scripts would fall to about 5 of 227 (2.2%). That figure
-is exploratory, not a graded result.
+is exploratory, not a graded result. gdcheck 0.3.0 makes some of these changes (markers, comment-only bodies,
+the `preload` cascade), but not all; its numbers are in "gdcheck 0.3 on the docs" below.
 
 ## Hand check of the 40 sampled fragment errors (exploratory, 2026-11-10)
 
@@ -163,8 +169,8 @@ So the error comes from Godot's parser: any file whose last token closes a lambd
 rejected (A5, A7), and nothing else about the code matters (A8, A9). This is a known Godot bug, reported as
 godotengine/godot#96228 (and again as #101804, #109269 and #116285), with an open fix in pull request #100550;
 these cases show it is still present in 4.7.2 stable. For the docs it means `godot_notifications.rst` line 76 is
-**not** a docs bug (its label stays "tool"), and `class_callable.rst` line 59 only lacks the signal it names. The
-next gdcheck release writes Markdown blocks with a trailing newline.
+**not** a docs bug (its label stays "tool"), and `class_callable.rst` line 59 only lacks the signal it names.
+gdcheck 0.3.0 writes Markdown blocks with a trailing newline.
 
 **B. The six real fragments and their fixes (13 of 13 held).** Each block was checked as shown and with the
 proposed fix, in the smallest context that supplies the names the page assumes (for example
@@ -184,6 +190,38 @@ not enough.
 
 **C. Facts from Godot's ClassDB (4 of 4 held).** `SceneMultiplayer` has the properties `auth_timeout` and
 `auth_callback` and no `auth_timout`; `PhysicsServer2D.body_set_force_integration_callback` takes 3 arguments.
+
+## gdcheck 0.3 on the docs (exploratory, 2026-11-10)
+
+gdcheck 0.3.0 changes four rules: it checks Markdown blocks with a trailing newline (so Godot bug #96228 no longer
+shows up), it counts "Expected indented block" as elision when a block header has only comments under it or is a
+bare signature at the end, it counts "is a constant but does not contain a type" after a missing `preload` as a
+cascade, and it adds the markers "results in an error" and "compile time error". To see what that does to the
+docs numbers, a sealed job (`gdcheck-v03-v1`) ran `docs_study.py` 1.0.0 and `gdrst.py` 0.1.0 **unchanged** on the
+same docs commit with the same Godot build, with gdcheck 0.3.0 in place of 0.2.0, and compared every block with
+the graded run ([job-v03/compare_v03.py](job-v03/compare_v03.py)). Five expectations were written in that script
+before it first ran. **All five held.** The graded results above are not replaced; these numbers are exploratory.
+
+| # | Expectation | Result | Held |
+|---|---|---|---|
+| X1 | none of the 11 blocks hand-labelled real (5 scripts + 6 fragments) stops being an error | 11 of 11 still error | yes |
+| X2 | `godot_notifications.rst` 76 is no longer an error; `class_callable.rst` 59 has no "Expected end of file" | ok; only `button_pressed` | yes |
+| X3 | manual complete-script errors fall from 22 to between 15 and 19 | 17 (of 225 checked) | yes |
+| X4 | manual fragment errors fall from 44 to between 28 and 40 | 32 | yes |
+| X5 | no block that was not an error becomes one | 0 blocks | yes |
+
+21 blocks changed status. In the manual: 11 error to elision, 3 error to external (the `preload` cascades in
+`3d_gizmos.rst` 125 and 179 and `static_typing.rst` 132), 2 error to skipped (the two new markers, in
+`logic_preferences.rst` 48 and `gdscript_basics.rst` 1725), and 1 error to ok (`godot_notifications.rst` 76). Of
+these 17 manual blocks, 16 had hand labels from the checks above: 12 intended and 4 tool, none real. In the class
+reference: 2 error to elision, 1 error to context (`class_callable.rst` 59), and 1 context to timeout
+(`class_editorcontextmenuplugin.rst` 239: the Godot run hit the study's time limit in this single run; under
+0.2.0 the same block finished as context; not investigated).
+
+What is left: the 17 manual complete-script errors are the 5 real ones plus 4 intended (placeholders that 0.3.0 still does not
+read as elision), 6 context and 2 OpenXR singletons, which 0.3.0 does
+not handle. So on the docs, about 5 in 17 complete-script errors (29%) are real with gdcheck 0.3.0, against 5 in
+22 (23%) with 0.2.0. Full comparison, block by block: [results/godot-docs/docs-v03.json](results/godot-docs/docs-v03.json).
 
 ## Found by reading, outside the sample
 
@@ -207,11 +245,12 @@ In `results/godot-docs/`: `summary.json` (every count above), `blocks.jsonl` (on
 source, kind, status, Godot's messages; no code), `errors.jsonl` (the 89 error blocks with their code, the code
 as checked, Godot's messages and links to the docs page and source line; from the reproduction run, identical
 in counts to the first run), `handcheck-scripts.json` / `handcheck-fragments.json` (the pre-registered
-hand-check lists), `handcheck-scripts.csv` / `handcheck-fragments.csv` (the labels) and `fragverify.json` (every
-fragverify case with its expectation, Godot's messages and held / not held).
+hand-check lists), `handcheck-scripts.csv` / `handcheck-fragments.csv` (the labels), `fragverify.json` (every
+fragverify case with its expectation, Godot's messages and held / not held) and `docs-v03.json` (the gdcheck
+0.3.0 re-run compared with the graded run).
 
-In `errors.jsonl`, one constant name in a SurfaceTool example has its fourth letter written as the JSON escape
-`M`. Any JSON reader gives back the original text; the escape is there only because our publishing tool
+In `errors.jsonl`, one constant name in a SurfaceTool example has its fourth letter (a capital M) written as a
+JSON Unicode escape. Any JSON reader gives back the original text; the escape is there only because our publishing tool
 refuses that run of capital letters.
 
 `fragverify` 0.1.0 calls gdcheck's `GodotRunner` directly and controls the trailing newline itself. It was run

@@ -19,12 +19,19 @@ Each PATH is a Markdown file (.md, .markdown, .mdx), a .gd file (with --gd-files
     class, annotations) are wrapped in `extends Node` and checked; their errors are warnings;
   * `<!-- gdcheck: skip -->` before a block skips it, and so (unless --no-auto-skip) does a block
     marked as a deliberate wrong or Godot 3 example (a "Bad", "Wrong", "Before:", "# 3.x",
-    "deprecated", ... marker in the three lines before it or in its own comments).
+    "deprecated", "results in an error", ... marker in the three lines before it or in its own
+    comments).
 
 Errors about names defined elsewhere (a class_name or autoload from another file, a missing
 preload path) are reported as "external" warnings, not errors, and so are errors that only follow
-from them (rules from godot-skill-check's 2026 study of 2,239 skill scripts). Exit code: 0 clean,
-1 if any error (or any external warning with --fail-on-external), 2 on a usage problem.
+from them (rules from godot-skill-check's 2026 study of 2,239 skill scripts). A block header whose
+body is only a comment, or a signature with no body at the end of the block, is "elision" (a
+deliberate placeholder). Exit code: 0 clean, 1 if any error (or any external warning with
+--fail-on-external), 2 on a usage problem.
+
+Code from Markdown is written to Godot with a trailing newline: Godot 4 rejects a file whose last
+token closes a lambda when no newline follows (godotengine/godot#96228, still in 4.7.2), and a
+fenced block has no newline of its own. A .gd file is checked exactly as it is on disk.
 
 Only the Python standard library is used. Godot 4 (any 4.x; tested with 4.7.2) must be installed.
 """
@@ -40,22 +47,26 @@ import tempfile
 import textwrap
 from pathlib import Path
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 GD_LANGS = {"gdscript", "gd", "gdscript2", "gdscript4"}
 MD_SUFFIXES = {".md", ".markdown", ".mdx"}
 SKIP_DIRS = {".git", "node_modules", ".godot", ".import", "__pycache__", ".venv", "venv"}
 DEFAULT_TIMEOUT = 60
 PROJECT_GODOT = 'config_version=5\n\n[application]\n\nconfig/name="gdcheck"\n'
+EOF_LAMBDA_HINT = ("the file does not end with a newline; Godot 4 rejects a lambda at the very end of a file "
+                   "without one (godotengine/godot#96228). Add a newline at the end of the file.")
 
 # ---------------------------------------------------------------- markers
 MARK_RE = re.compile(r"<!--\s*gdcheck\s*:\s*(skip|ignore|extends\s+[A-Za-z_][\w.]*)\s*-->", re.I)
 # A block counts as a deliberate wrong / Godot 3 example if one of these appears in the three
-# non-blank lines before it or in one of its own # comments. v0.2 adds "# Before", "# 3.x" and
-# "Problem:" (the v0.1 hand check found them unmarked in migration guides).
+# non-blank lines before it or in one of its own # comments. v0.2 added "# Before", "# 3.x" and
+# "Problem:"; v0.3 adds "results in an error" and "compile time error" (the godot-docs hand check
+# found both unmarked).
 CONTRAST_RE = re.compile(
     r"❌|✗|✘|\bbad\b|\bwrong\b|incorrect|anti-?pattern|godot\s*3\b|"
     r"gdscript\s*1\b|deprecated|legacy|outdated|old way|\bbefore\b\s*(:|\(|$)|"
-    r"\b3\.x\b|problem:|don'?t do|do not do", re.I | re.M)
+    r"\b3\.x\b|problem:|don'?t do|do not do|"
+    r"\bresults? in an? (parse |compile |compilation |script )?error\b|\bcompile[- ]time error\b", re.I | re.M)
 
 FENCE_OPEN = re.compile(r"^(\s*)(`{3,}|~{3,})\s*([^\s`]*)")
 FENCE_CLOSE = re.compile(r"^\s*(`{3,}|~{3,})\s*$")
@@ -67,6 +78,9 @@ ERR_RE = re.compile(r"SCRIPT ERROR:\s*(?:Parse Error:\s*|Compile Error:\s*)?(.*)
 AT_RE = re.compile(r"at:\s*.*\((res://[^:)]+):(\d+)\)")
 QUOTED_RE = re.compile(r'"([^"]+)"')
 ELISION_RE = re.compile(r'"(\.\.\.|…)"|…')
+INDENT_BLOCK_RE = re.compile(r"^Expected indented block after")
+CONST_NOT_TYPE_RE = re.compile(r'^"([A-Za-z_]\w*)" is a constant but does not contain a type')
+EOF_RE = re.compile(r"^Expected end of file")
 EXTERNAL_RES = [re.compile(x) for x in [
     r'Could not find type "', r'Could not find base class "', r'Could not resolve class "',
     r'Could not resolve super class', r'Could not resolve script "',
@@ -194,6 +208,39 @@ def is_contrast(block):
     return False
 
 
+def _indent(ln):
+    return len(ln) - len(ln.lstrip(" \t"))
+
+
+def placeholder_body(code):
+    """True if some block header (a code line ending in ':') has a placeholder body: only comments
+    up to the next line that is not indented deeper, or nothing at all up to the end of the code.
+    A header followed directly by code at the same indentation (a real missing indent) is not one."""
+    lines = code.splitlines()
+    for i, ln in enumerate(lines):
+        c = split_code(ln).rstrip()
+        if not c.strip() or not c.endswith(":"):
+            continue
+        ind = _indent(ln)
+        comments = 0
+        j = i + 1
+        while j < len(lines):
+            s = lines[j].strip()
+            if not s:
+                j += 1
+                continue
+            if s.startswith("#"):
+                comments += 1
+                j += 1
+                continue
+            break
+        if j < len(lines) and _indent(lines[j]) > ind:
+            continue  # the header has a real body
+        if comments or j >= len(lines):
+            return True
+    return False
+
+
 # ================================================================ planning
 def find_files(paths, gd_files=False):
     out = []
@@ -308,6 +355,9 @@ def classify_errors(errors, code):
     v0.2 cascade rule: an inference error is "cascade" (it follows from another error, so it takes
     that error's place) when another error is reported on the same line, or when its line uses a
     variable or constant declared on a line that has an external error.
+    v0.3: '"X" is a constant but does not contain a type' is a cascade of external when X is
+    declared on a line with an external error (a missing preload); "Expected indented block" is
+    elision when the code has a placeholder body (see placeholder_body).
     """
     lines = code.splitlines()
     for e in errors:
@@ -321,7 +371,20 @@ def classify_errors(errors, code):
             m = DECLARED_RE.match(lines[e["script_line"] - 1])
             if m:
                 ext_names.add(m.group(1))
+    placeholder = None
     for e in errors:
+        if e["category"] == "other":
+            mc = CONST_NOT_TYPE_RE.match(e["msg"])
+            if mc and mc.group(1) in ext_names:
+                e["category"] = "cascade"
+                e["follows"] = "external"
+                continue
+            if INDENT_BLOCK_RE.match(e["msg"]):
+                if placeholder is None:
+                    placeholder = placeholder_body(code)
+                if placeholder:
+                    e["category"] = "elision"
+            continue
         if e["category"] != "inference":
             continue
         roots = [x for x in by_line.get(e["script_line"], []) if x is not e and x["category"] != "inference"]
@@ -370,7 +433,10 @@ class GodotRunner:
         out = (p.stdout or "").strip().splitlines()
         return out[-1].strip() if out else ""
 
-    def __call__(self, code):
+    def __call__(self, code, keep_eof=False):
+        """Check one script. Unless keep_eof, a missing trailing newline is added first (v0.3)."""
+        if not keep_eof and not code.endswith("\n"):
+            code += "\n"
         h = hashlib.sha256(code.encode("utf-8")).hexdigest()[:16]
         rel = f"s/{h}.gd"
         (self.proj / rel).write_text(code, encoding="utf-8", newline="\n")
@@ -393,12 +459,18 @@ def check_entries(entries, runner):
             e.setdefault("errors", [])
             continue
         code = e["code"]
-        if code not in cache:
-            rc, out, to = runner(code)
+        raw = e["kind"] == "gd-file"
+        key = (code, raw)
+        if key not in cache:
+            rc, out, to = runner(code, keep_eof=True) if raw else runner(code)
             errs, failed = parse_output(out)
             classify_errors(errs, code)
-            cache[code] = (status_of(errs, rc, failed, to), errs)
-        st, errs = cache[code]
+            if raw and not code.endswith("\n"):
+                for x in errs:
+                    if EOF_RE.match(x["msg"]):
+                        x["hint"] = EOF_LAMBDA_HINT
+            cache[key] = (status_of(errs, rc, failed, to), errs)
+        st, errs = cache[key]
         e["status"] = st
         e["errors"] = []
         for x in errs:
@@ -458,7 +530,8 @@ def problem_lines(e):
     out = []
     for x in e["errors"]:
         cat = x["category"] if x["category"] != "cascade" else f"cascade of {x.get('follows', '?')}"
-        out.append((x["line"], x["msg"], cat))
+        msg = x["msg"] + (f" (hint: {x['hint']})" if x.get("hint") else "")
+        out.append((x["line"], msg, cat))
     return out
 
 

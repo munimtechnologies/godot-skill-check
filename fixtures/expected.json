@@ -1,5 +1,5 @@
 {
- "note": "Expected gdcheck results on the fixtures, written before gdcheck was ever run against Godot. Keys are file#n = the n-th GDScript block in that file.",
+ "note": "Expected gdcheck results on the fixtures, written before gdcheck was ever run against Godot (runs main to strict-external: v0.2, 2026-11-09; run v03: 2026-11-10, before gdcheck 0.3 was first run). Keys are file#n = the n-th GDScript block in that file.",
  "runs": [
   {
    "name": "main",
@@ -54,6 +54,20 @@
    "exit": 1,
    "blocks": {
     "fixtures/external.md#1": {"status": "external"}
+   }
+  },
+  {
+   "name": "v03",
+   "args": ["--fragments", "fixtures/v03.md"],
+   "exit": 1,
+   "blocks": {
+    "fixtures/v03.md#1": {"status": "ok"},
+    "fixtures/v03.md#2": {"status": "elision", "first_category": "elision"},
+    "fixtures/v03.md#3": {"status": "external", "first_category": "external"},
+    "fixtures/v03.md#4": {"status": "skipped"},
+    "fixtures/v03.md#5": {"status": "skipped"},
+    "fixtures/v03.md#6": {"status": "error", "first_category": "other"},
+    "fixtures/v03.md#7": {"status": "elision", "severity": "warning", "first_category": "elision"}
    }
   }
  ]

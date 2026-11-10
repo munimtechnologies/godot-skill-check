@@ -217,9 +217,19 @@ class TestClassify(unittest.TestCase):
         self.assertEqual(self.classify(e, code, False), "elision")
 
     def test_empty_body_without_elision_is_error(self):
-        code = "extends Node\n\nfunc f():\n"
+        # A header followed by code at the same indentation is a real missing indent. (Until gdcheck 0.2
+        # this test used a bare signature at the end of the code; see the next test.)
+        code = "extends Node\n\nfunc f():\nprint(1)\n"
         e = errs(("Expected indented block after function declaration.", 4))
         self.assertEqual(self.classify(e, code, False), "error")
+        self.assertEqual(e[0]["category"], "other")
+
+    def test_bare_signature_at_end_is_elision_since_gdcheck_03(self):
+        # gdcheck 0.3 counts a header with nothing after it as a shown-only signature (elision). The graded
+        # docs-study numbers were made with gdcheck 0.2.0, which counted this as an error.
+        code = "extends Node\n\nfunc f():\n"
+        e = errs(("Expected indented block after function declaration.", 4))
+        self.assertEqual(self.classify(e, code, False), "elision")
 
     def test_ok_and_unknown(self):
         self.assertEqual(r.status_of([], 0, False, False), "ok")

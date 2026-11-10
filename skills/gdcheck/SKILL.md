@@ -13,13 +13,19 @@ with GDScript before you publish it.
 
 ## 1. Get gdcheck and Godot
 
+gdcheck is one Python file (standard library only). It needs a Godot 4 binary. Use a fixed release of
+godot-skill-check, and read `install_godot.sh` (about 50 lines) before you run it: it downloads the official
+Godot Linux build from github.com/godotengine/godot releases and refuses it unless its SHA-512 matches the
+`SHA512-SUMS.txt` that the Godot team publishes with that release.
+
 ```sh
-git clone --depth 1 https://github.com/munimtechnologies/godot-skill-check /tmp/godot-skill-check
+git clone --depth 1 --branch v0.3.0 https://github.com/munimtechnologies/godot-skill-check /tmp/godot-skill-check
 GODOT_VERSION=4.7.2 RUNNER_TEMP=/tmp bash /tmp/godot-skill-check/install_godot.sh   # Linux x86_64
 ```
 
-The last line printed is `GDCHECK_GODOT=<path>`. On macOS or Windows, use an installed Godot 4 binary instead
-and pass its path with `--godot`. Python 3.10+ is needed; nothing else.
+The last line printed is `GDCHECK_GODOT=<path>`. If Godot 4 is already installed (macOS, Windows, or a
+distribution package), skip the script and pass that binary with `--godot`. Python 3.10+ is needed; nothing
+else.
 
 ## 2. Check
 
@@ -33,9 +39,11 @@ Markdown file. Exit code 0 means no errors.
 - `error`: a real problem in the example. Fix it.
 - `external`: the example uses a name defined in another file (a `class_name`, an autoload, a missing `preload`).
   That is a warning. If the reader is not expected to have that file, show it or declare a stub.
+- `elision`: a deliberate placeholder (`...`, a body that is only a comment, a signature on its own). A notice.
 - `fragment`: a partial snippet that was not checked. To check it, put
   `<!-- gdcheck: extends CharacterBody2D -->` (the right base class) on the line before the block.
-- `skipped`: the block is marked as a deliberate wrong or Godot 3 example, or has `<!-- gdcheck: skip -->`.
+- `skipped`: the block is marked as a deliberate wrong or Godot 3 example ("Bad", "results in an error", ...),
+  or has `<!-- gdcheck: skip -->`.
 
 ## 3. Fix the common errors
 
@@ -71,13 +79,28 @@ func die() -> void:
 **Members of the wrong base class.** `velocity`, `move_and_slide()` and `is_on_floor()` exist only on
 `CharacterBody2D`/`CharacterBody3D`; `position` needs a `Node2D` or `Node3D`. Make the `extends` line match.
 
+**A lambda at the very end of a .gd file.** Godot 4 (still in 4.7.2) rejects a file whose last token closes a
+lambda when no newline follows it, with "Expected end of file" (godotengine/godot#96228). When you write a .gd
+file, end it with a newline. gdcheck adds the newline for Markdown blocks and gives this hint for .gd files.
+
+```gdscript
+extends Node
+
+func _ready() -> void:
+	var timer := Timer.new()
+	add_child(timer)
+	timer.timeout.connect(func():
+		print("tick")
+	)
+```
+
 ## 4. In CI
 
 Add the GitHub Action so every pull request is checked:
 
 ```yaml
 - uses: actions/checkout@v4
-- uses: munimtechnologies/godot-skill-check@v0.2.0
+- uses: munimtechnologies/godot-skill-check@v0.3.0
   with:
     paths: skills docs
 ```
