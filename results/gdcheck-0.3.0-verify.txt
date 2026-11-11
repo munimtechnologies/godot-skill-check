@@ -1,0 +1,24 @@
+===== run-01-sh: sh /work/verify.sh
+waited_minutes=0
+abf513b401b32653e574ae665bd9798d250ca485
+50:VERSION = "0.3.0"
+E1 held
+E2 exit=0
+Ran 59 tests in 0.031s
+
+OK
+E3 exit=0
+Ran 27 tests in 0.008s
+
+OK
+E4 exit=0
+Ran 6 tests in 0.000s
+
+OK
+E5 install exit=0
+gdcheck: downloading https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+gdcheck: SHA-512 verified: 9aa00f7a605200940bce3027a567b782f49bd8e940dd06ae9e987bd65aee1b1467edd56ed84fcdcbdd44354bf613bdbb4e5d2913e925850368e150c59ed54c65
+4.7.2.stable.official.ed1daf0bf
+GDCHECK_GODOT=/tmp/rt/gdcheck-godot-4.7.2/godot
+E5 selfcheck exit=0
+gdcheck 0.3.0: Godot 4.7.2.stable.official.ed1daf0bf; 1 files, 3 GDScript blocks: ok 3; exit 0
