@@ -1,0 +1,19 @@
+test_error (test_verify_classref.TestEvaluate.test_error) ... ok
+test_norm_and_probe (test_verify_classref.TestEvaluate.test_norm_and_probe) ... ok
+test_ok (test_verify_classref.TestEvaluate.test_ok) ... ok
+test_export_range_fix (test_verify_classref.TestFixes.test_export_range_fix) ... ok
+test_link_fix (test_verify_classref.TestFixes.test_link_fix) ... ok
+test_missing_or_double_is_refused (test_verify_classref.TestFixes.test_missing_or_double_is_refused) ... ok
+test_node_fix_order (test_verify_classref.TestFixes.test_node_fix_order) ... ok
+test_popup_fix (test_verify_classref.TestFixes.test_popup_fix) ... ok
+test_regex_once (test_verify_classref.TestFixes.test_regex_once) ... ok
+test_single_replacement (test_verify_classref.TestFixes.test_single_replacement) ... ok
+test_cases_are_unique_and_complete (test_verify_classref.TestScripts.test_cases_are_unique_and_complete) ... ok
+test_cases_match_the_real_labels (test_verify_classref.TestScripts.test_cases_match_the_real_labels) ... ok
+test_standalone_indents_statements (test_verify_classref.TestScripts.test_standalone_indents_statements) ... ok
+test_standalone_keeps_blank_lines_empty (test_verify_classref.TestScripts.test_standalone_keeps_blank_lines_empty) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+OK

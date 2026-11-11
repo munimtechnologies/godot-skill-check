@@ -1,0 +1,616 @@
+{
+ "summary": {
+  "classref_verify": "0.1.0",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "real_labels": 12,
+  "verified": 12,
+  "unverified": [],
+  "A_held": 12,
+  "B_held": 12,
+  "C_held": 12,
+  "D_held": 12,
+  "extra_held": [
+   2,
+   3
+  ],
+  "probe_held": [
+   9,
+   9
+  ]
+ },
+ "cases": [
+  {
+   "id": "R01",
+   "file": "classes/class_@gdscript.rst",
+   "line": 642,
+   "key": "\"@export_multiline\" annotation requires",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "\"@export_multiline\" annotation requires a variable of type \"String\", \"Array[String]\", \"PackedStringArray\", \"Dictionary\", or \"Array[Dictionary]\", but type \"Variant\" was given instead."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "\"@export_multiline\" annotation requires a variable of type \"String\", \"Array[String]\", \"PackedStringArray\", \"Dictionary\", or \"Array[Dictionary]\", but type \"Variant\" was given instead."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Node\n@export_multiline var character_biography: String\n@export_multiline var npc_dialogs: Array[String]\n@export_multiline(\"monospace\", \"no_wrap\") var favorite_ascii_art: String\n"
+   },
+   "D": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R02",
+   "file": "classes/class_@gdscript.rst",
+   "line": 706,
+   "key": "Variable \"number\" has the same name",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Variable \"number\" has the same name as a previously declared variable."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Variable \"number\" has the same name as a previously declared variable."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Node\n@export_range(0, 20) var number: int\n@export_range(-10, 20) var number2: int\n@export_range(-10, 20, 0.2) var number3: float\n@export_range(0, 20) var numbers: Array[float]\n\n@export_range(0, 100, 1, \"or_greater\") var power_percent: int\n@export_range(0, 100, 1, \"or_greater\", \"or_less\") var health_delta: int\n\n@export_range(-180, 180, 0.001, \"radians_as_degrees\") var angle_radians: float\n@export_range(0, 360, 1, \"degrees\") var angle_degrees: float\n@export_range(-8, 8, 2, \"suffix:px\") var target_offset: float\n"
+   },
+   "D": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R03",
+   "file": "classes/class_@globalscope.rst",
+   "line": 6415,
+   "key": "Could not find base class \"Sprite\"",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Could not find base class \"Sprite\"."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Could not find base class \"Sprite\"."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Sprite2D\nvar elapsed = 0.0\nfunc _process(delta):\n    var min_angle = deg_to_rad(0.0)\n    var max_angle = deg_to_rad(90.0)\n    rotation = lerp_angle(min_angle, max_angle, elapsed)\n    elapsed += delta\n"
+   },
+   "D": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R04",
+   "file": "classes/class_@globalscope.rst",
+   "line": 7737,
+   "key": "Variable \"a\" has the same name",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Variable \"a\" has the same name as a previously declared variable."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Variable \"a\" has the same name as a previously declared variable."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Node\nvar a = wrap(4, 5, 10)\n# a is 9 (int)\n\nvar b = wrap(7, 5, 10)\n# a is 7 (int)\n\nvar c = wrap(10.5, 5, 10)\n# a is 5.5 (float)\n"
+   },
+   "D": {
+    "status": "error",
+    "msgs": [
+     "Could not find base class \"Sprite\"."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R06",
+   "file": "classes/class_displayserver.rst",
+   "line": 4499,
+   "key": "Expected end of statement after expression, found \"Identifier\"",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Expected end of statement after expression, found \"Identifier\" instead."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Expected end of statement after expression, found \"Identifier\" instead."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Node\nfunc demo():\n    var uri = \"content://com.android...\" # URI of the selected file or folder.\n    var persist = true # Set to false to release the persistable permission.\n    var android_runtime = Engine.get_singleton(\"AndroidRuntime\")\n    android_runtime.updatePersistableUriPermission(uri, persist)\n"
+   },
+   "D": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R07",
+   "file": "classes/class_dtlsserver.rst",
+   "line": 115,
+   "key": "argument 2 should be \"String\" but is \"bool\"",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Cannot pass a value of type \"bool\" as \"String\".",
+     "Invalid argument for \"connect_to_peer()\" function: argument 2 should be \"String\" but is \"bool\"."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Cannot pass a value of type \"bool\" as \"String\".",
+     "Invalid argument for \"connect_to_peer()\" function: argument 2 should be \"String\" but is \"bool\"."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "# client_node.gd\nextends Node\n\nvar dtls = PacketPeerDTLS.new()\nvar udp = PacketPeerUDP.new()\nvar connected = false\n\nfunc _ready():\n    udp.connect_to_host(\"127.0.0.1\", 4242)\n    dtls.connect_to_peer(udp, \"127.0.0.1\", TLSOptions.client_unsafe()) # Use true in production for certificate validation!\n\nfunc _process(delta):\n    dtls.poll()\n    if dtls.get_status() == PacketPeerDTLS.STATUS_CONNECTED:\n        if !connected:\n            # Try to contact server\n            dtls.put_packet(\"The answer is... 42!\".to_utf8_buffer())\n        while dtls.get_available_packet_count() > 0:\n            print(\"Connected: %s\" % dtls.get_packet().get_string_from_utf8())\n            connected = true\n"
+   },
+   "D": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R10",
+   "file": "classes/class_linkbutton.rst",
+   "line": 294,
+   "key": "Invalid escape in string",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Invalid escape in string."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Invalid escape in string."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends LinkButton\nfunc demo():\n    uri = \"https://godotengine.org\"  # Opens the URL in the default web browser.\n    uri = \"C:\\\\SomeFolder\"  # Opens the file explorer at the given path.\n    uri = \"C:\\\\SomeImage.png\"  # Opens the given image in the default viewing app.\n"
+   },
+   "D": {
+    "status": "error",
+    "msgs": [
+     "Identifier \"uri\" not declared in the current scope.",
+     "Identifier \"uri\" not declared in the current scope.",
+     "Identifier \"uri\" not declared in the current scope."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R13",
+   "file": "classes/class_node.rst",
+   "line": 2033,
+   "key": "Variable \"b\" has the same name",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Variable \"b\" has the same name as a previously declared variable."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Variable \"b\" has the same name as a previously declared variable."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Node\n# Assuming the following are children of this node, in order:\n# First, Middle, Last.\n\nvar a = get_child(0).name  # a is \"First\"\nvar b = get_child(1).name  # b is \"Middle\"\nvar c = get_child(2).name  # b is \"Last\"\nvar d = get_child(-1).name # c is \"Last\"\n"
+   },
+   "D": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R14",
+   "file": "classes/class_popupmenu.rst",
+   "line": 913,
+   "key": "Unindent doesn't match the previous indentation level",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Unindent doesn't match the previous indentation level."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Unindent doesn't match the previous indentation level."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends PopupMenu\nfunc _ready():\n    add_multistate_item(\"Item\", 3, 0)\n\n    index_pressed.connect(func(index: int):\n            toggle_item_multistate(index)\n            match get_item_multistate(index):\n                0:\n                    print(\"First state\")\n                1:\n                    print(\"Second state\")\n                2:\n                    print(\"Third state\")\n    )\n"
+   },
+   "D": {
+    "status": "error",
+    "msgs": [
+     "Function \"add_multistate_item()\" not found in base self.",
+     "Identifier \"index_pressed\" not declared in the current scope.",
+     "Function \"toggle_item_multistate()\" not found in base self.",
+     "Function \"get_item_multistate()\" not found in base self."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R15",
+   "file": "classes/class_renderingdevice.rst",
+   "line": 3263,
+   "key": "Cannot find member \"STORAGE_BUFFER_USAGE_SHADER_DEVICE_ADDRESS\"",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Identifier \"rd\" not declared in the current scope.",
+     "Identifier \"rd\" not declared in the current scope.",
+     "Identifier \"bytes\" not declared in the current scope.",
+     "Identifier \"bytes\" not declared in the current scope.",
+     "Cannot find member \"STORAGE_BUFFER_USAGE_SHADER_DEVICE_ADDRESS\" in base \"RenderingDevice\".",
+     "Identifier \"rd\" not declared in the current scope.",
+     "Identifier \"storage_buffer\" not declared in the current scope.",
+     "Identifier \"storage_buffer\" not declared in the current scope.",
+     "Identifier \"rd\" not declared in the current scope.",
+     "Identifier \"storage_buffer_address\" not declared in the current scope."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Cannot find member \"STORAGE_BUFFER_USAGE_SHADER_DEVICE_ADDRESS\" in base \"RenderingDevice\"."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Node\nvar rd: RenderingDevice\nvar storage_buffer: RID\nvar storage_buffer_address: int\nfunc demo(bytes: PackedByteArray):\n    rd = RenderingServer.get_rendering_device()\n\n    if rd.has_feature(RenderingDevice.SUPPORTS_BUFFER_DEVICE_ADDRESS):\n        storage_buffer = rd.storage_buffer_create(bytes.size(), bytes, 0, RenderingDevice.BUFFER_CREATION_DEVICE_ADDRESS_BIT)\n        storage_buffer_address = rd.buffer_get_device_address(storage_buffer)\n"
+   },
+   "D": {
+    "status": "error",
+    "msgs": [
+     "Identifier \"rd\" not declared in the current scope.",
+     "Identifier \"rd\" not declared in the current scope.",
+     "Identifier \"bytes\" not declared in the current scope.",
+     "Identifier \"bytes\" not declared in the current scope.",
+     "Identifier \"rd\" not declared in the current scope.",
+     "Identifier \"storage_buffer\" not declared in the current scope.",
+     "Identifier \"storage_buffer\" not declared in the current scope.",
+     "Identifier \"rd\" not declared in the current scope.",
+     "Identifier \"storage_buffer_address\" not declared in the current scope."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R16",
+   "file": "classes/class_renderingdevice.rst",
+   "line": 6854,
+   "key": "cannot be constructed as it is abstract",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Native class \"RenderingDevice\" cannot be constructed as it is abstract.",
+     "Name \"new\" is a Callable. You can call it with \"new.call()\" instead.",
+     "Identifier \"vertex_buffer\" not declared in the current scope.",
+     "Identifier \"index_buffer\" not declared in the current scope.",
+     "Identifier \"geometries\" not declared in the current scope.",
+     "Identifier \"blas\" not declared in the current scope.",
+     "Identifier \"tlas\" not declared in the current scope.",
+     "Identifier \"blas\" not declared in the current scope.",
+     "Identifier \"blas\" not declared in the current scope.",
+     "Identifier \"hit_sbt\" not declared in the current scope.",
+     "Identifier \"hit_sbt\" not declared in the current scope.",
+     "Identifier \"tlas\" not declared in the current scope.",
+     "Identifier \"raytracing_pipeline\" not declared in the current scope.",
+     "Identifier \"uniform_set\" not declared in the current scope.",
+     "Identifier \"hit_sbt\" not declared in the current scope."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Native class \"RenderingDevice\" cannot be constructed as it is abstract.",
+     "Name \"new\" is a Callable. You can call it with \"new.call()\" instead."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Node\nvar vertex_buffer: RID\nvar index_buffer: RID\nvar geometries: Array = []\nvar blas: RID\nvar tlas: RID\nvar hit_sbt: RID\nvar raytracing_pipeline: RID\nvar uniform_set: RID\nfunc demo():\n    var rd = RenderingServer.create_local_rendering_device()\n    assert(rd.has_feature(RenderingDevice.SUPPORTS_RAYTRACING_PIPELINE))\n\n    # Create a BLAS for a mesh.\n    var geometry = RDAccelerationStructureGeometry.new()\n    geometry.flags = RenderingDevice.ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE_BIT\n    geometry.vertex_buffer = vertex_buffer\n    geometry.vertex_stride = 12\n    geometry.vertex_format = RenderingDevice.DATA_FORMAT_R32G32B32_SFLOAT\n    geometry.vertex_count = 3\n    geometry.index_buffer = index_buffer\n    geometry.index_count = 3\n    geometries.push_back(geometry)\n\n    blas = rd.blas_create([geometry], 0)\n\n    # Create TLAS.\n    tlas = rd.tlas_create(1, 0)\n\n    # Build acceleration structures.\n    rd.blas_build(blas)\n\n    var instance = RDAccelerationStructureInstance.new()\n    instance.blas = blas\n\n    instance.hit_sbt_range = rd.hit_sbt_range_alloc(hit_sbt, 1)\n    rd.hit_sbt_range_update(hit_sbt, instance.hit_sbt_range, 0, [0])\n\n    rd.tlas_build(tlas, [instance])\n\n    var raylist = rd.raytracing_list_begin()\n\n    # Bind pipeline and uniforms.\n    rd.raytracing_list_bind_raytracing_pipeline(raylist, raytracing_pipeline)\n    rd.raytracing_list_bind_uniform_set(raylist, uniform_set, 0)\n\n    # Trace rays.\n    var width = get_viewport().size.x\n    var height = get_viewport().size.y\n    rd.raytracing_list_trace_rays(raylist, 0, hit_sbt, width, height, 1)\n\n    rd.raytracing_list_end()\n"
+   },
+   "D": {
+    "status": "error",
+    "msgs": [
+     "Identifier \"vertex_buffer\" not declared in the current scope.",
+     "Identifier \"index_buffer\" not declared in the current scope.",
+     "Identifier \"geometries\" not declared in the current scope.",
+     "Identifier \"blas\" not declared in the current scope.",
+     "Identifier \"tlas\" not declared in the current scope.",
+     "Identifier \"blas\" not declared in the current scope.",
+     "Identifier \"blas\" not declared in the current scope.",
+     "Identifier \"hit_sbt\" not declared in the current scope.",
+     "Identifier \"hit_sbt\" not declared in the current scope.",
+     "Identifier \"tlas\" not declared in the current scope.",
+     "Identifier \"raytracing_pipeline\" not declared in the current scope.",
+     "Identifier \"uniform_set\" not declared in the current scope.",
+     "Identifier \"hit_sbt\" not declared in the current scope."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  },
+  {
+   "id": "R18",
+   "file": "classes/class_spinbox.rst",
+   "line": 36,
+   "key": "Cannot find member \"HORIZONTAL_ALIGNMENT_RIGHT\" in base \"LineEdit\"",
+   "key_recorded": true,
+   "A": {
+    "status": "error",
+    "msgs": [
+     "Cannot find member \"HORIZONTAL_ALIGNMENT_RIGHT\" in base \"LineEdit\"."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "C": {
+    "status": "error",
+    "msgs": [
+     "Cannot find member \"HORIZONTAL_ALIGNMENT_RIGHT\" in base \"LineEdit\"."
+    ],
+    "held": true,
+    "why_not": ""
+   },
+   "B": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": "",
+    "code": "extends Node\nfunc demo():\n    var spin_box = SpinBox.new()\n    add_child(spin_box)\n    var line_edit = spin_box.get_line_edit()\n    line_edit.context_menu_enabled = false\n    spin_box.alignment = HORIZONTAL_ALIGNMENT_RIGHT\n"
+   },
+   "D": {
+    "status": "ok",
+    "msgs": [],
+    "held": true,
+    "why_not": ""
+   },
+   "verified": true
+  }
+ ],
+ "extra": [
+  {
+   "status": "ok",
+   "msgs": [],
+   "held": false,
+   "why_not": "expected errors, got none (status ok)",
+   "id": "X1",
+   "base": "R02",
+   "about": "names made distinct but no types added: untyped @export_range fails too",
+   "expect": "error"
+  },
+  {
+   "status": "ok",
+   "msgs": [],
+   "held": true,
+   "why_not": "",
+   "id": "X2",
+   "base": "R18",
+   "about": "only LineEdit. dropped: --check-only does not see the wrong property name horizontal_alignment on an inferred type",
+   "expect": "ok"
+  },
+  {
+   "status": "ok",
+   "msgs": [],
+   "held": true,
+   "why_not": "",
+   "id": "X3",
+   "base": "R07",
+   "about": "hostname only, default TLS options",
+   "expect": "ok"
+  }
+ ],
+ "probe": [
+  {
+   "key": "sprite_exists",
+   "expect": "false",
+   "got": "false",
+   "held": true
+  },
+  {
+   "key": "sprite2d_exists",
+   "expect": "true",
+   "got": "true",
+   "held": true
+  },
+  {
+   "key": "rd_can_instantiate",
+   "expect": "false",
+   "got": "false",
+   "held": true
+  },
+  {
+   "key": "rd_storage_shader_device_address",
+   "expect": "false",
+   "got": "false",
+   "held": true
+  },
+  {
+   "key": "rd_buffer_creation_device_address_bit",
+   "expect": "true",
+   "got": "true",
+   "held": true
+  },
+  {
+   "key": "lineedit_horizontal_alignment_right",
+   "expect": "false",
+   "got": "false",
+   "held": true
+  },
+  {
+   "key": "spinbox_horizontal_alignment",
+   "expect": "false",
+   "got": "false",
+   "held": true
+  },
+  {
+   "key": "spinbox_alignment",
+   "expect": "true",
+   "got": "true",
+   "held": true
+  },
+  {
+   "key": "dtls_arg2_type",
+   "expect": "4",
+   "got": "4",
+   "held": true
+  }
+ ]
+}

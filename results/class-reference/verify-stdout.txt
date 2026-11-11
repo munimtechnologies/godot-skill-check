@@ -1,0 +1,43 @@
+R01 A=True C=True B=True D=True verified=True  classes/class_@gdscript.rst:642
+R02 A=True C=True B=True D=True verified=True  classes/class_@gdscript.rst:706
+R03 A=True C=True B=True D=True verified=True  classes/class_@globalscope.rst:6415
+R04 A=True C=True B=True D=True verified=True  classes/class_@globalscope.rst:7737
+R06 A=True C=True B=True D=True verified=True  classes/class_displayserver.rst:4499
+R07 A=True C=True B=True D=True verified=True  classes/class_dtlsserver.rst:115
+R10 A=True C=True B=True D=True verified=True  classes/class_linkbutton.rst:294
+R13 A=True C=True B=True D=True verified=True  classes/class_node.rst:2033
+R14 A=True C=True B=True D=True verified=True  classes/class_popupmenu.rst:913
+R15 A=True C=True B=True D=True verified=True  classes/class_renderingdevice.rst:3263
+R16 A=True C=True B=True D=True verified=True  classes/class_renderingdevice.rst:6854
+R18 A=True C=True B=True D=True verified=True  classes/class_spinbox.rst:36
+X1 held=False status=ok  names made distinct but no types added: untyped @export_range fails too
+X2 held=True status=ok  only LineEdit. dropped: --check-only does not see the wrong property name horizontal_alignment on an inferred type
+X3 held=True status=ok  hostname only, default TLS options
+P sprite_exists expect=false got=false
+P sprite2d_exists expect=true got=true
+P rd_can_instantiate expect=false got=false
+P rd_storage_shader_device_address expect=false got=false
+P rd_buffer_creation_device_address_bit expect=true got=true
+P lineedit_horizontal_alignment_right expect=false got=false
+P spinbox_horizontal_alignment expect=false got=false
+P spinbox_alignment expect=true got=true
+P dtls_arg2_type expect=4 got=4
+{
+ "classref_verify": "0.1.0",
+ "godot_version": "4.7.2.stable.official.ed1daf0bf",
+ "real_labels": 12,
+ "verified": 12,
+ "unverified": [],
+ "A_held": 12,
+ "B_held": 12,
+ "C_held": 12,
+ "D_held": 12,
+ "extra_held": [
+  2,
+  3
+ ],
+ "probe_held": [
+  9,
+  9
+ ]
+}
