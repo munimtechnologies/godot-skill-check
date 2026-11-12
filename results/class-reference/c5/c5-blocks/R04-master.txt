@@ -1,0 +1,14 @@
+# R04 doc/classes/@GlobalScope.xml @ 069458825a8e4a01938a176372c0709ab6fd9dc3, block 82, ratio 1.0
+# repr of the raw block follows the text
+
+				var a = wrap(4, 5, 10)
+				# a is 9 (int)
+
+				var a = wrap(7, 5, 10)
+				# a is 7 (int)
+
+				var a = wrap(10.5, 5, 10)
+				# a is 5.5 (float)
+				
+
+'\n\t\t\t\tvar a = wrap(4, 5, 10)\n\t\t\t\t# a is 9 (int)\n\n\t\t\t\tvar a = wrap(7, 5, 10)\n\t\t\t\t# a is 7 (int)\n\n\t\t\t\tvar a = wrap(10.5, 5, 10)\n\t\t\t\t# a is 5.5 (float)\n\t\t\t\t'

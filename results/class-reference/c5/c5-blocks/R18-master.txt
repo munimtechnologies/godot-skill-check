@@ -1,0 +1,11 @@
+# R18 doc/classes/SpinBox.xml @ 069458825a8e4a01938a176372c0709ab6fd9dc3, block 0, ratio 1.0
+# repr of the raw block follows the text
+
+		var spin_box = SpinBox.new()
+		add_child(spin_box)
+		var line_edit = spin_box.get_line_edit()
+		line_edit.context_menu_enabled = false
+		spin_box.horizontal_alignment = LineEdit.HORIZONTAL_ALIGNMENT_RIGHT
+		
+
+'\n\t\tvar spin_box = SpinBox.new()\n\t\tadd_child(spin_box)\n\t\tvar line_edit = spin_box.get_line_edit()\n\t\tline_edit.context_menu_enabled = false\n\t\tspin_box.horizontal_alignment = LineEdit.HORIZONTAL_ALIGNMENT_RIGHT\n\t\t'

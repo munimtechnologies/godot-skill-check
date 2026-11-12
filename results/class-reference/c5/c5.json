@@ -1,0 +1,448 @@
+{
+ "summary": {
+  "classref_c5": "0.1.0",
+  "refs": {
+   "master": {
+    "sha": "069458825a8e4a01938a176372c0709ab6fd9dc3",
+    "date": "2026-11-11T17:27:55Z"
+   },
+   "4.7": {
+    "sha": "8521df165a44db92bcc4c878d4d7e53714652c97",
+    "date": "2026-11-04T14:05:40Z"
+   }
+  },
+  "verified": 12,
+  "same_in_master": 12,
+  "same_in_master_ids": [
+   "R01",
+   "R02",
+   "R03",
+   "R04",
+   "R06",
+   "R07",
+   "R10",
+   "R13",
+   "R14",
+   "R15",
+   "R16",
+   "R18"
+  ],
+  "same_in_master_15": [
+   7,
+   7
+  ],
+  "control_same": 12,
+  "control_failed": [],
+  "c5_threshold_20": 6,
+  "c5_threshold_15": 4
+ },
+ "cases": [
+  {
+   "id": "R01",
+   "file": "classes/class_@gdscript.rst",
+   "line": 642,
+   "xml": "modules/gdscript/doc_classes/@GDScript.xml",
+   "glanced": true,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 47,
+    "n_blocks": 62
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 47,
+    "n_blocks": 62
+   }
+  },
+  {
+   "id": "R02",
+   "file": "classes/class_@gdscript.rst",
+   "line": 706,
+   "xml": "modules/gdscript/doc_classes/@GDScript.xml",
+   "glanced": false,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 50,
+    "n_blocks": 62
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 50,
+    "n_blocks": 62
+   }
+  },
+  {
+   "id": "R03",
+   "file": "classes/class_@globalscope.rst",
+   "line": 6415,
+   "xml": "doc/classes/@GlobalScope.xml",
+   "glanced": false,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 29,
+    "n_blocks": 94
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 29,
+    "n_blocks": 94
+   }
+  },
+  {
+   "id": "R04",
+   "file": "classes/class_@globalscope.rst",
+   "line": 7737,
+   "xml": "doc/classes/@GlobalScope.xml",
+   "glanced": false,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 82,
+    "n_blocks": 94
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 82,
+    "n_blocks": 94
+   }
+  },
+  {
+   "id": "R06",
+   "file": "classes/class_displayserver.rst",
+   "line": 4499,
+   "xml": "doc/classes/DisplayServer.xml",
+   "glanced": true,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 0,
+    "n_blocks": 17
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 0,
+    "n_blocks": 17
+   }
+  },
+  {
+   "id": "R07",
+   "file": "classes/class_dtlsserver.rst",
+   "line": 115,
+   "xml": "doc/classes/DTLSServer.xml",
+   "glanced": true,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 1,
+    "n_blocks": 2
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 1,
+    "n_blocks": 2
+   }
+  },
+  {
+   "id": "R10",
+   "file": "classes/class_linkbutton.rst",
+   "line": 294,
+   "xml": "doc/classes/LinkButton.xml",
+   "glanced": true,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 0,
+    "n_blocks": 1
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 0,
+    "n_blocks": 1
+   }
+  },
+  {
+   "id": "R13",
+   "file": "classes/class_node.rst",
+   "line": 2033,
+   "xml": "doc/classes/Node.xml",
+   "glanced": false,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 3,
+    "n_blocks": 14
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 3,
+    "n_blocks": 14
+   }
+  },
+  {
+   "id": "R14",
+   "file": "classes/class_popupmenu.rst",
+   "line": 913,
+   "xml": "doc/classes/PopupMenu.xml",
+   "glanced": false,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": true,
+    "best_ratio": 1.0,
+    "best_index": 0,
+    "n_blocks": 1
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": true,
+    "best_ratio": 1.0,
+    "best_index": 0,
+    "n_blocks": 1
+   }
+  },
+  {
+   "id": "R15",
+   "file": "classes/class_renderingdevice.rst",
+   "line": 3263,
+   "xml": "doc/classes/RenderingDevice.xml",
+   "glanced": false,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 6,
+    "n_blocks": 8
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 6,
+    "n_blocks": 8
+   }
+  },
+  {
+   "id": "R16",
+   "file": "classes/class_renderingdevice.rst",
+   "line": 6854,
+   "xml": "doc/classes/RenderingDevice.xml",
+   "glanced": false,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 4,
+    "n_blocks": 8
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 4,
+    "n_blocks": 8
+   }
+  },
+  {
+   "id": "R18",
+   "file": "classes/class_spinbox.rst",
+   "line": 36,
+   "xml": "doc/classes/SpinBox.xml",
+   "glanced": true,
+   "master": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 0,
+    "n_blocks": 1
+   },
+   "4.7": {
+    "same": true,
+    "same_ignoring_ws": true,
+    "fixed_present": false,
+    "best_ratio": 1.0,
+    "best_index": 0,
+    "n_blocks": 1
+   }
+  }
+ ],
+ "searches": {
+  "R01": {
+   "query": "\"character_biography\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 1,
+   "items": [
+    {
+     "repo": "godot",
+     "number": 82952,
+     "title": "Allow `@export`ed Arrays to set property hints for their elements",
+     "state": "closed",
+     "is_pr": true,
+     "created_at": "2023-10-07T10:37:19Z",
+     "url": "https://github.com/godotengine/godot/pull/82952"
+    }
+   ]
+  },
+  "R02": {
+   "query": "\"export_range\" \"power_percent\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 0,
+   "items": []
+  },
+  "R03": {
+   "query": "\"lerp_angle\" \"extends Sprite\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 1,
+   "items": [
+    {
+     "repo": "godot",
+     "number": 38276,
+     "title": "Add Math::slerp_angle",
+     "state": "closed",
+     "is_pr": true,
+     "created_at": "2020-04-28T00:46:57Z",
+     "url": "https://github.com/godotengine/godot/pull/38276"
+    }
+   ]
+  },
+  "R04": {
+   "query": "\"wrap(10.5, 5, 10)\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 0,
+   "items": []
+  },
+  "R06": {
+   "query": "\"updatePersistableUriPermission\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 0,
+   "items": []
+  },
+  "R07": {
+   "query": "\"connect_to_peer(udp, false)\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 0,
+   "items": []
+  },
+  "R10": {
+   "query": "\"SomeFolder\" LinkButton repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 1,
+   "items": [
+    {
+     "repo": "godot",
+     "number": 30675,
+     "title": "Add a `uri` property to `LinkButton`",
+     "state": "closed",
+     "is_pr": true,
+     "created_at": "2019-07-18T11:37:59Z",
+     "url": "https://github.com/godotengine/godot/pull/30675"
+    }
+   ]
+  },
+  "R13": {
+   "query": "\"get_child(-1).name\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 2,
+   "items": [
+    {
+     "repo": "godot",
+     "number": 53665,
+     "title": "Godot 64bit editor can not use more than 3.1gb of RAM in PoolVector due to the maximum number of allocations being exceeded",
+     "state": "closed",
+     "is_pr": false,
+     "created_at": "2021-10-11T07:34:00Z",
+     "url": "https://github.com/godotengine/godot/issues/53665"
+    },
+    {
+     "repo": "godot",
+     "number": 118709,
+     "title": "`StringName` has no `operator[]` to extract single characters, like `String`",
+     "state": "closed",
+     "is_pr": false,
+     "created_at": "2026-04-18T10:40:37Z",
+     "url": "https://github.com/godotengine/godot/issues/118709"
+    }
+   ]
+  },
+  "R14": {
+   "query": "\"add_multistate_item\" lambda repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 0,
+   "items": []
+  },
+  "R15": {
+   "query": "\"STORAGE_BUFFER_USAGE_SHADER_DEVICE_ADDRESS\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 1,
+   "items": [
+    {
+     "repo": "godot",
+     "number": 100062,
+     "title": "Implement Buffer Device Address for Rendering Device Vulkan and DirectX12",
+     "state": "closed",
+     "is_pr": true,
+     "created_at": "2024-12-05T17:49:11Z",
+     "url": "https://github.com/godotengine/godot/pull/100062"
+    }
+   ]
+  },
+  "R16": {
+   "query": "\"RenderingDevice.new()\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 1,
+   "items": [
+    {
+     "repo": "godot",
+     "number": 38431,
+     "title": "register RenderingDevice as gdscript singleton",
+     "state": "closed",
+     "is_pr": true,
+     "created_at": "2020-05-03T10:02:41Z",
+     "url": "https://github.com/godotengine/godot/pull/38431"
+    }
+   ]
+  },
+  "R18": {
+   "query": "\"LineEdit.HORIZONTAL_ALIGNMENT_RIGHT\" repo:godotengine/godot repo:godotengine/godot-docs",
+   "total_count": 0,
+   "items": []
+  }
+ }
+}

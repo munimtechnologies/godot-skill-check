@@ -52,6 +52,23 @@ Full write-up: **[RESULTS-godot-docs.md](RESULTS-godot-docs.md)** (pre-registere
 - Every proposed fix was tested with Godot 4.7.2 (fragverify 0.1.0: 22 of 22 cases as expected).
 - 5 of 7 predictions held (P1 and P4 missed). Data in [results/godot-docs/](results/godot-docs/).
 
+## Results: the Godot class reference (2026-11-12)
+
+Full write-up: **[results/class-reference/RESULTS.md](results/class-reference/RESULTS.md)** (pre-registered in
+[PREREGISTRATION-class-reference.md](PREREGISTRATION-class-reference.md)).
+
+- gdcheck 0.3.0 marks 20 GDScript blocks in the class reference part of the Godot 4.7 docs as errors. One reader
+  labelled 12 of them real bugs before any verification, and **Godot 4.7.2 confirmed all 12**: the error
+  reproduces, and a correction written before the run passes with no error.
+- Most are single API facts that went stale under the example: a Godot 3 class name (`Sprite`), an old method
+  signature, a constant that no longer exists, an abstract class created with `new()`. Others are a variable
+  declared twice, `val` for `var`, and an unescaped Windows path.
+- **All 12 are still the same code on `master`** (commit `069458825a8e`, checked 2026-11-12), and a search of
+  godotengine issues and pull requests found no earlier report of any of them. 3 of 5 predictions held on all 20
+  blocks (C1 and C4 missed).
+- Nothing has been filed on any godotengine repository: Godot's 2026 contribution policy bans autonomous AI
+  agents and AI-written text there.
+
 ## Check your own skill or docs: gdcheck
 
 `gdcheck.py` (Python standard library only, plus a Godot 4 binary) reads every ```` ```gdscript ```` / ```` ```gd ````

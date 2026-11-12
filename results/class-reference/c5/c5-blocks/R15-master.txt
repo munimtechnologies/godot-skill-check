@@ -1,0 +1,11 @@
+# R15 doc/classes/RenderingDevice.xml @ 069458825a8e4a01938a176372c0709ab6fd9dc3, block 6, ratio 1.0
+# repr of the raw block follows the text
+
+			rd = RenderingServer.get_rendering_device()
+
+			if rd.has_feature(RenderingDevice.SUPPORTS_BUFFER_DEVICE_ADDRESS):
+				storage_buffer = rd.storage_buffer_create(bytes.size(), bytes, RenderingDevice.STORAGE_BUFFER_USAGE_SHADER_DEVICE_ADDRESS)
+				storage_buffer_address = rd.buffer_get_device_address(storage_buffer)
+			
+
+'\n\t\t\trd = RenderingServer.get_rendering_device()\n\n\t\t\tif rd.has_feature(RenderingDevice.SUPPORTS_BUFFER_DEVICE_ADDRESS):\n\t\t\t\tstorage_buffer = rd.storage_buffer_create(bytes.size(), bytes, RenderingDevice.STORAGE_BUFFER_USAGE_SHADER_DEVICE_ADDRESS)\n\t\t\t\tstorage_buffer_address = rd.buffer_get_device_address(storage_buffer)\n\t\t\t'

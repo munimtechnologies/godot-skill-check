@@ -1,0 +1,17 @@
+# R02 modules/gdscript/doc_classes/@GDScript.xml @ 8521df165a44db92bcc4c878d4d7e53714652c97, block 50, ratio 1.0
+# repr of the raw block follows the text
+
+				@export_range(0, 20) var number
+				@export_range(-10, 20) var number
+				@export_range(-10, 20, 0.2) var number: float
+				@export_range(0, 20) var numbers: Array[float]
+
+				@export_range(0, 100, 1, "or_greater") var power_percent
+				@export_range(0, 100, 1, "or_greater", "or_less") var health_delta
+
+				@export_range(-180, 180, 0.001, "radians_as_degrees") var angle_radians
+				@export_range(0, 360, 1, "degrees") var angle_degrees
+				@export_range(-8, 8, 2, "suffix:px") var target_offset
+				
+
+'\n\t\t\t\t@export_range(0, 20) var number\n\t\t\t\t@export_range(-10, 20) var number\n\t\t\t\t@export_range(-10, 20, 0.2) var number: float\n\t\t\t\t@export_range(0, 20) var numbers: Array[float]\n\n\t\t\t\t@export_range(0, 100, 1, "or_greater") var power_percent\n\t\t\t\t@export_range(0, 100, 1, "or_greater", "or_less") var health_delta\n\n\t\t\t\t@export_range(-180, 180, 0.001, "radians_as_degrees") var angle_radians\n\t\t\t\t@export_range(0, 360, 1, "degrees") var angle_degrees\n\t\t\t\t@export_range(-8, 8, 2, "suffix:px") var target_offset\n\t\t\t\t'

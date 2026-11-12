@@ -1,0 +1,26 @@
+# R07 doc/classes/DTLSServer.xml @ 069458825a8e4a01938a176372c0709ab6fd9dc3, block 1, ratio 1.0
+# repr of the raw block follows the text
+
+		# client_node.gd
+		extends Node
+
+		var dtls = PacketPeerDTLS.new()
+		var udp = PacketPeerUDP.new()
+		var connected = false
+
+		func _ready():
+			udp.connect_to_host("127.0.0.1", 4242)
+			dtls.connect_to_peer(udp, false) # Use true in production for certificate validation!
+
+		func _process(delta):
+			dtls.poll()
+			if dtls.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
+				if !connected:
+					# Try to contact server
+					dtls.put_packet("The answer is... 42!".to_utf8_buffer())
+				while dtls.get_available_packet_count() > 0:
+					print("Connected: %s" % dtls.get_packet().get_string_from_utf8())
+					connected = true
+		
+
+'\n\t\t# client_node.gd\n\t\textends Node\n\n\t\tvar dtls = PacketPeerDTLS.new()\n\t\tvar udp = PacketPeerUDP.new()\n\t\tvar connected = false\n\n\t\tfunc _ready():\n\t\t\tudp.connect_to_host("127.0.0.1", 4242)\n\t\t\tdtls.connect_to_peer(udp, false) # Use true in production for certificate validation!\n\n\t\tfunc _process(delta):\n\t\t\tdtls.poll()\n\t\t\tif dtls.get_status() == PacketPeerDTLS.STATUS_CONNECTED:\n\t\t\t\tif !connected:\n\t\t\t\t\t# Try to contact server\n\t\t\t\t\tdtls.put_packet("The answer is... 42!".to_utf8_buffer())\n\t\t\t\twhile dtls.get_available_packet_count() > 0:\n\t\t\t\t\tprint("Connected: %s" % dtls.get_packet().get_string_from_utf8())\n\t\t\t\t\tconnected = true\n\t\t'

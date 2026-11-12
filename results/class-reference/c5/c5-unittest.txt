@@ -1,0 +1,13 @@
+test_contiguous_only (test_c5_upstream.ContainsTests.test_contiguous_only) ... ok
+test_indentation_difference_is_seen (test_c5_upstream.NormTests.test_indentation_difference_is_seen) ... ok
+test_inner_blank_lines_kept (test_c5_upstream.NormTests.test_inner_blank_lines_kept) ... ok
+test_rst_style_matches_xml_style (test_c5_upstream.NormTests.test_rst_style_matches_xml_style) ... ok
+test_tabs_and_common_indent (test_c5_upstream.NormTests.test_tabs_and_common_indent) ... ok
+test_every_case_has_a_query_and_xml (test_c5_upstream.SetupTests.test_every_case_has_a_query_and_xml) ... ok
+test_blocks_found_and_unescaped (test_c5_upstream.XmlTests.test_blocks_found_and_unescaped) ... ok
+test_compare (test_c5_upstream.XmlTests.test_compare) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK

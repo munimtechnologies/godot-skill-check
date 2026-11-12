@@ -1,0 +1,13 @@
+# R03 doc/classes/@GlobalScope.xml @ 069458825a8e4a01938a176372c0709ab6fd9dc3, block 29, ratio 1.0
+# repr of the raw block follows the text
+
+				extends Sprite
+				var elapsed = 0.0
+				func _process(delta):
+					var min_angle = deg_to_rad(0.0)
+					var max_angle = deg_to_rad(90.0)
+					rotation = lerp_angle(min_angle, max_angle, elapsed)
+					elapsed += delta
+				
+
+'\n\t\t\t\textends Sprite\n\t\t\t\tvar elapsed = 0.0\n\t\t\t\tfunc _process(delta):\n\t\t\t\t\tvar min_angle = deg_to_rad(0.0)\n\t\t\t\t\tvar max_angle = deg_to_rad(90.0)\n\t\t\t\t\trotation = lerp_angle(min_angle, max_angle, elapsed)\n\t\t\t\t\telapsed += delta\n\t\t\t\t'

@@ -1,0 +1,10 @@
+# R06 doc/classes/DisplayServer.xml @ 8521df165a44db92bcc4c878d4d7e53714652c97, block 0, ratio 1.0
+# repr of the raw block follows the text
+
+				val uri = "content://com.android..." # URI of the selected file or folder.
+				val persist = true # Set to false to release the persistable permission.
+				var android_runtime = Engine.get_singleton("AndroidRuntime")
+				android_runtime.updatePersistableUriPermission(uri, persist)
+				
+
+'\n\t\t\t\tval uri = "content://com.android..." # URI of the selected file or folder.\n\t\t\t\tval persist = true # Set to false to release the persistable permission.\n\t\t\t\tvar android_runtime = Engine.get_singleton("AndroidRuntime")\n\t\t\t\tandroid_runtime.updatePersistableUriPermission(uri, persist)\n\t\t\t\t'

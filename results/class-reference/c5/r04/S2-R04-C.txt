@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+SCRIPT ERROR: Parse Error: Variable "a" has the same name as a previously declared variable.
+          at: GDScript::reload (res://s/83192ee663802cc6.gd:5)
+ERROR: Failed to load script "res://s/83192ee663802cc6.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

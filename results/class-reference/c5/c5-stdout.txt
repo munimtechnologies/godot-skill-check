@@ -1,0 +1,70 @@
+REF master 069458825a8e4a01938a176372c0709ab6fd9dc3 2026-11-11T17:27:55Z
+REF 4.7 8521df165a44db92bcc4c878d4d7e53714652c97 2026-11-04T14:05:40Z
+R01 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_@gdscript.rst:642
+R02 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_@gdscript.rst:706
+R03 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_@globalscope.rst:6415
+R04 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_@globalscope.rst:7737
+R06 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_displayserver.rst:4499
+R07 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_dtlsserver.rst:115
+R10 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_linkbutton.rst:294
+R13 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_node.rst:2033
+R14 master same=True ws=True fixed=True ratio=1.0 | control same=True  classes/class_popupmenu.rst:913
+R15 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_renderingdevice.rst:3263
+R16 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_renderingdevice.rst:6854
+R18 master same=True ws=True fixed=False ratio=1.0 | control same=True  classes/class_spinbox.rst:36
+S R01 total=1 
+   godot#82952 PR closed Allow `@export`ed Arrays to set property hints for their elements
+S R02 total=0 
+S R03 total=1 
+   godot#38276 PR closed Add Math::slerp_angle
+S R04 total=0 
+S R06 total=0 
+S R07 total=0 
+S R10 total=1 
+   godot#30675 PR closed Add a `uri` property to `LinkButton`
+S R13 total=2 
+   godot#53665 issue closed Godot 64bit editor can not use more than 3.1gb of RAM in PoolVector due to the maximum number of all
+   godot#118709 issue closed `StringName` has no `operator[]` to extract single characters, like `String`
+S R14 total=0 
+S R15 total=1 
+   godot#100062 PR closed Implement Buffer Device Address for Rendering Device Vulkan and DirectX12
+S R16 total=1 
+   godot#38431 PR closed register RenderingDevice as gdscript singleton
+S R18 total=0 
+{
+ "classref_c5": "0.1.0",
+ "refs": {
+  "master": {
+   "sha": "069458825a8e4a01938a176372c0709ab6fd9dc3",
+   "date": "2026-11-11T17:27:55Z"
+  },
+  "4.7": {
+   "sha": "8521df165a44db92bcc4c878d4d7e53714652c97",
+   "date": "2026-11-04T14:05:40Z"
+  }
+ },
+ "verified": 12,
+ "same_in_master": 12,
+ "same_in_master_ids": [
+  "R01",
+  "R02",
+  "R03",
+  "R04",
+  "R06",
+  "R07",
+  "R10",
+  "R13",
+  "R14",
+  "R15",
+  "R16",
+  "R18"
+ ],
+ "same_in_master_15": [
+  7,
+  7
+ ],
+ "control_same": 12,
+ "control_failed": [],
+ "c5_threshold_20": 6,
+ "c5_threshold_15": 4
+}

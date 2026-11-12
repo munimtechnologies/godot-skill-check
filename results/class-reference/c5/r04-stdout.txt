@@ -1,0 +1,14 @@
+S1 R04-D gdcheck=['Could not find base class "Sprite".'] foreign=[]
+S2 R03-A gdcheck=['Could not find base class "Sprite".'] foreign=[]
+S2 R03-C gdcheck=['Could not find base class "Sprite".'] foreign=[]
+S2 R03-B gdcheck=[] foreign=[]
+S2 R03-D gdcheck=[] foreign=[]
+S2 R04-A gdcheck=['Variable "a" has the same name as a previously declared variable.'] foreign=[]
+S2 R04-C gdcheck=['Variable "a" has the same name as a previously declared variable.'] foreign=[]
+S2 R04-B gdcheck=[] foreign=[]
+S2 R04-D gdcheck=['Could not find base class "Sprite".'] foreign=[]
+{
+ "S1_sprite_in_R04D": true,
+ "S2_sprite_in_R04D": true,
+ "S2_foreign_errors_total": 0
+}

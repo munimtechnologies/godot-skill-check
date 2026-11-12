@@ -1,0 +1,170 @@
+{
+ "summary": {
+  "S1_sprite_in_R04D": true,
+  "S2_sprite_in_R04D": true,
+  "S2_foreign_errors_total": 0
+ },
+ "runs": {
+  "S1": [
+   {
+    "check": "R04-D",
+    "own_path": "res://s/fdf0eb9d942355f0.gd",
+    "rc": 1,
+    "gdcheck_msgs": [
+     "Could not find base class \"Sprite\"."
+    ],
+    "errors_with_paths": [
+     {
+      "msg": "Could not find base class \"Sprite\".",
+      "path": "res://s/fdf0eb9d942355f0.gd"
+     }
+    ],
+    "foreign": [],
+    "files_in_project": [
+     "fdf0eb9d942355f0.gd"
+    ]
+   }
+  ],
+  "S2": [
+   {
+    "check": "R03-A",
+    "own_path": "res://s/3c3176ede5b2752f.gd",
+    "rc": 1,
+    "gdcheck_msgs": [
+     "Could not find base class \"Sprite\"."
+    ],
+    "errors_with_paths": [
+     {
+      "msg": "Could not find base class \"Sprite\".",
+      "path": "res://s/3c3176ede5b2752f.gd"
+     }
+    ],
+    "foreign": [],
+    "files_in_project": [
+     "3c3176ede5b2752f.gd"
+    ]
+   },
+   {
+    "check": "R03-C",
+    "own_path": "res://s/3c3176ede5b2752f.gd",
+    "rc": 1,
+    "gdcheck_msgs": [
+     "Could not find base class \"Sprite\"."
+    ],
+    "errors_with_paths": [
+     {
+      "msg": "Could not find base class \"Sprite\".",
+      "path": "res://s/3c3176ede5b2752f.gd"
+     }
+    ],
+    "foreign": [],
+    "files_in_project": [
+     "3c3176ede5b2752f.gd"
+    ]
+   },
+   {
+    "check": "R03-B",
+    "own_path": "res://s/20f5be291e2e4795.gd",
+    "rc": 0,
+    "gdcheck_msgs": [],
+    "errors_with_paths": [],
+    "foreign": [],
+    "files_in_project": [
+     "20f5be291e2e4795.gd",
+     "3c3176ede5b2752f.gd"
+    ]
+   },
+   {
+    "check": "R03-D",
+    "own_path": "res://s/20f5be291e2e4795.gd",
+    "rc": 0,
+    "gdcheck_msgs": [],
+    "errors_with_paths": [],
+    "foreign": [],
+    "files_in_project": [
+     "20f5be291e2e4795.gd",
+     "3c3176ede5b2752f.gd"
+    ]
+   },
+   {
+    "check": "R04-A",
+    "own_path": "res://s/97dbd68b01a1c057.gd",
+    "rc": 1,
+    "gdcheck_msgs": [
+     "Variable \"a\" has the same name as a previously declared variable."
+    ],
+    "errors_with_paths": [
+     {
+      "msg": "Variable \"a\" has the same name as a previously declared variable.",
+      "path": "res://s/97dbd68b01a1c057.gd"
+     }
+    ],
+    "foreign": [],
+    "files_in_project": [
+     "20f5be291e2e4795.gd",
+     "3c3176ede5b2752f.gd",
+     "97dbd68b01a1c057.gd"
+    ]
+   },
+   {
+    "check": "R04-C",
+    "own_path": "res://s/83192ee663802cc6.gd",
+    "rc": 1,
+    "gdcheck_msgs": [
+     "Variable \"a\" has the same name as a previously declared variable."
+    ],
+    "errors_with_paths": [
+     {
+      "msg": "Variable \"a\" has the same name as a previously declared variable.",
+      "path": "res://s/83192ee663802cc6.gd"
+     }
+    ],
+    "foreign": [],
+    "files_in_project": [
+     "20f5be291e2e4795.gd",
+     "3c3176ede5b2752f.gd",
+     "83192ee663802cc6.gd",
+     "97dbd68b01a1c057.gd"
+    ]
+   },
+   {
+    "check": "R04-B",
+    "own_path": "res://s/f97a0a0acfffe233.gd",
+    "rc": 0,
+    "gdcheck_msgs": [],
+    "errors_with_paths": [],
+    "foreign": [],
+    "files_in_project": [
+     "20f5be291e2e4795.gd",
+     "3c3176ede5b2752f.gd",
+     "83192ee663802cc6.gd",
+     "97dbd68b01a1c057.gd",
+     "f97a0a0acfffe233.gd"
+    ]
+   },
+   {
+    "check": "R04-D",
+    "own_path": "res://s/fdf0eb9d942355f0.gd",
+    "rc": 1,
+    "gdcheck_msgs": [
+     "Could not find base class \"Sprite\"."
+    ],
+    "errors_with_paths": [
+     {
+      "msg": "Could not find base class \"Sprite\".",
+      "path": "res://s/fdf0eb9d942355f0.gd"
+     }
+    ],
+    "foreign": [],
+    "files_in_project": [
+     "20f5be291e2e4795.gd",
+     "3c3176ede5b2752f.gd",
+     "83192ee663802cc6.gd",
+     "97dbd68b01a1c057.gd",
+     "f97a0a0acfffe233.gd",
+     "fdf0eb9d942355f0.gd"
+    ]
+   }
+  ]
+ }
+}

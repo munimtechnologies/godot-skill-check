@@ -3,9 +3,8 @@
 By MV2 of Munim, Inc. (mv2@munimtech.com). Made with AI agents (Anthropic Claude). Text: CC BY 4.0.
 Code quoted from the Godot class reference stays under the docs' licence, CC BY 3.0 (Godot community).
 
-Status (2026-11-11): C1 to C4 graded; **C5 (is the same code still on `master`?) is not graded yet**. It
-waits for the read-only job `classref-c5-v1`. Its method and code were published before it runs:
-[c5/EXPECTATIONS.md](c5/EXPECTATIONS.md), [c5/c5_upstream.py](c5/c5_upstream.py).
+Status (2026-11-12): C1 to C5 graded. **C5 graded: held.** All 12 blocks verified real are still the same code on
+`master` of godotengine/godot (it needed 6 of 12; on the 15 not glanced at, 7 of 7, needing 4). See section 4a.
 
 - Pre-registration: [PREREGISTRATION-class-reference.md](../../PREREGISTRATION-class-reference.md)
   (commit `899351a`, 2026-11-10 16:19 UTC).
@@ -15,6 +14,10 @@ waits for the read-only job `classref-c5-v1`. Its method and code were published
   container on 2026-11-11 01:35 to 01:38 UTC with Godot `4.7.2.stable.official.ed1daf0bf`, on this
   repository at `3ef6cad`. Output: [classref-verify.json](classref-verify.json),
   [verify-stdout.txt](verify-stdout.txt), unit tests 14 of 14 passed ([verify-unittest.txt](verify-unittest.txt)).
+- C5: [c5/c5_upstream.py](c5/c5_upstream.py) 0.1.0 with its method in [c5/EXPECTATIONS.md](c5/EXPECTATIONS.md),
+  both published before the run, run unchanged once in a sealed container on 2026-11-12 12:17 to 12:21 UTC on
+  this repository at `83f0ea7`. Output: [c5/c5.json](c5/c5.json), [c5/c5-stdout.txt](c5/c5-stdout.txt), unit
+  tests 8 of 8 passed ([c5/c5-unittest.txt](c5/c5-unittest.txt)).
 
 Results are kept in three groups: what the checker found automatically, what one reader labelled by hand,
 and what Godot confirmed. Exploratory findings are listed apart and were not used for any label or grade.
@@ -76,13 +79,42 @@ has a property `alignment` and none called `horizontal_alignment`; argument 2 of
 | C2 | at least one complete-script error verified real | **held** (2 of 3: R03, R07) | **held** (R03) |
 | C3 | at most 5 labelled `tool` | **held** (0) | **held** (0) |
 | C4 | at most 5 labelled `intended` | **not held** (8) | **not held** (8) |
-| C5 | at least half of the verified blocks unchanged on `master` | pending (needs 6 of 12) | pending (needs 4 of 7) |
+| C5 | at least half of the verified blocks unchanged on `master` | **held** (12 of 12; needed 6) | **held** (7 of 7; needed 4) |
 
 C1 was set from the rates in the earlier manual studies (5 of 17 script errors and 6 of 40 sampled fragment
 errors were real). The class reference turned out much higher: 12 of 20 (60%). A likely reason, not tested:
 the manual's fragment errors are mostly sketches with parts left out on purpose, while the class reference's
 errors are mostly single API facts (an old class name, a missing constant, an old signature) that a
 reference page gets wrong when the API changes under it.
+
+## 4a. C5: is the same code still on `master`? (graded 2026-11-12)
+
+Method as published before the run ([c5/EXPECTATIONS.md](c5/EXPECTATIONS.md)): each block's code, read from the
+class XML (`doc/classes/<Class>.xml`, `modules/gdscript/doc_classes/@GDScript.xml`) at a fixed commit, is
+compared with the block gdcheck read from the 4.7 docs, after the same normalisation on both sides, and
+counts as the same only if its lines appear as one contiguous run with indentation kept.
+
+| ref | commit | date (UTC) | blocks the same |
+|---|---|---|---|
+| `master` | `069458825a8e` | 2026-11-11 17:27 | **12 of 12** |
+| `4.7` (control) | `8521df165a44` | 2026-11-04 14:05 | 12 of 12 |
+
+- The control matched 12 of 12, so the comparison finds these blocks where the 4.7 docs were built from.
+- On `master`, every block matched with similarity 1.0. The output's informational "fixed" flag is true for
+  R14 only, and it means nothing there: that flag compares text with leading whitespace removed, and R14's
+  correction changes only indentation. Read by eye ([c5/c5-blocks/R14-master.txt](c5/c5-blocks/R14-master.txt)),
+  master still has the lambda's closing `)` one tab deeper than the `connect(` line, as in 4.7.
+- The 12 blocks as they stand on `master` are saved in [c5/c5-blocks/](c5/c5-blocks/) next to their 4.7 copies.
+
+Expectations written with the method (guesses, not pre-registered predictions): E1 unit tests pass: **held**
+(8 of 8). E2 control 12 of 12: **held**. E3 master still shows 10 to 12 unchanged: **held** (12).
+E4 no earlier report found for at least 8 of 12: **held** (12). One read-only GitHub search per case over
+issues and pull requests in godotengine/godot and godotengine/godot-docs returned 7 hits for 6 cases, all
+read by title: five pull requests about adding or changing features near the APIs in question (for example
+"Add a `uri` property to `LinkButton`"), none of them about a code example, and two issues. The one hit that looked closest, godot#118709 ("`StringName` has no
+`operator[]`", returned for R13), was read in full: it is a feature request about indexing `StringName` and
+does not mention the class reference or R13's repeated `var b`. So no earlier report of any of the 12 was
+found. A search can miss reports worded differently, so this is "none found", not "none exist".
 
 ## 5. Exploratory (written before the run, not used for any label)
 
@@ -94,13 +126,16 @@ reference page gets wrong when the API changes under it.
   type, so the parser does not check the property name. The SpinBox example has a second bug that a
   parser check cannot see; ClassDB confirms it.
 - **X3 held.** R07 with a hostname and default TLS options also passes.
-- **Open question about the checker.** R04's check D listed one extra message, `Could not find base class
-  "Sprite"`, which is R03's error, not R04's. It changes no verdict (R04's checks A and B show no such
-  message, and R04's own error was gone in D). gdcheck 0.3.0 keeps every script it checks in one project
-  folder and does not compare the file named in Godot's `at:` line with the file being checked, so a message
-  about an earlier script may be counted for a later one. The `classref-c5-v1` job re-runs those checks and
-  saves Godot's raw output so the cause can be read, not guessed. If it is a gdcheck bug, the fix and the
-  numbers it changes will be published in a gdcheck release.
+- **The open question about the checker is answered: not a gdcheck bug.** R04's check D had listed one extra
+  message, `Could not find base class "Sprite"`. We suspected gdcheck 0.3.0 was counting a message about
+  R03's script (checked earlier in the same project folder) for R04. The C5 job re-ran the checks with
+  Godot's raw output saved ([c5/r04/](c5/r04/), [c5/r04-anomaly.json](c5/r04-anomaly.json)). The suspicion
+  **did not hold**: in a fresh project holding only R04-D's own file (run S1), Godot still gave the message,
+  and its `at:` line names that same file. In the R03-then-R04 run (S2), no error in any check pointed at
+  another file (0 foreign errors). So the message belongs to the code gdcheck checked for R04 (its wrapping
+  of the fragment). Check A shows only the repeated `var a`, because Godot stops at that parse error before it
+  resolves the base class; once the repeat is fixed (check D), the next error shows. A likely source, not
+  checked here: the wrapper's base class came from the page. It changes no verdict. No gdcheck release is needed.
 
 ## Limits
 
@@ -110,5 +145,6 @@ reference page gets wrong when the API changes under it.
   (X2 shows one such case).
 - The population is the class reference's blocks that gdcheck 0.3.0 marks `error`. Blocks Godot accepts
   were not read, so this is not a count of all bugs in the class reference.
+- C5 compares code text on one day (`master` at 2026-11-11 17:27 UTC); it says nothing about later commits.
 - Nothing here has been filed, commented or proposed on any godotengine repository. Godot's 2026
   contribution policy bans autonomous AI agents and AI-written text in its issues and pull requests.

@@ -1,0 +1,9 @@
+# R10 doc/classes/LinkButton.xml @ 069458825a8e4a01938a176372c0709ab6fd9dc3, block 0, ratio 1.0
+# repr of the raw block follows the text
+
+			uri = "https://godotengine.org"  # Opens the URL in the default web browser.
+			uri = "C:\SomeFolder"  # Opens the file explorer at the given path.
+			uri = "C:\SomeImage.png"  # Opens the given image in the default viewing app.
+			
+
+'\n\t\t\turi = "https://godotengine.org"  # Opens the URL in the default web browser.\n\t\t\turi = "C:\\SomeFolder"  # Opens the file explorer at the given path.\n\t\t\turi = "C:\\SomeImage.png"  # Opens the given image in the default viewing app.\n\t\t\t'

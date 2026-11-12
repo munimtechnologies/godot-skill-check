@@ -1,0 +1,13 @@
+# R13 doc/classes/Node.xml @ 069458825a8e4a01938a176372c0709ab6fd9dc3, block 3, ratio 1.0
+# repr of the raw block follows the text
+
+				# Assuming the following are children of this node, in order:
+				# First, Middle, Last.
+
+				var a = get_child(0).name  # a is "First"
+				var b = get_child(1).name  # b is "Middle"
+				var b = get_child(2).name  # b is "Last"
+				var c = get_child(-1).name # c is "Last"
+				
+
+'\n\t\t\t\t# Assuming the following are children of this node, in order:\n\t\t\t\t# First, Middle, Last.\n\n\t\t\t\tvar a = get_child(0).name  # a is "First"\n\t\t\t\tvar b = get_child(1).name  # b is "Middle"\n\t\t\t\tvar b = get_child(2).name  # b is "Last"\n\t\t\t\tvar c = get_child(-1).name # c is "Last"\n\t\t\t\t'

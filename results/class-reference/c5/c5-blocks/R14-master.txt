@@ -1,0 +1,19 @@
+# R14 doc/classes/PopupMenu.xml @ 069458825a8e4a01938a176372c0709ab6fd9dc3, block 0, ratio 1.0
+# repr of the raw block follows the text
+
+				func _ready():
+					add_multistate_item("Item", 3, 0)
+
+					index_pressed.connect(func(index: int):
+							toggle_item_multistate(index)
+							match get_item_multistate(index):
+								0:
+									print("First state")
+								1:
+									print("Second state")
+								2:
+									print("Third state")
+						)
+				
+
+'\n\t\t\t\tfunc _ready():\n\t\t\t\t\tadd_multistate_item("Item", 3, 0)\n\n\t\t\t\t\tindex_pressed.connect(func(index: int):\n\t\t\t\t\t\t\ttoggle_item_multistate(index)\n\t\t\t\t\t\t\tmatch get_item_multistate(index):\n\t\t\t\t\t\t\t\t0:\n\t\t\t\t\t\t\t\t\tprint("First state")\n\t\t\t\t\t\t\t\t1:\n\t\t\t\t\t\t\t\t\tprint("Second state")\n\t\t\t\t\t\t\t\t2:\n\t\t\t\t\t\t\t\t\tprint("Third state")\n\t\t\t\t\t\t)\n\t\t\t\t'
